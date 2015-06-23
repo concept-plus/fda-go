@@ -127,3 +127,41 @@ html, body {
     padding: 0;
   }
 }
+
+.recall-search-button {
+  color: white;
+  background-color: #2562ab;
+}
+#help-button {
+  background-color: inherit;
+  border: none;
+}
+img.header-logo {
+  padding: 100px 0 20px 0;
+}
+h1.lead {
+  margin: 0;
+  padding: 20px 0 40px 0;
+}
+.fda-go-text {
+  color: #051869;
+  font-weight: 400;
+  font-size: 21px;
+}
+.search-bar {
+  padding: 10px;
+}
+#category-search-button {
+  background-color: #009f21;
+}
+.category-radio-group .input-group {
+  display: inline-table;
+  padding: 15px 5px;
+}
+#recall-instructions {
+  padding: 70px 0 20px 0;
+  font-size: 16px;
+}
+.recall-buttons {
+  padding: 20px;
+}

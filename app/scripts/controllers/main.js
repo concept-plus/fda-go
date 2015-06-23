@@ -9,5 +9,9 @@
  */
 angular.module('fdagoApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.search = [];
+    $scope.awesomeThings = [
+      'HTML5 Boilerplate',
+      'AngularJS',
+      'Karma'
+    ];
   });

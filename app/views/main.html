@@ -1,11 +1,65 @@
 <div class="center">
-  <h1>FDA GO</h1>
-  <p class="lead">FDA drugs, devices and food info.</p>
+    <div class="pull-right">
+        <button id="help-button"><span class="fda-go-text">Help</span></button>
+    </div>
+    <image class="header-logo" src="../images/fda-go-logo-l.png"></image>
+    <h1 class="lead fda-go-text">FDA drugs, devices and food info.</h1>
 
-  <form>
-  <input>
-  </form>
+    <!-- <div class="row ">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6"> -->
+            <form>
 
-  <p>Select one of the predefined searches below to get a list of the most recent recalls.</p>
+                <div class="row search-bar">
+                    <div class="input-group">
+                        <input type="text" id="category-search-box" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn">
+                            <button type="submit" id="category-search-button" class="btn btn-default">
+                                <i class="glyphicon glyphicon-search"></i>
+                                <span class='sr-only'>Search</span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="row category-radio-group">
+                    <span class="input-group col-sm-3">
+                        <span class="input-group-addon">
+                            <input type="radio" id="drug-search-radio" aria-label="Search Drugs" checked>
+                        </span>
+                        <label class="form-control">drugs</label>
+                    </span>
+                    <span class="input-group col-sm-3">
+                        <span class="input-group-addon">
+                            <input type="radio" id="device-search-radio" aria-label="Search Devices">
+                        </span>
+                        <label class="form-control">devices</label>
+                    </span>
+                    <span class="input-group col-sm-3">
+                        <span class="input-group-addon">
+                            <input type="radio" id="food-search-radio" aria-label="Search Food">
+                        </span>
+                        <label class="form-control">food</label>
+                    </span>
+                </div>
+
+            </form>
+
+            <p id="recall-instructions">Select one of the predefined searches below to get a list of the most recent recalls.</p>
+
+            <div class="row recall-buttons">
+                <div class="col-sm-4">
+                    <button type="button" id="drug-recall-button" class="btn btn-default recall-search-button">Drug Recalls \ Go</button>
+                </div>
+                <div class="col-sm-4">
+                    <button type="button" id="device-recall-button" class="btn btn-default recall-search-button">Device Recalls \ Go</button>
+                </div>
+                <div class="col-sm-4">
+                    <button type="button" id="food-recall-button" class="btn btn-default recall-search-button">Food Recalls \ Go</button>
+                </div>
+            </div>
+        <!-- </div>
+        <div class="col-sm-3"></div>
+    </div> -->
+
 </div>
-
