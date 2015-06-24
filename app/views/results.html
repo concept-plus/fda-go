@@ -1,1 +1,20 @@
-<p>This is the results view.</p>
+<div ng-controller="ResultsCtrl as controller">
+    <p>Showing results for {{result.search}}</p>
+    <table>
+        <caption>Monthly savings</caption>
+        <thead>
+            <th>
+                <td>Brand Name</td>
+                <td>Manufacturer</td>
+                <td>Substances</td>
+            </th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="result in controller.results">
+                <td>{{result.brand_name}}</td>
+                <td>{{result.manufacturer}}</td>
+                <td>{{result.substances}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -7,11 +7,28 @@
  * # MainCtrl
  * Controller of the fdagoApp
  */
-angular.module('fdagoApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+angular.module('fdagoApp').controller('MainCtrl', function($scope, $location) {
+    this.queryCategory = 'drug';
+    this.searchString = null;
+
+    // var self = this;
+
+    var navigateToResults = function(category, search) {
+        var path = '/results?category=' + category;
+        if (('' + search).length > 0) {
+            path = path + '&search=' + search;
+        }
+        console.log('navigating to ' + path);
+        $location.path(path);
+    };
+
+    this.submitSearch = function() {
+        navigateToResults(this.queryCategory, this.searchString);
+    };
+
+    this.submitDrugRecallQuery = angular.bind(null, navigateToResults, 'drug');
+
+    this.submitDeviceRecallQuery = angular.bind(null, navigateToResults, 'device');
+
+    this.submitFoodRecallQuery = angular.bind(null, navigateToResults, 'food');
+});
