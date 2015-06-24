@@ -212,10 +212,13 @@ h1.lead {
 .search-bar {
   padding: 10px;
 }
-#category-search-button {
-  background-color: #009f21;
+#drug-search-button {
+  background-color: transparent;
   border: none;
-  margin-left: -3px;
+  margin-left: -26px;
+  margin-top: -3px;
+  position: relative;
+  z-index: 99;
 }
 .category-radio-group .input-group {
   display: inline-table;
