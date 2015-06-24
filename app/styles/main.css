@@ -96,6 +96,11 @@ html, body {
   padding: 50px 0 0 0;
   background: #fff;
 }
+.navmenu-fixed-left .panel {
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+}
 .navmenu-fixed-left .navmenu-brand{
   background-color: #563d7c;
   margin: 0;
@@ -151,7 +156,6 @@ html, body {
   .container {
     max-width: 730px;
   }
-
   /* Remove the padding we set earlier */
   .header,
   .marketing,
@@ -190,6 +194,7 @@ html, body {
   .canvas {
     padding: 0;
   }
+
 }
 
 .recall-search-button {
