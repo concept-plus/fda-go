@@ -8,6 +8,9 @@
  * Controller of the fdagoApp
  */
 angular.module('fdagoApp').controller('MainCtrl', function($scope, $location) {
+    // hide nav for home screen.
+    angular.element('#navigation').hide();
+
     this.queryCategory = 'drug';
     this.searchString = null;
 
@@ -32,3 +35,4 @@ angular.module('fdagoApp').controller('MainCtrl', function($scope, $location) {
 
     this.submitFoodRecallQuery = angular.bind(null, navigateToResults, 'food');
 });
+

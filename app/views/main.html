@@ -1,65 +1,40 @@
 <div class="center" ng-controller="MainCtrl as controller">
-    <div class="pull-right">
-        <button id="help-button"><span class="fda-go-text">Help</span></button>
-    </div>
     <image class="header-logo" src="../images/fda-go-logo-l.png"></image>
     <h1 class="lead fda-go-text">FDA drugs, devices and food info.</h1>
 
-    <!-- <div class="row ">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-6"> -->
-            <form>
+    <form>
+      <div class="row search-bar">
+        <h4 for="drugsearch">Search for adverse events, labeling and recalls for drugs.</h4>
+        <div class="input-group">
+          <input type="text" name="drugsearch" id="category-search-box" class="form-control large" placeholder="Enter your drug search here.">
+          <span class="input-group-btn">
+              <button type="submit" id="category-search-button" class="btn btn-default"ng-click="controller.submitSearch()">
+                  <i class="glyphicon glyphicon-search"></i>
+                  <span class='sr-only'>Search</span>
+              </button>
+          </span>
+        </div>
+      </div>
 
-                <div class="row search-bar">
-                    <div class="input-group">
-                        <input type="text" id="category-search-box" class="form-control" placeholder="Search for..." ng-model="controller.searchString">
-                        <span class="input-group-btn">
-                            <button type="submit" id="category-search-button" class="btn btn-default" ng-click="controller.submitSearch()">
-                                <i class="glyphicon glyphicon-search"></i>
-                                <span class='sr-only'>Search</span>
-                            </button>
-                        </span>
-                    </div>
-                </div>
+    </form>
 
-                <div class="row category-radio-group">
-                    <span class="input-group col-sm-3">
-                        <span class="input-group-addon">
-                            <input type="radio" id="drug-search-radio" aria-label="Search Drugs" checked ng-model="controller.queryCategory">
-                        </span>
-                        <label class="form-control">drugs</label>
-                    </span>
-                    <span class="input-group col-sm-3">
-                        <span class="input-group-addon">
-                            <input type="radio" id="device-search-radio" aria-label="Search Devices" ng-model="controller.queryCategory">
-                        </span>
-                        <label class="form-control">devices</label>
-                    </span>
-                    <span class="input-group col-sm-3">
-                        <span class="input-group-addon">
-                            <input type="radio" id="food-search-radio" aria-label="Search Food" ng-model="controller.queryCategory">
-                        </span>
-                        <label class="form-control">food</label>
-                    </span>
-                </div>
+    <p id="recall-instructions">...or select one of the predefined searches below to get a list of the most recent recalls.</p>
 
-            </form>
+    <div class="row recall-buttons">
+        <div class="col-sm-4">
+            <button type="button" id="drug-recall-button" class="btn btn-default recall-search-button">Drug Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search drug recalls."></span>
+        </div>
+        <div class="col-sm-4">
+            <button type="button" id="device-recall-button" class="btn btn-default recall-search-button">Device Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search medical device recalls."></span>
+        </div>
+        <div class="col-sm-4">
+            <button type="button" id="food-recall-button" class="btn btn-default recall-search-button">Food Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search food recalls."></span>
+        </div>
+    </div>
 
-            <p id="recall-instructions">Select one of the predefined searches below to get a list of the most recent recalls.</p>
-
-            <div class="row recall-buttons">
-                <div class="col-sm-4">
-                    <button type="button" id="drug-recall-button" class="btn btn-default recall-search-button" ng-click="controller.submitDrugRecallQuery()">Drug Recalls \ Go</button>
-                </div>
-                <div class="col-sm-4">
-                    <button type="button" id="device-recall-button" class="btn btn-default recall-search-button" ng-click="controller.submitDeviceRecallQuery()">Device Recalls \ Go</button>
-                </div>
-                <div class="col-sm-4">
-                    <button type="button" id="food-recall-button" class="btn btn-default recall-search-button" ng-click="controller.submitFoodRecallQuery()">Food Recalls \ Go</button>
-                </div>
-            </div>
-        <!-- </div>
-        <div class="col-sm-3"></div>
-    </div> -->
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
 
 </div>
