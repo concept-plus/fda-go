@@ -114,6 +114,10 @@ html, body {
   font-size: 1.4em;
   border: none;
 }
+.recall-buttons button{
+  width: 155px;
+  margin-bottom: 20px;
+}
 
 
 
@@ -124,6 +128,9 @@ html, body {
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
+  img.header-logo {
+    padding: 100px 0 20px 0;
+  }
   .navbar{
     display: none;
   }
@@ -176,9 +183,6 @@ html, body {
 #help-button {
   background-color: inherit;
   border: none;
-}
-img.header-logo {
-  padding: 100px 0 20px 0;
 }
 h1.lead {
   margin: 0;
