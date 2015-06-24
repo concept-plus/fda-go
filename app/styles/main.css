@@ -96,6 +96,19 @@ html, body {
   padding: 50px 0 0 0;
   background: #fff;
 }
+.navmenu-fixed-left .navmenu-brand{
+  background-color: #563d7c;
+  margin: 0;
+  color: #fff;
+}
+.navmenu-fixed-left .btn-success{
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 18px;
+}
+.navmenu-fixed-left .recall-buttons{
+  margin-left: -10px;
+}
 
 /* Search type radios */
 #searchTypeRadioGroup .input-group{
@@ -159,6 +172,9 @@ html, body {
 @media (min-width: 0) {
   .navbar-toggle {
     display: block; /* force showing the toggle */
+  }
+  .recall-buttons {
+    margin-left: -80px;
   }
 }
 

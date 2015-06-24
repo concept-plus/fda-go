@@ -23,12 +23,42 @@
 
     <!-- Reveal menu -->
     <div class="navmenu navmenu-default navmenu-fixed-left">
-      <a class="navmenu-brand" href="#/">Home</a>
+      <a class="navmenu-brand" href="#/"><span class="glyphicon glyphicon-home" aria-hidden="true"> Home</a>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Search Drug</h3>
+        </div>
+        <div class="panel-body">
+          <form>
+            <input type="text" name="drugsearch" id="category-search-box" class="form-control large">
+            <button type="submit" class="btn btn-success btn-block">Search Now</button>
+          </form>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Latest Recalls</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row recall-buttons">
+            <div class="col-sm-4">
+                <button type="button" class="btn btn-default recall-search-button">Drug Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search drug recalls."></span>
+            </div>
+            <div class="col-sm-4">
+                <button type="button" class="btn btn-default recall-search-button">Device Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search medical device recalls."></span>
+            </div>
+            <div class="col-sm-4">
+                <button type="button" class="btn btn-default recall-search-button">Food Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search food recalls."></span>
+            </div>
+        </div>
+        </div>
+      </div>
+      <!--
       <ul class="nav navmenu-nav">
         <li><a href="./">Drug Recalls</a></li>
         <li><a href="./">Device Recalls</a></li>
         <li class="active"><a href="./">Food Recalls</a></li>
-      </ul>
+      </ul>-->
     </div>
 
     <div class="canvas">
