@@ -1,11 +1,41 @@
 <div class="center">
-  <h1>FDA GO</h1>
-  <p class="lead">FDA drugs, devices and food info.</p>
+    <image class="header-logo" src="../images/fda-go-logo-l.png"></image>
+    <h1 class="lead fda-go-text">FDA drugs, devices and food info.</h1>
 
-  <form>
-  <input>
-  </form>
+    <form>
 
-  <p>Select one of the predefined searches below to get a list of the most recent recalls.</p>
+        <div class="row search-bar">
+          <h4 for="drugsearch">Search for adverse events, labeling and recalls for drugs.</h4>
+          <div class="input-group">
+            <input type="text" name="drugsearch" id="category-search-box" class="form-control large" placeholder="Enter your drug search here.">
+            <span class="input-group-btn">
+                <button type="submit" id="category-search-button" class="btn btn-default">
+                    <i class="glyphicon glyphicon-search"></i>
+                    <span class='sr-only'>Search</span>
+                </button>
+            </span>
+          </div>
+        </div>
+
+    </form>
+
+    <p id="recall-instructions">...or select one of the predefined searches below to get a list of the most recent recalls.</p>
+
+    <div class="row recall-buttons">
+        <div class="col-sm-4">
+            <button type="button" id="drug-recall-button" class="btn btn-default recall-search-button">Drug Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search drug recalls."></span>
+        </div>
+        <div class="col-sm-4">
+            <button type="button" id="device-recall-button" class="btn btn-default recall-search-button">Device Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search medical device recalls."></span>
+        </div>
+        <div class="col-sm-4">
+            <button type="button" id="food-recall-button" class="btn btn-default recall-search-button">Food Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search food recalls."></span>
+        </div>
+    </div>
+
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
 </div>
-

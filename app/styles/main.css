@@ -12,6 +12,13 @@ body {
 .center {
   text-align: center;
 }
+input.large{
+  font-size: 20px;
+  height: 50px;
+}
+input.large + span .glyphicon{
+  font-size: 33px;
+}
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -67,6 +74,11 @@ html, body {
   height: 100%;
 }
 
+/* Navbar styles */
+.navbar{
+  display: block;
+}
+
 .navbar-toggle {
   float: left;
   margin-left: 15px;
@@ -85,8 +97,44 @@ html, body {
   background: #fff;
 }
 
+/* Search type radios */
+#searchTypeRadioGroup .input-group{
+  float: left;
+  width: 33%;
+}
+
+/* Recall Button styles */
+.recall-buttons .go-endcap {
+  float: right;
+  margin-left: -18px;
+  position: absolute;
+}
+.recall-buttons button {
+  padding: 7px 16px 8px 10px;
+  font-size: 1.4em;
+  border: none;
+}
+.recall-buttons button{
+  width: 155px;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
+  img.header-logo {
+    padding: 100px 0 20px 0;
+  }
+  .navbar{
+    display: none;
+  }
+
   .container {
     max-width: 730px;
   }
@@ -126,4 +174,41 @@ html, body {
   .canvas {
     padding: 0;
   }
+}
+
+.recall-search-button {
+  color: white;
+  background-color: #2562ab;
+}
+#help-button {
+  background-color: inherit;
+  border: none;
+}
+h1.lead {
+  margin: 0;
+  padding: 20px 0 40px 0;
+}
+.fda-go-text {
+  color: #051869;
+  font-weight: 400;
+  font-size: 21px;
+}
+.search-bar {
+  padding: 10px;
+}
+#category-search-button {
+  background-color: #009f21;
+  border: none;
+  margin-left: -3px;
+}
+.category-radio-group .input-group {
+  display: inline-table;
+  padding: 15px 5px;
+}
+#recall-instructions {
+  padding: 70px 0 20px 0;
+  font-size: 16px;
+}
+.recall-buttons {
+  padding: 20px;
 }

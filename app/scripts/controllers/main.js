@@ -10,4 +10,6 @@
 angular.module('fdagoApp')
   .controller('MainCtrl', function ($scope) {
     $scope.search = [];
+
+    angular.element('#navigation').hide();
   });
