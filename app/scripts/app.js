@@ -23,7 +23,7 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/results', {
+      .when('/results/:category/:search', {
         templateUrl: 'views/results.html',
         controller: 'ResultsCtrl'
       })
