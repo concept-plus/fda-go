@@ -1,19 +1,19 @@
 <div ng-controller="ResultsCtrl as controller">
-    <p>Showing results for {{result.search}}</p>
+    <p>Showing results for <strong>{{controller.search}}</strong></p>
     <table>
-        <caption>Search results</caption>
+        <caption class="sr-only">Search results</caption>
         <thead>
-            <th>
-                <td>Brand Name</td>
-                <td>Manufacturer</td>
-                <td>Substances</td>
-            </th>
+            <tr>
+                <th scope="col">Brand Name</th>
+                <th scope="col">Manufacturer</th>
+                <th scope="col">Substances</th>
+            </tr>
         </thead>
         <tbody>
             <tr ng-repeat="result in controller.results">
-                <td>{{result.brand_name}}</td>
-                <td>{{result.manufacturer}}</td>
-                <td>{{result.substances}}</td>
+                <td>{{controller.formatArray(result.brand_name)}}</td>
+                <td>{{controller.formatArray(result.manufacturer_name)}}</td>
+                <td>{{controller.formatArray(result.substance_name)}}</td>
             </tr>
         </tbody>
     </table>

@@ -2,13 +2,60 @@
 
 /**
  * @ngdoc function
- * @name fdagoApp.controller:AboutCtrl
+ * @name fdagoApp.controller:ResultsCtrl
  * @description
- * # AboutCtrl
+ * # ResultsCtrl
  * Controller of the fdagoApp
  */
-angular.module('fdagoApp').controller('ResultsCtrl', function() {
+angular.module('fdagoApp').controller('ResultsCtrl', ['$location', 'fdaGoQueryService', function($location, fdaGoQueryService) {
     console.log('results controller init');
     this.results = [];
-    this.search = null;
-});
+
+    $location.url();
+    var path = $location.path();
+    var pathItems = path.split('/');
+
+    this.category = pathItems[pathItems.length - 2];
+    this.search = pathItems[pathItems.length - 1];
+
+    console.log('results controller: category=' + this.category + ', search=' + this.search);
+
+    var self = this;
+
+    this.submitQuery = function() {
+        var promise = null;
+        switch(this.category) {
+            case 'drug':
+                promise = fdaGoQueryService.findDrugs(this.search);
+                break;
+            case 'drugRecall':
+                promise = fdaGoQueryService.getRecentDrugRecalls();
+                break;
+            case 'deviceRecall':
+                promise = fdaGoQueryService.getRecentDeviceRecalls();
+                break;
+            case 'foodRecall':
+                promise = fdaGoQueryService.getRecentFoodRecalls();
+                break;
+        }
+        if (angular.isDefined(promise)) {
+            promise.then(
+                function(results) {
+                    self.results = results.results;
+                },
+                function(error) {
+                    console.log('ERROR: ' + JSON.stringify(error));
+                }
+            );
+        }
+    };
+
+    this.formatArray = function(array) {
+        if (angular.isArray(array)) {
+            return array.join(', ');
+        }
+        return array;
+    };
+
+    this.submitQuery();
+}]);

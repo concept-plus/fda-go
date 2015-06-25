@@ -15,17 +15,18 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'services'
   ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        // controller: 'MainCtrl'
       })
       .when('/results/:category/:search', {
         templateUrl: 'views/results.html',
-        controller: 'ResultsCtrl'
+        // controller: 'ResultsCtrl'
       })
       .otherwise({
         redirectTo: '/'
