@@ -15,8 +15,8 @@ angular.module('fdagoApp').controller('ResultsCtrl', ['$location', 'fdaGoQuerySe
     var path = $location.path();
     var pathItems = path.split('/');
 
-    this.category = pathItems[pathItems.length - 2];
-    this.search = pathItems[pathItems.length - 1];
+    this.category = decodeURIComponent(pathItems[pathItems.length - 2]);
+    this.search = decodeURIComponent(pathItems[pathItems.length - 1]);
 
     console.log('results controller: category=' + this.category + ', search=' + this.search);
 
