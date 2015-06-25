@@ -16,8 +16,8 @@ describe('Controller: MainCtrl', function () {
     });
   }));
 
-  it('should have no items to start', function () {
-    expect(scope.search.length).toBe(0);
-  });
+  // it('should have no items to start', function () {
+  //   expect(scope.search.length).toBe(0);
+  // });
 
 });

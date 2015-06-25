@@ -26,7 +26,8 @@ services.factory('openFdaQueryService', ['queryUtil', '$http', '$q', function(ut
 
             var queryParams = [];
             if (options.search) {
-                queryParams.push({ name: 'search', value: options.search });
+                var search = options.search.replace(/\s+/g, '+'); // replace whitespace with '+' character according to openfda api
+                queryParams.push({ name: 'search', value: search });
             }
             queryParams.push({ name: 'limit', value: PAGE_SIZE });
             if (options.page > 0) {

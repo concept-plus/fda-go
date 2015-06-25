@@ -10,7 +10,7 @@ queryServices.factory('fdaGoQueryService', ['queryUtil', '$q', 'drugQueryService
                 var deferred = $q.defer();
 
                 var eventPromise = drugQueryService.findAdverseEventsByName(name);
-                // var labelPromise = drugQueryService.findLabelingByName(name);
+                var labelPromise = drugQueryService.findLabelingByName(name);
                 var recallPromise = drugQueryService.findEnforcementReportsByName(name);
 
                 var ucname = angular.uppercase(name);
@@ -34,16 +34,16 @@ queryServices.factory('fdaGoQueryService', ['queryUtil', '$q', 'drugQueryService
                         error = error;
                     }
                 );
-                // labelPromise.then(
-                //     function onFulfilled(data) {
-                //         angular.forEach(data.results, function(result) {
-                //             drugs.push(result.openfda);
-                //         });
-                //     },
-                //     function onRejected(error) {
-                //         error = error;
-                //     }
-                // );
+                labelPromise.then(
+                    function onFulfilled(data) {
+                        angular.forEach(data.results, function(result) {
+                            drugs.push(result.openfda);
+                        });
+                    },
+                    function onRejected(error) {
+                        error = error;
+                    }
+                );
                 recallPromise.then(
                     function onFulfilled(data) {
                         angular.forEach(data.results, function(result) {
@@ -55,7 +55,7 @@ queryServices.factory('fdaGoQueryService', ['queryUtil', '$q', 'drugQueryService
                     }
                 );
 
-                $q.all([eventPromise, /*labelPromise,*/ recallPromise]).finally(function() {
+                $q.all([eventPromise, labelPromise, recallPromise]).finally(function() {
                     if (error && drugs.length === 0) {
                         deferred.reject(error);
                     } else {

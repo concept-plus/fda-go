@@ -15,6 +15,8 @@ angular.module('fdagoApp').controller('MainCtrl', function($scope, $location) {
     this.searchString = null;
 
     var navigateToResults = function(category, search) {
+        category = encodeURIComponent(category);
+        search = encodeURIComponent(search);
         var path = '/results/' + category;
         if (('' + search).length > 0) {
             path = path + '/' + search;
