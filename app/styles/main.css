@@ -212,3 +212,11 @@ h1.lead {
 .recall-buttons {
   padding: 20px;
 }
+
+#results-table td,th {
+  padding: 5px;
+  border: 1px solid #444444;
+}
+#results-table th {
+  background-color: #cccccc;
+}
