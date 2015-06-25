@@ -9,7 +9,7 @@
  */
 angular.module('fdagoApp').controller('MainCtrl', function($scope, $location) {
     // hide nav for home screen.
-    //angular.element('#navigation').hide();
+    angular.element('#navigation').hide();
 
     this.queryCategory = 'drug';
     this.searchString = null;

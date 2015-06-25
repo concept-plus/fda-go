@@ -7,7 +7,7 @@
  * # ResultsCtrl
  * Controller of the fdagoApp
  */
-angular.module('fdagoApp').controller('ResultsCtrl', ['$location', 'fdaGoQueryService', function($location, fdaGoQueryService) {
+angular.module('fdagoApp').controller('ResultsCtrl', ['$scope', '$location', 'fdaGoQueryService', function($scope, $location, fdaGoQueryService) {
     console.log('results controller init');
     this.results = [];
 
@@ -21,6 +21,24 @@ angular.module('fdagoApp').controller('ResultsCtrl', ['$location', 'fdaGoQuerySe
     console.log('results controller: category=' + this.category + ', search=' + this.search);
 
     var self = this;
+
+    angular.element(window).on('resize.doResize', function (){
+      $scope.$apply(function(){
+        if (angular.element(window).innerWidth() < 767) {
+          angular.element('#navigation').show();
+        } else {
+          angular.element('#navigation').hide();
+        }
+
+        if (angular.element('.canvas-slid').length > 0) {
+          angular.element('.navmenu').offcanvas('hide');
+        }
+      });
+    });
+
+    $scope.$on('$destroy',function (){
+         angular.element(window).off('resize.doResize'); //remove the handler added earlier
+    });
 
     this.submitQuery = function() {
         var promise = null;
@@ -59,3 +77,4 @@ angular.module('fdagoApp').controller('ResultsCtrl', ['$location', 'fdaGoQuerySe
 
     this.submitQuery();
 }]);
+
