@@ -7,7 +7,7 @@
  * # ResultsCtrl
  * Controller of the fdagoApp
  */
-angular.module('fdagoApp').controller('ResultsCtrl', ['$scope', '$location', 'fdaGoQueryService', function($scope, $location, fdaGoQueryService) {
+angular.module('fdagoApp').controller('ResultsCtrl', ['$scope', '$location', 'fdaGoQueryService', '$timeout', function($scope, $location, fdaGoQueryService, $timeout) {
     // set canvas id
     angular.element('.canvas').attr('id', 'results-page');
 
@@ -17,21 +17,31 @@ angular.module('fdagoApp').controller('ResultsCtrl', ['$scope', '$location', 'fd
     var path = $location.path();
     var pathItems = path.split('/');
     var mobileView = function() {
-        angular.element('#sidemenu-content').appendTo('#sidemenu');
+        angular.element('#sidebar').html('');
+        angular.element('#sidemenu .sidemenu-content').attr('aria-hidden', 'false');
+        if(angular.element('#sidemenu').children().length === 0){
+          angular.element('.sidemenu-content').clone().appendTo('#sidemenu');
+        }
         angular.element('#navigation').show();
       },
       desktopView = function() {
         angular.element('#navigation').hide();
-        angular.element('#sidemenu-content').appendTo('#sidebar');
+        angular.element('#sidemenu .sidemenu-content').attr('aria-hidden', 'true');
+        if(angular.element('#sidebar').children().length === 0){
+          $timeout(function (){
+            angular.element('.sidemenu-content').clone().appendTo('#sidebar');
+          },1);
+        }
+        //angular.element('.sidemenu-content').clone().appendTo('#sidebar');
+        //console.log(angular.element('#sidebar'));
       };
 
     this.category = decodeURIComponent(pathItems[pathItems.length - 2]);
     this.search = decodeURIComponent(pathItems[pathItems.length - 1]);
 
-    console.log('results controller: category=' + this.category + ', search=' + this.search);
-
     var self = this;
 
+    mobileView(); //reset.
     if (angular.element(window).innerWidth() > 766) {
       desktopView();
     }

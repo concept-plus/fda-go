@@ -23,7 +23,7 @@
 
     <!-- Reveal menu -->
     <nav id="sidemenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas-768" role="navigation">
-      <div id="sidemenu-content">
+      <div class="sidemenu-content">
         <a class="navmenu-brand" href="#/"><span class="glyphicon glyphicon-home" aria-hidden="true"> Home</span></a>
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -79,14 +79,13 @@
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-51439623-4', 'auto');
+      ga('send', 'pageview');
     </script>
 
     <!-- build:js(.) scripts/vendor.js -->
