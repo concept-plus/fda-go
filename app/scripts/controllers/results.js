@@ -32,8 +32,6 @@ angular.module('fdagoApp').controller('ResultsCtrl', ['$scope', '$location', 'fd
             angular.element('.sidemenu-content').clone().appendTo('#sidebar');
           },1);
         }
-        //angular.element('.sidemenu-content').clone().appendTo('#sidebar');
-        //console.log(angular.element('#sidebar'));
       };
 
     this.category = decodeURIComponent(pathItems[pathItems.length - 2]);
