@@ -22,52 +22,49 @@
     <![endif]-->
 
     <!-- Reveal menu -->
-    <nav class="navmenu navmenu-default navmenu-fixed-left offcanvas-768" role="navigation">
-      <a class="navmenu-brand" href="#/"><span class="glyphicon glyphicon-home" aria-hidden="true"> Home</a>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Search Drug</h3>
+    <nav id="sidemenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas-768" role="navigation">
+      <div id="sidemenu-content">
+        <a class="navmenu-brand" href="#/"><span class="glyphicon glyphicon-home" aria-hidden="true"> Home</span></a>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Search Drug</h3>
+          </div>
+          <div class="panel-body">
+            <form>
+              <input type="text" name="drugsearch" id="drug-search-box" class="form-control large">
+              <button type="submit" class="btn btn-success btn-block">Search Now</button>
+            </form>
+          </div>
         </div>
-        <div class="panel-body">
-          <form>
-            <input type="text" name="drugsearch" id="drug-search-box" class="form-control large">
-            <button type="submit" class="btn btn-success btn-block">Search Now</button>
-          </form>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Latest Recalls</h3>
+          </div>
+          <div class="panel-body">
+            <div class="row recall-buttons">
+              <div class="col-sm-4">
+                  <button type="button" class="btn btn-default recall-search-button">Drug Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search drug recalls."></span>
+              </div>
+              <div class="col-sm-4">
+                  <button type="button" class="btn btn-default recall-search-button">Device Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search medical device recalls."></span>
+              </div>
+              <div class="col-sm-4">
+                  <button type="button" class="btn btn-default recall-search-button">Food Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search food recalls."></span>
+              </div>
+          </div>
+          </div>
         </div>
       </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Latest Recalls</h3>
-        </div>
-        <div class="panel-body">
-          <div class="row recall-buttons">
-            <div class="col-sm-4">
-                <button type="button" class="btn btn-default recall-search-button">Drug Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search drug recalls."></span>
-            </div>
-            <div class="col-sm-4">
-                <button type="button" class="btn btn-default recall-search-button">Device Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search medical device recalls."></span>
-            </div>
-            <div class="col-sm-4">
-                <button type="button" class="btn btn-default recall-search-button">Food Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search food recalls."></span>
-            </div>
-        </div>
-        </div>
-      </div>
-      <!--
-      <ul class="nav navmenu-nav">
-        <li><a href="./">Drug Recalls</a></li>
-        <li><a href="./">Device Recalls</a></li>
-        <li class="active"><a href="./">Food Recalls</a></li>
-      </ul>-->
     </nav>
 
-    <div class="canvas">
+    <div class="canvas" data-info="">
       <div id="navigation" class="navbar navbar-default navbar-fixed-top">
         <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
+        <a id="fdago-home" href="#/" title="Go to homepage."><img src="./images/fda-go-logo-m.png" alt="Click to go to homepage."/></a>
       </div>
 
       <div class="container">

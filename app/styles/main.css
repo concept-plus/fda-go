@@ -75,26 +75,29 @@ html, body {
 }
 
 /* Navbar styles */
-.navbar{
-  display: block;
+#main-page .navbar{
+  display: none !important;
 }
 
 .navbar-toggle {
   float: left;
   margin-left: 15px;
+  margin-top: 16px;
 }
 
 .navmenu {
   z-index: 1;
 }
-
 .canvas {
   position: relative;
   left: 0;
   z-index: 2;
   min-height: 100%;
-  padding: 50px 0 0 0;
   background: #fff;
+}
+.canvas #fdago-home{
+  display: block;
+  padding: 10px 40px;
 }
 .navmenu-fixed-left .panel {
   border-radius: 0;
@@ -114,6 +117,31 @@ html, body {
 .navmenu-fixed-left .recall-buttons{
   margin-left: -10px;
 }
+
+#sidebar .navmenu-brand {
+  display: none;
+  visibility: none;
+}
+#sidebar .recall-buttons {
+  padding: 0;
+  margin-left: 0;
+}
+#sidebar .btn-success {
+  margin-top: 10px;
+}
+#sidebar .recall-buttons div{
+  padding: 0;
+  width: 100%;
+}
+#sidebar .recall-buttons button {
+  font-size: 1em;
+  width: 130px;
+  margin-bottom: 20px;
+}
+#sidebar .recall-buttons img{
+  width: 61px;
+}
+
 
 /* Search type radios */
 #searchTypeRadioGroup .input-group{
@@ -145,11 +173,32 @@ html, body {
 
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 0) {
+  .canvas {
+    padding-top: 75px;
+  }
+  .navbar-toggle {
+    display: block; /* force showing the toggle */
+  }
+  .recall-buttons {
+    margin-left: -80px;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .canvas {
+    padding-top: 75px;
+  }
+  #main-page {
+    padding-top: 0px;
+  }
   img.header-logo {
     padding: 100px 0 20px 0;
   }
   .navbar{
+    display: block !important;
+  }
+  .navbar .navbar-toggle{
     display: none;
   }
 
@@ -173,26 +222,15 @@ html, body {
   }
 }
 
-@media (min-width: 0) {
-  .navbar-toggle {
-    display: block; /* force showing the toggle */
-  }
-  .recall-buttons {
-    margin-left: -80px;
-  }
-}
-
 @media (min-width: 992px) {
   body {
     padding: 0;
   }
   .navbar {
-    right: auto;
-    background: none;
-    border: none;
+    display: block !important;
   }
   .canvas {
-    padding: 0;
+    padding-top: 75px;
   }
 
 }

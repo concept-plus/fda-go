@@ -8,8 +8,9 @@
  * Controller of the fdagoApp
  */
 angular.module('fdagoApp').controller('MainCtrl', function($scope, $location) {
-    // hide nav for home screen.
-    angular.element('#navigation').hide();
+    // reset sidemenu
+    angular.element('.canvas').attr('id', 'main-page');
+    angular.element('#sidemenu-content').appendTo('#sidemenu');
 
     this.queryCategory = 'drug';
     this.searchString = null;

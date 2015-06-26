@@ -8,12 +8,22 @@
  * Controller of the fdagoApp
  */
 angular.module('fdagoApp').controller('ResultsCtrl', ['$scope', '$location', 'fdaGoQueryService', function($scope, $location, fdaGoQueryService) {
-    console.log('results controller init');
+    // set canvas id
+    angular.element('.canvas').attr('id', 'results-page');
+
     this.results = [];
 
     $location.url();
     var path = $location.path();
     var pathItems = path.split('/');
+    var mobileView = function() {
+        angular.element('#sidemenu-content').appendTo('#sidemenu');
+        angular.element('#navigation').show();
+      },
+      desktopView = function() {
+        angular.element('#navigation').hide();
+        angular.element('#sidemenu-content').appendTo('#sidebar');
+      };
 
     this.category = decodeURIComponent(pathItems[pathItems.length - 2]);
     this.search = decodeURIComponent(pathItems[pathItems.length - 1]);
@@ -22,14 +32,20 @@ angular.module('fdagoApp').controller('ResultsCtrl', ['$scope', '$location', 'fd
 
     var self = this;
 
+    if (angular.element(window).innerWidth() > 766) {
+      desktopView();
+    }
     angular.element(window).on('resize.doResize', function (){
       $scope.$apply(function(){
         if (angular.element(window).innerWidth() < 767) {
-          angular.element('#navigation').show();
+          // Handle mobile view
+          mobileView();
         } else {
-          angular.element('#navigation').hide();
+          // Handle desktop view
+          desktopView();
         }
 
+        // Make sure the left nav menus are closed.
         if (angular.element('.canvas-slid').length > 0) {
           angular.element('.navmenu').offcanvas('hide');
         }
@@ -39,6 +55,8 @@ angular.module('fdagoApp').controller('ResultsCtrl', ['$scope', '$location', 'fd
     $scope.$on('$destroy',function (){
          angular.element(window).off('resize.doResize'); //remove the handler added earlier
     });
+
+
 
     this.submitQuery = function() {
         var promise = null;

@@ -1,20 +1,28 @@
 <div ng-controller="ResultsCtrl as controller">
-    <p>Showing results for <strong>{{controller.search}}</strong></p>
-    <table id="results-table">
-        <caption class="sr-only">Search results</caption>
-        <thead>
-            <tr>
-                <th scope="col">Brand Name</th>
-                <th scope="col">Manufacturer</th>
-                <th scope="col">Substances</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="result in controller.results">
-                <td>{{controller.formatArray(result.brand_name)}}</td>
-                <td>{{controller.formatArray(result.manufacturer_name)}}</td>
-                <td>{{controller.formatArray(result.substance_name)}}</td>
-            </tr>
-        </tbody>
-    </table>
+  <div class="">
+    <!-- left sidebar -->
+    <div id="sidebar" class="col-sm-4"></div>
+
+    <!-- main -->
+    <div id="main-content" class="col-sm-8">
+      <p>Showing results for <strong>{{controller.search}}</strong></p>
+      <table id="results-table">
+          <caption class="sr-only">Search results</caption>
+          <thead>
+              <tr>
+                  <th scope="col">Brand Name</th>
+                  <th scope="col">Manufacturer</th>
+                  <th scope="col">Substances</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr ng-repeat="result in controller.results">
+                  <td>{{controller.formatArray(result.brand_name)}}</td>
+                  <td>{{controller.formatArray(result.manufacturer_name)}}</td>
+                  <td>{{controller.formatArray(result.substance_name)}}</td>
+              </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
 </div>
