@@ -12,18 +12,16 @@ angular.module('fdagoApp').controller('MainCtrl', function($rootScope, $scope) {
     angular.element('.canvas').attr('id', 'main-page');
     angular.element('#sidemenu-content').appendTo('#sidemenu');
 
+    $scope.invalid = false;
+
     $scope.submitSearch = function (q) {
-      $rootScope.submitSearchSidebar(q);
+      if (q === undefined || q === '') {
+        $scope.invalid = true;
+        angular.element('#search-bx').focus();
+      } else {
+        $rootScope.invalid = false;
+        $rootScope.submitSearchSidebar(q);
+      }
     };
-
-    /*
-    $scope.submitDrugRecallQuery = angular.bind(null, navigateToResults, 'drug');
-
-    $scope.submitDeviceRecallQuery = angular.bind(null, navigateToResults, 'device');
-
-    $scope.submitFoodRecallQuery = angular.bind(null, navigateToResults, 'food');
-
-    */
-
 
 });

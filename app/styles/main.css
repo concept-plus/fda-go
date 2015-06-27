@@ -48,6 +48,9 @@ input.large + span .glyphicon{
   border-top: 1px solid #e5e5e5;
 }
 
+.alert-danger {
+  margin-top: 10px;
+}
 .container-narrow > hr {
   margin: 30px 0;
 }

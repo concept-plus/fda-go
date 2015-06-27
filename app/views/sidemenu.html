@@ -7,6 +7,10 @@
     <div class="panel-body">
       <form>
         <input type="text" ng-model="searchString" id="sidebar-search-box" class="form-control large">
+        <div class="alert alert-danger" role="alert" ng-show="invalid == true">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error: </span>
+          Please enter a search value.
+        </div>
         <button type="submit" id="search-button-sidebar" class="btn btn-success btn-block" ng-click="submitSearchSidebar(searchString)">Search Now</button>
       </form>
     </div>
