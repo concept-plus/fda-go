@@ -90,6 +90,7 @@ html, body {
   width: 250px;
 }
 .canvas {
+  display: inline-block;
   position: relative;
   left: 0;
   z-index: 2;
@@ -119,6 +120,7 @@ html, body {
   margin-left: -10px;
 }
 
+#sidebar,
 #sidebar .navmenu-brand {
   display: none;
   visibility: none;

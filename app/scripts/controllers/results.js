@@ -44,11 +44,7 @@ angular.module('fdagoApp').controller('ResultsCtrl', function($scope, $location,
           // Handle desktop view
           desktopView();
         }
-
-        // Make sure the left nav menus are closed.
-        if (angular.element('.canvas-slid').length > 0) {
-          angular.element('.navmenu').offcanvas('hide');
-        }
+        $scope.resetSidemenu();
       });
     });
 
@@ -56,9 +52,11 @@ angular.module('fdagoApp').controller('ResultsCtrl', function($scope, $location,
          angular.element(window).off('resize.doResize'); //remove the handler added earlier
     });
 
-    $scope.submitSearch = function (q) {
-      console.log('/results/' + $scope.category + '/' + encodeURIComponent(q));
-      $location.path('/results/' + $scope.category + '/' + encodeURIComponent(q));
+    $scope.resetSidemenu = function(){
+      // Make sure the left nav menus are closed.
+      if (angular.element('.canvas-slid').length > 0) {
+        angular.element('.navmenu').offcanvas('hide');
+      }
     };
 
     $scope.submitQuery = function() {

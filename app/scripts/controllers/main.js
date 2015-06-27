@@ -7,15 +7,13 @@
  * # MainCtrl
  * Controller of the fdagoApp
  */
-angular.module('fdagoApp').controller('MainCtrl', function($scope, $location) {
+angular.module('fdagoApp').controller('MainCtrl', function($rootScope, $scope) {
     // reset sidemenu
     angular.element('.canvas').attr('id', 'main-page');
     angular.element('#sidemenu-content').appendTo('#sidemenu');
 
-    $scope.category = 'drug';
-
     $scope.submitSearch = function (q) {
-      $location.path('/results/' + $scope.category + '/' + encodeURIComponent(q));
+      $rootScope.submitSearchSidebar(q);
     };
 
     /*

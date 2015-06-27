@@ -31,4 +31,11 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+  })
+  .controller('RootCtrl', function($rootScope, $location){
+    $rootScope.submitSearchSidebar = function(q){
+      angular.element('.navmenu').offcanvas('hide');
+      $rootScope.category = 'drug';
+      $location.path('/results/' + $rootScope.category + '/' + encodeURIComponent(q));
+    };
   });
