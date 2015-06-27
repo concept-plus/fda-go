@@ -174,8 +174,10 @@ html, body {
 .results-wrapper h1{
   text-transform: capitalize;
 }
-
-#results-table thead{
+.results-container {
+  opacity: 0;
+}
+.results-table thead{
   color: #051869;
   font-size: 16px;
   white-space: nowrap;
@@ -213,7 +215,7 @@ h1.lead {
 .search-bar {
   padding: 10px;
 }
-#drug-search-button {
+#search-button {
   background-color: transparent;
   border: none;
   margin-left: -26px;
