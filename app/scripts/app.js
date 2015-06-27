@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'services',
-    'utilities'
+    'utilities',
+    'datatables'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -58,5 +59,7 @@ angular
 
     $rootScope.getRecall = function(type){
       console.log(type);
+      $rootScope.category = type;
+      $location.path('/results/' + type);
     };
   });

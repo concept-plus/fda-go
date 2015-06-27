@@ -95,6 +95,9 @@ html, body {
   z-index: 1;
   width: 250px;
 }
+.nav-tabs {
+  margin-bottom: 20px;
+}
 .canvas {
   position: relative;
   left: 0;
@@ -177,8 +180,8 @@ html, body {
 .results-wrapper h1{
   text-transform: capitalize;
 }
-.results-container {
-  opacity: 0;
+#results-container {
+  margin-bottom: 50px;
 }
 .results-table thead{
   color: #051869;
@@ -194,7 +197,11 @@ html, body {
 .table-hover > tbody > tr:hover {
   background-color: #ECECEC;
 }
-
+.dataTables_filter input{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px;
+}
 
 /* Side menu */
 
@@ -274,7 +281,7 @@ h1.lead {
   }
 
   .container {
-    max-width: 900px;
+    max-width: 960px;
   }
   /* Remove the padding we set earlier */
   .header,

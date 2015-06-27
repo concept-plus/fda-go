@@ -6,8 +6,24 @@
 
   <!-- main -->
   <div id="main-content" class="col-sm-8 results-wrapper">
-    <!--div class="category bg-success">{{category}}</div-->
-    <h1>{{search}}</h1>
+    <!-- Drug header -->
+    <div ng-if="category == 'drug'">
+      <h1>{{search}}</h1>
+    </div>
+    <div ng-if="category == 'drug-recall'">
+      <h1>Drug recalls for the last 60 days</h1>
+    </div>
+
+    <!-- Device header -->
+    <div ng-if="category == 'device-recall'">
+      <h1>Device recalls for 2015</h1>
+    </div>
+
+    <!-- Food header -->
+    <div ng-if="category == 'food-recall'">
+      <h1>Food recalls for the last 60 days</h1>
+    </div>
+
     <div ng-if="results.event.total + results.label.total + results.recall.total < 1">
       <p>{{resultsMessage}}</p>
     </div>
@@ -18,7 +34,7 @@
       </div>
       <div id="results-container" class="fade">
           <ul id="detail-tabs" class="nav nav-tabs" role="tablist">
-              <li role="presentation" class="active">
+              <li role="presentation" class="">
                   <a href="#event-tab-content" id="event-tab" role="tab" data-toggle="tab" aria-controls="event-content" aria-expanded="true"  ng-click="onClickTab()">Adverse Events</a>
               </li>
               <li role="presentation">
@@ -30,7 +46,7 @@
           </ul>
           <div id="detail-tab-content" class="tab-content">
               <div role="tabpanel" class="tab-pane fade in active" id="event-tab-content" aria-labelledBy="event-tab">
-                  <table id="event-results-table" class="table results-table table-striped table-hover" data-subcategory="event">
+                  <table id="event-results-table" datatables="" class="table results-table table-striped table-hover" data-subcategory="event">
                       <caption class="sr-only">Adverse event results</caption>
                       <thead>
                           <tr>

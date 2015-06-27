@@ -7,7 +7,15 @@
  * # ResultsCtrl
  * Controller of the fdagoApp
  */
-angular.module('fdagoApp').controller('ResultsCtrl', ['$q', '$rootScope', '$scope', '$location', 'fdaGoQueryService', 'queryUtil', function($q, $rootScope, $scope, $location, fdaGoQueryService, util) {
+angular.module('fdagoApp').controller('ResultsCtrl', [
+    '$q',
+    '$rootScope',
+    '$scope',
+    '$location',
+    'fdaGoQueryService',
+    'queryUtil',
+    '$timeout',
+    function($q, $rootScope, $scope, $location, fdaGoQueryService, util, $timeout) {
     // set canvas id
     angular.element('.canvas').attr('id', 'results-page');
 
@@ -67,6 +75,12 @@ angular.module('fdagoApp').controller('ResultsCtrl', ['$q', '$rootScope', '$scop
     $scope.$on('$destroy',function (){
          angular.element(window).off('resize.doResize'); //remove the handler added earlier
     });
+
+    $scope.drawDataTable = function(){
+      angular.element('.results-table').DataTable({
+        'order': [[0, 'desc']]
+      });
+    };
 
     $scope.resetSidemenu = function(){
       // Make sure the left nav menus are closed.
@@ -128,7 +142,17 @@ angular.module('fdagoApp').controller('ResultsCtrl', ['$q', '$rootScope', '$scop
             }
         }
         $q.all(promises).finally(function() {
-          console.log('all queries returned: total = ' + ($scope.results.event.total + $scope.results.label.total + $scope.results.recall.total));
+          //console.log('all queries returned: total = ' + ($scope.results.event.total + $scope.results.label.total + $scope.results.recall.total));
+          $rootScope.showLoading(false);
+          angular.element('#results-container').addClass('in');
+          $timeout(function(){
+            if ($scope.category.indexOf('-recall') > -1){
+              angular.element('#detail-tabs a:last').tab('show');
+            } else {
+              angular.element('#detail-tabs a:first').tab('show');
+            }
+            $scope.drawDataTable();
+          },300);
           try {
             if ($scope.results.event.total + $scope.results.label.total + $scope.results.recall.total === 0){
               $scope.resultsMessage = 'No results found for ' + $scope.search + '.';
