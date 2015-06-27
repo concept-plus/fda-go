@@ -172,7 +172,7 @@ html, body {
   text-transform: capitalize;
 }
 
-#results-table thead{
+.results-table thead{
   color: #051869;
   font-size: 16px;
   white-space: nowrap;

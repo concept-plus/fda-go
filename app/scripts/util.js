@@ -21,9 +21,9 @@ angular.module('utilities', []).factory('queryUtil', ['$filter', function($filte
             var uniqueDrugs = [];
             var drugHash = {};
             angular.forEach(drugs, function(drug) {
-                if (!drugHash[drug.substance_name]) {
+                if (!drugHash[drug.brand_name]) {
                     uniqueDrugs.push(drug);
-                    drugHash[drug.substance_name] = true;
+                    drugHash[drug.brand_name] = true;
                 }
             });
             return uniqueDrugs;
