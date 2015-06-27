@@ -90,7 +90,6 @@ html, body {
   width: 250px;
 }
 .canvas {
-  display: inline-block;
   position: relative;
   left: 0;
   z-index: 2;
@@ -120,14 +119,14 @@ html, body {
   margin-left: -10px;
 }
 
-#sidebar,
 #sidebar .navmenu-brand {
   display: none;
   visibility: none;
 }
 #sidebar .recall-buttons {
   padding: 0;
-  margin-left: 0;
+  margin-left: -53px;
+  text-align: center;
 }
 #sidebar .btn-success {
   margin-top: 10px;
@@ -138,7 +137,7 @@ html, body {
 }
 #sidebar .recall-buttons button {
   font-size: 1em;
-  width: 130px;
+  width: 140px;
   margin-bottom: 20px;
 }
 #sidebar .recall-buttons img{
@@ -233,7 +232,11 @@ h1.lead {
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 0) {
+  #sidebar{
+    display: none;
+  }
   .canvas {
+    display: inline-block;
     padding-top: 75px;
   }
   .navbar-toggle {
@@ -246,6 +249,7 @@ h1.lead {
 
 @media screen and (min-width: 767px) {
   .canvas {
+    display: block;
     padding-top: 75px;
   }
   #main-page {
@@ -254,7 +258,7 @@ h1.lead {
   img.header-logo {
     padding: 100px 0 20px 0;
   }
-  .navbar{
+  .navbar, #sidebar{
     display: block !important;
   }
   .navbar .navbar-toggle{
