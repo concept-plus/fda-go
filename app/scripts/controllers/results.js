@@ -11,7 +11,7 @@ angular.module('fdagoApp').controller('ResultsCtrl', ['$q', '$rootScope', '$scop
     // set canvas id
     angular.element('.canvas').attr('id', 'results-page');
 
-    $scope.results = {
+    $scope.EMPTY_RESULTS = {
         'event': {
             total: 0,
             items: []
@@ -25,6 +25,7 @@ angular.module('fdagoApp').controller('ResultsCtrl', ['$q', '$rootScope', '$scop
             items: []
         }
     };
+    $scope.results = $scope.EMPTY_RESULTS;
     $scope.resultsMessage = '';
     $scope.selectedItem = null;
     $scope.selectedSubcategory = 'event';
@@ -95,6 +96,8 @@ angular.module('fdagoApp').controller('ResultsCtrl', ['$q', '$rootScope', '$scop
     };
 
     $scope.submitQuery = function() {
+        $scope.results = $scope.EMPTY_RESULTS;
+        angular.element('#results-container').removeClass('in');
         var promises = [];
         if ($scope.category === 'drug') {
             var eventPromise = fdaGoQueryService.findDrugEvents($scope.search);
@@ -120,13 +123,12 @@ angular.module('fdagoApp').controller('ResultsCtrl', ['$q', '$rootScope', '$scop
                     break;
             }
             if (angular.isDefined(promise)) {
-                $scope.setResults('recallResults', promise);
+                $scope.setResults('recall', promise);
                 promises.push(promise);
             }
         }
         $q.all(promises).finally(function() {
-          $rootScope.showLoading(false);
-          angular.element('#results-container').addClass('in');
+          console.log('all queries returned: total = ' + ($scope.results.event.total + $scope.results.label.total + $scope.results.recall.total));
           try {
             if ($scope.results.event.total + $scope.results.label.total + $scope.results.recall.total === 0){
               $scope.resultsMessage = 'No results found for ' + $scope.search + '.';
@@ -134,6 +136,10 @@ angular.module('fdagoApp').controller('ResultsCtrl', ['$q', '$rootScope', '$scop
           }catch(e){
             $scope.resultsMessage = 'No results found for ' + $scope.search + '.';
           }
+          setTimeout(function() {
+            $rootScope.showLoading(false);
+            angular.element('#results-container').addClass('in');
+          }, 0);
         });
     };
 
