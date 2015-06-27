@@ -1,0 +1,32 @@
+<div class="sidemenu-content">
+  <a class="navmenu-brand" href="#/"><span class="glyphicon glyphicon-home" aria-hidden="true"> Home</span></a>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Search Drug</h3>
+    </div>
+    <div class="panel-body">
+      <form>
+        <input type="text" ng-model="searchString" id="sidebar-search-box" class="form-control large">
+        <button type="submit" class="btn btn-success btn-block" ng-click="submitSearch(searchString)">Search Now</button>
+      </form>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Latest Recalls</h3>
+    </div>
+    <div class="panel-body">
+      <div class="row recall-buttons">
+        <div class="col-sm-4">
+            <button type="button" class="btn btn-default recall-search-button">Drug Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search drug recalls."></span>
+        </div>
+        <div class="col-sm-4">
+            <button type="button" class="btn btn-default recall-search-button">Device Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search medical device recalls."></span>
+        </div>
+        <div class="col-sm-4">
+            <button type="button" class="btn btn-default recall-search-button">Food Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search food recalls."></span>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>

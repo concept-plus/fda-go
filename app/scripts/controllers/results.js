@@ -7,37 +7,29 @@
  * # ResultsCtrl
  * Controller of the fdagoApp
  */
-angular.module('fdagoApp').controller('ResultsCtrl', ['$scope', '$location', 'fdaGoQueryService', '$timeout', function($scope, $location, fdaGoQueryService, $timeout) {
+angular.module('fdagoApp').controller('ResultsCtrl', function($scope, $location, fdaGoQueryService) {
     // set canvas id
     angular.element('.canvas').attr('id', 'results-page');
 
-    this.results = [];
+    $scope.results = [];
+    $scope.resultsMessage = '';
 
     $location.url();
     var path = $location.path();
     var pathItems = path.split('/');
     var mobileView = function() {
-        angular.element('#sidebar').html('');
         angular.element('#sidemenu .sidemenu-content').attr('aria-hidden', 'false');
-        if(angular.element('#sidemenu').children().length === 0){
-          angular.element('.sidemenu-content').clone().appendTo('#sidemenu');
-        }
+        angular.element('#sidebar').hide();
         angular.element('#navigation').show();
       },
       desktopView = function() {
         angular.element('#navigation').hide();
         angular.element('#sidemenu .sidemenu-content').attr('aria-hidden', 'true');
-        if(angular.element('#sidebar').children().length === 0){
-          $timeout(function (){
-            angular.element('.sidemenu-content').clone().appendTo('#sidebar');
-          },1);
-        }
+        angular.element('#sidebar').show();
       };
 
-    this.category = decodeURIComponent(pathItems[pathItems.length - 2]);
-    this.search = decodeURIComponent(pathItems[pathItems.length - 1]);
-
-    var self = this;
+    $scope.category = decodeURIComponent(pathItems[pathItems.length - 2]);
+    $scope.search = decodeURIComponent(pathItems[pathItems.length - 1]);
 
     mobileView(); //reset.
     if (angular.element(window).innerWidth() > 766) {
@@ -64,13 +56,16 @@ angular.module('fdagoApp').controller('ResultsCtrl', ['$scope', '$location', 'fd
          angular.element(window).off('resize.doResize'); //remove the handler added earlier
     });
 
+    $scope.submitSearch = function (q) {
+      console.log('/results/' + $scope.category + '/' + encodeURIComponent(q));
+      $location.path('/results/' + $scope.category + '/' + encodeURIComponent(q));
+    };
 
-
-    this.submitQuery = function() {
+    $scope.submitQuery = function() {
         var promise = null;
-        switch(this.category) {
+        switch($scope.category) {
             case 'drug':
-                promise = fdaGoQueryService.findDrugs(this.search);
+                promise = fdaGoQueryService.findDrugs($scope.search);
                 break;
             case 'drugRecall':
                 promise = fdaGoQueryService.getRecentDrugRecalls();
@@ -85,7 +80,10 @@ angular.module('fdagoApp').controller('ResultsCtrl', ['$scope', '$location', 'fd
         if (angular.isDefined(promise)) {
             promise.then(
                 function(results) {
-                    self.results = results.results;
+                    $scope.results = results.results;
+                    if ($scope.results.length === 0){
+                      $scope.resultsMessage = 'No results found for ' + $scope.search + '.';
+                    }
                 },
                 function(error) {
                     console.log('ERROR: ' + JSON.stringify(error));
@@ -94,13 +92,13 @@ angular.module('fdagoApp').controller('ResultsCtrl', ['$scope', '$location', 'fd
         }
     };
 
-    this.formatArray = function(array) {
+    $scope.formatArray = function(array) {
         if (angular.isArray(array)) {
             return array.join(', ');
         }
         return array;
     };
 
-    this.submitQuery();
-}]);
+    $scope.submitQuery();
+});
 

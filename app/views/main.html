@@ -1,4 +1,4 @@
-<div class="center" ng-controller="MainCtrl as controller">
+<div class="center">
     <image class="header-logo" src="../images/fda-go-logo-l.png"></image>
     <h1 class="lead fda-go-text">FDA drugs, devices and food info.</h1>
 
@@ -7,9 +7,9 @@
         <div class="row search-bar">
           <h4 for="drugsearch">Search for adverse events, labeling and recalls for drugs.</h4>
           <div class="input-group">
-            <input type="text" name="drugsearch" id="drug-search-box" class="form-control large" placeholder="Enter your drug search here." ng-model="controller.searchString">
+            <input type="text" id="search-box" class="form-control large" placeholder="Enter your drug search here." ng-model="searchString">
             <span class="input-group-btn">
-                <button type="submit" id="drug-search-button" class="go-endcap" ng-click="controller.submitSearch()">
+                <button type="submit" id="drug-search-button" class="go-endcap" ng-click="submitSearch(searchString)">
                   <img src="./images/go-button-endcap-l.png" alt="Go: click to search medical device recalls.">
                     <span class='sr-only'>Search</span>
                 </button>
@@ -18,7 +18,6 @@
         </div>
 
     </form>
-
     <p id="recall-instructions">...or select one of the predefined searches below to get a list of the most recent recalls.</p>
 
     <div class="row recall-buttons">

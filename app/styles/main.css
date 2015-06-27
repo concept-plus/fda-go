@@ -87,6 +87,7 @@ html, body {
 
 .navmenu {
   z-index: 1;
+  width: 250px;
 }
 .canvas {
   position: relative;
@@ -225,7 +226,7 @@ h1.lead {
   font-size: 16px;
 }
 .recall-buttons {
-  padding: 20px;
+  padding-top: 20px;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -259,7 +260,7 @@ h1.lead {
   }
 
   .container {
-    max-width: 730px;
+    max-width: 900px;
   }
   /* Remove the padding we set earlier */
   .header,

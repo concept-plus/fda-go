@@ -12,27 +12,20 @@ angular.module('fdagoApp').controller('MainCtrl', function($scope, $location) {
     angular.element('.canvas').attr('id', 'main-page');
     angular.element('#sidemenu-content').appendTo('#sidemenu');
 
-    this.queryCategory = 'drug';
-    this.searchString = null;
+    $scope.category = 'drug';
 
-    var navigateToResults = function(category, search) {
-        category = encodeURIComponent(category);
-        search = encodeURIComponent(search);
-        var path = '/results/' + category;
-        if (('' + search).length > 0) {
-            path = path + '/' + search;
-        }
-        console.log('navigating to ' + path);
-        $location.path(path);
+    $scope.submitSearch = function (q) {
+      $location.path('/results/' + $scope.category + '/' + encodeURIComponent(q));
     };
 
-    this.submitSearch = function() {
-        navigateToResults(this.queryCategory, this.searchString);
-    };
+    /*
+    $scope.submitDrugRecallQuery = angular.bind(null, navigateToResults, 'drug');
 
-    this.submitDrugRecallQuery = angular.bind(null, navigateToResults, 'drug');
+    $scope.submitDeviceRecallQuery = angular.bind(null, navigateToResults, 'device');
 
-    this.submitDeviceRecallQuery = angular.bind(null, navigateToResults, 'device');
+    $scope.submitFoodRecallQuery = angular.bind(null, navigateToResults, 'food');
 
-    this.submitFoodRecallQuery = angular.bind(null, navigateToResults, 'food');
+    */
+
+
 });
