@@ -24,6 +24,10 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/results/:category/', {
+        templateUrl: 'views/results.html',
+        controller: 'ResultsCtrl'
+      })
       .when('/results/:category/:search', {
         templateUrl: 'views/results.html',
         controller: 'ResultsCtrl'
@@ -37,5 +41,16 @@ angular
       angular.element('.navmenu').offcanvas('hide');
       $rootScope.category = 'drug';
       $location.path('/results/' + $rootScope.category + '/' + encodeURIComponent(q));
+    };
+    $rootScope.showLoading = function(bool){
+      if (bool) {
+        angular.element('#loading').show();
+      } else {
+        angular.element('#loading').hide();
+      }
+    };
+
+    $rootScope.getRecall = function(type){
+      console.log(type);
     };
   });

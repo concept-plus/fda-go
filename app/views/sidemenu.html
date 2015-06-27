@@ -7,7 +7,7 @@
     <div class="panel-body">
       <form>
         <input type="text" ng-model="searchString" id="sidebar-search-box" class="form-control large">
-        <button type="submit" class="btn btn-success btn-block" ng-click="submitSearchSidebar(searchString)">Search Now</button>
+        <button type="submit" id="search-button-sidebar" class="btn btn-success btn-block" ng-click="submitSearchSidebar(searchString)">Search Now</button>
       </form>
     </div>
   </div>
@@ -18,13 +18,13 @@
     <div class="panel-body">
       <div class="row recall-buttons">
         <div class="col-sm-4">
-            <button type="button" class="btn btn-default recall-search-button">Drug Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search drug recalls."></span>
+            <button type="button" class="btn btn-default recall-search-button" ng-click="getRecall('drug')">Drug Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search drug recalls."></span>
         </div>
         <div class="col-sm-4">
-            <button type="button" class="btn btn-default recall-search-button">Device Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search medical device recalls."></span>
+            <button type="button" class="btn btn-default recall-search-button" ng-click="getRecall('device')">Device Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search medical device recalls."></span>
         </div>
         <div class="col-sm-4">
-            <button type="button" class="btn btn-default recall-search-button">Food Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search food recalls."></span>
+            <button type="button" class="btn btn-default recall-search-button" ng-click="getRecall('food')">Food Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search food recalls."></span>
         </div>
     </div>
     </div>

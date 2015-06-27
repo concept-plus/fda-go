@@ -7,7 +7,7 @@
  * # ResultsCtrl
  * Controller of the fdagoApp
  */
-angular.module('fdagoApp').controller('ResultsCtrl', function($scope, $location, fdaGoQueryService) {
+angular.module('fdagoApp').controller('ResultsCtrl', function($rootScope, $scope, $location, fdaGoQueryService) {
     // set canvas id
     angular.element('.canvas').attr('id', 'results-page');
 
@@ -65,19 +65,20 @@ angular.module('fdagoApp').controller('ResultsCtrl', function($scope, $location,
             case 'drug':
                 promise = fdaGoQueryService.findDrugs($scope.search);
                 break;
-            case 'drugRecall':
+            case 'drug-recall':
                 promise = fdaGoQueryService.getRecentDrugRecalls();
                 break;
-            case 'deviceRecall':
+            case 'device-recall':
                 promise = fdaGoQueryService.getRecentDeviceRecalls();
                 break;
-            case 'foodRecall':
+            case 'food-recall':
                 promise = fdaGoQueryService.getRecentFoodRecalls();
                 break;
         }
         if (angular.isDefined(promise)) {
             promise.then(
                 function(results) {
+                    $rootScope.showLoading(false);
                     $scope.results = results.results;
                     if ($scope.results.length === 0){
                       $scope.resultsMessage = 'No results found for ' + $scope.search + '.';

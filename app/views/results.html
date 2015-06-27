@@ -6,8 +6,9 @@
 
   <!-- main -->
   <div id="main-content" class="col-sm-8 results-wrapper">
+    <!--div class="category bg-success">{{category}}</div-->
     <h1>{{search}}</h1>
-
+    <div id="loading"><img src="./images/ajax-loader.gif" alt="Your results are loading."/></div>
     <div ng-if="results.length < 1">
       <p>{{resultsMessage}}</p>
     </div>
@@ -16,18 +17,22 @@
       <table id="results-table" class="table table-striped table-hover ">
           <caption class="sr-only">Search results</caption>
           <thead>
+            <div ng-if="category == 'drug'">
               <tr>
                   <th scope="col">Brand Name</th>
                   <th scope="col">Manufacturer</th>
                   <th scope="col">Substances</th>
               </tr>
+            </div>
           </thead>
           <tbody>
+            <div ng-if="category == 'drug'">
               <tr ng-repeat="result in results">
                   <td>{{formatArray(result.brand_name)}}</td>
                   <td>{{formatArray(result.manufacturer_name)}}</td>
                   <td>{{formatArray(result.substance_name)}}</td>
               </tr>
+            </div>
           </tbody>
       </table>
     </div>
