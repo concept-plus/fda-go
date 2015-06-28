@@ -40,10 +40,10 @@ angular
   })
   .controller('RootCtrl', function($rootScope, $location){
     $rootScope.submitSearchSidebar = function(q){
-      angular.element('.navmenu').offcanvas('hide');
       if (q === undefined || q === '') {
         $rootScope.invalid = true;
       } else {
+        angular.element('.navmenu').offcanvas('hide');
         $rootScope.invalid = false;
         $rootScope.category = 'drug';
         $location.path('/results/' + $rootScope.category + '/' + encodeURIComponent(q));
@@ -57,9 +57,16 @@ angular
       }
     };
 
+    $rootScope.resetSidemenu = function(){
+      // Make sure the left nav menus are closed.
+      if (angular.element('.canvas-slid').length > 0) {
+        angular.element('.navmenu').offcanvas('hide');
+      }
+    };
+
     $rootScope.getRecall = function(type){
-      console.log(type);
       $rootScope.category = type;
       $location.path('/results/' + type);
+      $rootScope.resetSidemenu();
     };
   });

@@ -58,24 +58,6 @@ input.large + span .glyphicon{
   padding: 15px;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
-}
-
 html, body {
   height: 100%;
 }
@@ -188,6 +170,9 @@ html, body {
   font-size: 16px;
   white-space: nowrap;
 }
+.results-table .brand-name {
+  min-width: 230px;
+}
 .table > thead > tr > th {
   border-bottom: 2px solid #051869;
 }
@@ -197,7 +182,7 @@ html, body {
 .table-hover > tbody > tr:hover {
   background-color: #ECECEC;
 }
-.dataTables_filter input{
+div.dataTables_filter input{
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 4px;
@@ -251,7 +236,6 @@ h1.lead {
     display: none;
   }
   .canvas {
-    display: inline-block;
     padding-top: 75px;
   }
   .navbar-toggle {
@@ -260,6 +244,16 @@ h1.lead {
   .recall-buttons {
     margin-left: -80px;
   }
+  div.dataTables_filter input{
+    width: 120px;
+  }
+  .results-table .dtr-data a{
+    display: none;
+  }
+  .results-table .dtr-data .collapse{
+    display: block;
+  }
+
 }
 
 @media screen and (min-width: 767px) {
@@ -273,19 +267,13 @@ h1.lead {
   img.header-logo {
     padding: 100px 0 20px 0;
   }
-  .navbar, #sidebar{
-    display: block !important;
-  }
-  .navbar .navbar-toggle{
-    display: none;
-  }
-
+  /*
   .container {
     max-width: 960px;
   }
+  */
   /* Remove the padding we set earlier */
   .header,
-  .marketing,
   .footer {
     padding-left: 0;
     padding-right: 0;
@@ -294,9 +282,8 @@ h1.lead {
   .header {
     margin-bottom: 30px;
   }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
+  div.dataTables_filter input{
+    width: auto;
   }
 }
 
@@ -309,6 +296,12 @@ h1.lead {
   }
   .canvas {
     padding-top: 75px;
+  }
+  .navbar, #sidebar{
+    display: block !important;
+  }
+  .navbar .navbar-toggle{
+    display: none;
   }
 
 }
