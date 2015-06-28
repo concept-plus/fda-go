@@ -69,4 +69,8 @@ angular
       $location.path('/results/' + type);
       $rootScope.resetSidemenu();
     };
+
+    $rootScope.toggleHelp = function(){
+      console.log('...');
+    };
   });
