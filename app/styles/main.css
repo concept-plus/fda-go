@@ -87,6 +87,10 @@ html, body {
   min-height: 100%;
   background: #fff;
 }
+.main-wrapper{
+  margin: auto;
+  max-width: 768px;
+}
 .canvas #fdago-home{
   display: block;
   padding: 10px 40px;
