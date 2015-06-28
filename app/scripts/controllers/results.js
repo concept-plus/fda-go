@@ -174,7 +174,7 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
             angular.forEach(result.patient.drug, function(drug) {
                 if (drug.openfda && drug.openfda.brand_name) {
                     angular.forEach(drug.openfda.brand_name, function(brandName) {
-                        if (angular.uppercase(brandName).includes(ucSearch)) {
+                        if (angular.uppercase(brandName).indexOf(ucSearch) > -1) {
                             matchingDrugs.push(drug);
                         }
                     });
