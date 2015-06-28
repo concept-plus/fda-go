@@ -24,4 +24,7 @@ angular.module('fdagoApp').controller('MainCtrl', function($rootScope, $scope) {
       }
     };
 
+    setTimeout(function() {
+        angular.element('#search-box').focus();
+    }, 0);
 });
