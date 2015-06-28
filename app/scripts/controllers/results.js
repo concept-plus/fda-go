@@ -56,19 +56,19 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
     $scope.search = decodeURIComponent(pathItems[pathItems.length - 1]);
 
     mobileView(); //reset.
-    if (angular.element(window).innerWidth() > 766) {
+    if (angular.element(window).innerWidth() > 991) {
       desktopView();
     }
     angular.element(window).on('resize.doResize', function (){
       $scope.$apply(function(){
-        if (angular.element(window).innerWidth() < 767) {
+        if (angular.element(window).innerWidth() < 992) {
           // Handle mobile view
           mobileView();
         } else {
           // Handle desktop view
           desktopView();
         }
-        $scope.resetSidemenu();
+        $rootScope.resetSidemenu();
       });
     });
 
@@ -76,17 +76,18 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
          angular.element(window).off('resize.doResize'); //remove the handler added earlier
     });
 
-    $scope.drawDataTable = function(){
-      angular.element('.results-table').DataTable({
-        'order': [[0, 'desc']]
-      });
+    $scope.collapse = function(index){
+      angular.element('#result-' + index).collapse('toggle');
     };
 
-    $scope.resetSidemenu = function(){
-      // Make sure the left nav menus are closed.
-      if (angular.element('.canvas-slid').length > 0) {
-        angular.element('.navmenu').offcanvas('hide');
-      }
+    $scope.drawDataTable = function(){
+      angular.element('.results-table').DataTable({
+        'order': [[0, 'desc']],
+        'oLanguage': {
+          'sSearch': 'Filter:'
+        },
+        'responsive': true
+      });
     };
 
     $scope.onClickTab = function() {
@@ -142,9 +143,7 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
             }
         }
         $q.all(promises).finally(function() {
-          //console.log('all queries returned: total = ' + ($scope.results.event.total + $scope.results.label.total + $scope.results.recall.total));
           $rootScope.showLoading(false);
-          angular.element('#results-container').addClass('in');
           $timeout(function(){
             if ($scope.category.indexOf('-recall') > -1){
               angular.element('#detail-tabs a:last').tab('show');

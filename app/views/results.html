@@ -1,11 +1,11 @@
 <div class="">
   <!-- left sidebar -->
-  <div id="sidebar" class="col-sm-4">
+  <div id="sidebar" class="col-md-3">
     <div ng-include="'/views/sidemenu.html'"></div>
   </div>
 
   <!-- main -->
-  <div id="main-content" class="col-sm-8 results-wrapper">
+  <div id="main-content" class="col-md-9 results-wrapper">
     <!-- Drug header -->
     <div ng-if="category == 'drug'">
       <h1>{{search}}</h1>
@@ -24,16 +24,27 @@
       <h1>Food recalls for the last 60 days</h1>
     </div>
 
+    <!-- No Results -->
     <div ng-if="results.event.total + results.label.total + results.recall.total < 1">
       <p>{{resultsMessage}}</p>
     </div>
+
+    <!-- Results -->
     <div ng-if="results.event.total + results.label.total + results.recall.total > 0">
-      <p>Showing {{results.event.items.length}} of {{results.event.total | number: 0}} events, {{results.label.total | number: 0}} labels, and {{results.recall.total | number: 0}} recalls for <strong>{{search}}</strong></p>
+      <div ng-if="category == 'drug-recall' || category == 'device-recall' || category == 'food-recall'">
+        <p>Showing {{results.recall.total | number: 0}} recalls.</p>
+      </div>
+      <div ng-if="category == 'drug'">
+        <p>Showing {{results.event.items.length}} of {{results.event.total | number: 0}} events, {{results.label.total | number: 0}} labels, and {{results.recall.total | number: 0}} recalls for <strong>{{search}}</strong>.</p>
+      </div>
+      <!-- Loading -->
       <div id="loading">
         <img src="./images/ajax-loader.gif" alt="Your results are loading."/><br><br>
       </div>
+
+      <!-- Results -->
       <div id="results-container" class="fade">
-          <ul id="detail-tabs" class="nav nav-tabs" role="tablist">
+          <ul id="detail-tabs" class="nav nav-tabs" ng-class="{'hidden': category == 'drug-recall' || category == 'device-recall' || category == 'food-recall'}" role="tablist">
               <li role="presentation" class="">
                   <a href="#event-tab-content" id="event-tab" role="tab" data-toggle="tab" aria-controls="event-content" aria-expanded="true"  ng-click="onClickTab()">Adverse Events</a>
               </li>
@@ -45,27 +56,43 @@
               </li>
           </ul>
           <div id="detail-tab-content" class="tab-content">
-              <div role="tabpanel" class="tab-pane fade in active" id="event-tab-content" aria-labelledBy="event-tab">
-                  <table id="event-results-table" datatables="" class="table results-table table-striped table-hover" data-subcategory="event">
+              <div role="tabpanel" class="tab-pane fade" ng-class="{'hidden': category == 'drug-recall' || category == 'device-recall' || category == 'food-recall'}" id="event-tab-content" aria-labelledBy="event-tab">
+                  <table id="event-results-table" datatables="" class="table display responsive results-table table-striped table-hover" width="100%" data-subcategory="event">
                       <caption class="sr-only">Adverse event results</caption>
                       <thead>
                           <tr>
                               <th scope="col">Date</th>
-                              <th scope="col">Brand Name</th>
                               <th scope="col">Patient Reaction</th>
+                              <th scope="col" class="brand-name">Brand Name</th>
                           </tr>
                       </thead>
                       <tbody>
                           <tr ng-repeat="result in results.event.items" data-index="{{$index}}">
-                              <td>{{toDate(result.transmissiondate) | date:'M/d/yyyy'}}</td>
-                              <td>{{formatArray(result.fdago.matchingBrandNames)}}</td>
+                              <td>
+                                {{toDate(result.transmissiondate) | date:'M/d/yyyy'}}
+                              </td>
                               <td>{{getPatientReaction(result)}}</td>
+                              <td>
+                                <div ng-if="formatArray(result.fdago.matchingBrandNames).length == 0">
+                                  No brand data.
+                                </div>
+                                <div ng-if="formatArray(result.fdago.matchingBrandNames).length > 0">
+                                  <a class="" ng-click="collapse($index)" aria-expanded="false" aria-controls="collapseExample">
+                                    Click to view affected brands.
+                                  </a>
+                                  <div class="collapse" id="result-{{$index}}">
+                                    <div class="well">
+                                      {{formatArray(result.fdago.matchingBrandNames)}}
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
                           </tr>
                       </tbody>
                   </table>
               </div>
               <div role="tabpanel" class="tab-pane fade" id="label-tab-content" aria-labelledBy="label-tab">
-                  <table id="label-results-table" class="table results-table table-striped table-hover" data-subcategory="label">
+                  <table id="label-results-table" class="table responsive results-table table-striped table-hover" data-subcategory="label">
                       <caption class="sr-only">Labeling results</caption>
                       <thead>
                           <tr>
@@ -84,7 +111,7 @@
                   </table>
               </div>
               <div role="tabpanel" class="tab-pane fade" id="recall-tab-content" aria-labelledBy="recall-tab">
-                  <table id="recall-results-table" class="table results-table table-striped table-hover" data-subcategory="recall">
+                  <table id="recall-results-table" class="table responsive results-table table-striped table-hover" data-subcategory="recall">
                       <caption class="sr-only">Recall results</caption>
                       <thead>
                           <tr>
