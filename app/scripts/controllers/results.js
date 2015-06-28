@@ -82,7 +82,7 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
 
     $scope.drawDataTable = function(){
       angular.element('.results-table').DataTable({
-        'order': [[0, 'desc']],
+        'ordering': false,
         'oLanguage': {
           'sSearch': 'Filter:'
         },
