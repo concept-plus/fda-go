@@ -92,7 +92,7 @@
                   </table>
               </div>
               <div role="tabpanel" class="tab-pane fade" id="label-tab-content" aria-labelledBy="label-tab">
-                  <table id="label-results-table" class="table responsive results-table table-striped table-hover" data-subcategory="label">
+                  <table id="label-results-table" class="table responsive results-table table-striped table-hover" width="100%" data-subcategory="label">
                       <caption class="sr-only">Labeling results</caption>
                       <thead>
                           <tr>
@@ -111,23 +111,23 @@
                   </table>
               </div>
               <div role="tabpanel" class="tab-pane fade" id="recall-tab-content" aria-labelledBy="recall-tab">
-                  <table id="recall-results-table" class="table responsive results-table table-striped table-hover" data-subcategory="recall">
+                  <table id="recall-results-table" class="table responsive results-table table-striped table-hover" width="100%" data-subcategory="recall">
                       <caption class="sr-only">Recall results</caption>
                       <thead>
                           <tr>
                               <th scope="col">Date</th>
-                              <th scope="col">Brand Name</th>
                               <th scope="col">Product Description</th>
                               <th scope="col">Reason / Problem</th>
+                              <th scope="col">Brand Name</th>
                               <th scope="col">Company</th>
                           </tr>
                       </thead>
                       <tbody>
                           <tr ng-repeat="result in results.recall.items" data-index="{{$index}}">
                               <td>{{toDate(result.recall_initiation_date) | date:'M/d/yyyy'}}</td>
-                              <td>{{formatArray(result.openfda.brand_name)}}</td>
                               <td>{{result.product_description}}</td>
                               <td>{{result.reason_for_recall}}</td>
+                              <td>{{formatArray(result.openfda.brand_name)}}</td>
                               <td>{{result.recalling_firm}}</td>
                           </tr>
                       </tbody>
