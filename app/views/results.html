@@ -53,6 +53,7 @@
                               <th scope="col">Date</th>
                               <th scope="col">Brand Name</th>
                               <th scope="col">Patient Reaction</th>
+                              <th scope="col">Patient</th>
                           </tr>
                       </thead>
                       <tbody>
@@ -60,6 +61,7 @@
                               <td>{{toDate(result.transmissiondate) | date:'M/d/yyyy'}}</td>
                               <td>{{formatArray(result.fdago.matchingBrandNames)}}</td>
                               <td>{{getPatientReaction(result)}}</td>
+                              <td>{{getPatientDemographics(result)}}</td>
                           </tr>
                       </tbody>
                   </table>

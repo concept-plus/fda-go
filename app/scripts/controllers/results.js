@@ -229,13 +229,13 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
                     case '2': // recovering
                         break;
                     case '3': // not recovered
-                        reactionStr += ': Not recovered';
+                        reactionStr += ' (Did not recover)';
                         break;
                     case '4': // recovered with sequelae
-                        reactionStr += ': Recovered with sequelae';
+                        reactionStr += ' (Recovered with sequelae)';
                         break;
                     case '5': // fatal
-                        reactionStr += ': Fatal';
+                        reactionStr += ' (Fatal)';
                         break;
                     case '6': // unknown
                         break;
@@ -244,6 +244,50 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
             });
         }
         return reactions.join(', ');
+    };
+
+    $scope.getPatientDemographics = function(drugEvent) {
+        // male, 47-years-old, 168lbs
+        var demoStr = '';
+        var patient = drugEvent.patient;
+        if (patient.patientsex) {
+            demoStr += patient.patientsex === '1' ? 'Male' : patient.patientsex === '2' ? 'Female' : '';
+        }
+        if (patient.patientonsetage && patient.patientonsetageunit) {
+            if (demoStr.length > 0) {
+                demoStr += ', ';
+            }
+            demoStr += Math.round(patient.patientonsetage);
+            switch (patient.patientonsetageunit) {
+                case '800': // age measured in decades
+                    demoStr += 's';
+                    break;
+                case '801': // age measured in years
+                    demoStr += ' years old';
+                    break;
+                case '802': // age measured in months
+                    demoStr += ' months old';
+                    break;
+                case '803': // age measured in weeks
+                    demoStr += ' weeks old';
+                    break;
+                case '804': // age measured in days
+                    demoStr += ' days old';
+                    break;
+                case '805': // age measured in hours
+                    demoStr += ' hours old';
+                    break;
+                default:
+                    break;
+            }
+        }
+        if (patient.patientweight) {
+            if (demoStr.length > 0) {
+                demoStr += ', ';
+            }
+            demoStr += Math.round(patient.patientweight * 2.2046) + 'lbs'; // convert kg to lbs and remove decimal
+        }
+        return demoStr;
     };
 
     $scope.submitQuery();
