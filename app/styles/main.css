@@ -176,8 +176,14 @@ html, body {
 .table > thead > tr > th {
   border-bottom: 2px solid #051869;
 }
-.table-striped > tbody > tr:nth-of-type(odd) {
+.table-striped > tbody > tr:nth-of-type(odd),
+table.dataTable.display tbody tr.odd,
+table.dataTable.stripe tbody tr.odd {
   background-color: #EAF4FF;
+}
+table.dataTable.display tbody tr.odd>.sorting_1,
+table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
+  background-color: #DAECFF;
 }
 .table-hover > tbody > tr:hover {
   background-color: #ECECEC;
