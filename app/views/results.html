@@ -30,7 +30,7 @@
     </div>
 
     <!-- Results -->
-    <div ng-if="results.event.total + results.label.total + results.recall.total > 0">
+    <!-- <div ng-if="results.event.total + results.label.total + results.recall.total > 0"> -->
       <div ng-if="category == 'drug-recall' || category == 'device-recall' || category == 'food-recall'">
         <p>Showing {{results.recall.total | number: 0}} recalls.</p>
       </div>
@@ -46,19 +46,19 @@
       <div id="results-container" class="fade">
           <ul id="detail-tabs" class="nav nav-tabs" ng-class="{'hidden': category == 'drug-recall' || category == 'device-recall' || category == 'food-recall'}" role="tablist">
               <li role="presentation" class="">
-                  <a href="#event-tab-content" id="event-tab" role="tab" data-toggle="tab" aria-controls="event-content" aria-expanded="true"  ng-click="onClickTab()">Adverse Events</a>
+                  <a href="#event-tab-content" id="event-tab" role="tab" data-toggle="tab" aria-controls="event-content" aria-expanded="true"  ng-click="onClickTab()" data-subcategory="event">Adverse Events</a>
               </li>
               <li role="presentation">
-                  <a href="#label-tab-content" role="tab" id="label-tab" data-toggle="tab" aria-controls="label-content" ng-click="onClickTab()">Labeling</a>
+                  <a href="#label-tab-content" role="tab" id="label-tab" data-toggle="tab" aria-controls="label-content" ng-click="onClickTab()" data-subcategory="label">Labeling</a>
               </li>
               <li role="presentation">
-                  <a href="#recall-tab-content" role="tab" id="recall-tab" data-toggle="tab" aria-controls="recall-content" ng-click="onClickTab()">Recalls</a>
+                  <a href="#recall-tab-content" role="tab" id="recall-tab" data-toggle="tab" aria-controls="recall-content" ng-click="onClickTab()" data-subcategory="recall">Recalls</a>
               </li>
           </ul>
           <div id="detail-tab-content" class="tab-content">
               <div role="tabpanel" class="tab-pane fade" ng-class="{'hidden': category == 'drug-recall' || category == 'device-recall' || category == 'food-recall'}" id="event-tab-content" aria-labelledBy="event-tab">
                   <table id="event-results-table" datatables="" class="table display responsive results-table table-striped table-hover" width="100%" data-subcategory="event">
-                      <caption class="sr-only">Adverse event results</caption>
+                      <!-- <caption class="sr-only">Adverse event results</caption>
                       <thead>
                           <tr>
                               <th scope="col">Date</th>
@@ -88,12 +88,12 @@
                                 </div>
                               </td>
                           </tr>
-                      </tbody>
+                      </tbody> -->
                   </table>
               </div>
               <div role="tabpanel" class="tab-pane fade" id="label-tab-content" aria-labelledBy="label-tab">
                   <table id="label-results-table" class="table responsive results-table table-striped table-hover" width="100%" data-subcategory="label">
-                      <caption class="sr-only">Labeling results</caption>
+                      <!-- <caption class="sr-only">Labeling results</caption>
                       <thead>
                           <tr>
                               <th scope="col">Brand Name</th>
@@ -107,12 +107,12 @@
                               <td>{{formatArray(result.controlled_substance)}}</td>
                               <td>{{formatArray(result.recent_major_changes)}}</td>
                           </tr>
-                      </tbody>
+                      </tbody> -->
                   </table>
               </div>
               <div role="tabpanel" class="tab-pane fade" id="recall-tab-content" aria-labelledBy="recall-tab">
                   <table id="recall-results-table" class="table responsive results-table table-striped table-hover" width="100%" data-subcategory="recall">
-                      <caption class="sr-only">Recall results</caption>
+                      <!-- <caption class="sr-only">Recall results</caption>
                       <thead>
                           <tr>
                               <th scope="col">Date</th>
@@ -130,10 +130,10 @@
                               <td>{{formatArray(result.openfda.brand_name)}}</td>
                               <td>{{result.recalling_firm}}</td>
                           </tr>
-                      </tbody>
+                      </tbody> -->
                   </table>
               </div>
           </div>
       </div>
-    </div>
+    <!-- </div> -->
 </div>

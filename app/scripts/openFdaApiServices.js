@@ -10,7 +10,7 @@ services.factory('openFdaQueryService', ['queryUtil', '$http', '$q', function(ut
 
     var OPEN_FDA_BASE_URL = 'https://api.fda.gov';
 
-    var PAGE_SIZE = 100;
+    var PAGE_SIZE = 10;
 
     var DEFAULT_OPTIONS = {
         search: null,

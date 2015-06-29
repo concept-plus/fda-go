@@ -5,8 +5,7 @@ describe('Controller: ResultsCtrl', function () {
   // load the controller's module
   beforeEach(module('fdagoApp'));
 
-  var Results,
-    scope;
+  var Results;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($injector) {
