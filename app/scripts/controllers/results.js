@@ -99,7 +99,7 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
     $scope.setResults = function(subcategory, promise) {
         promise.then(
             function(results) {
-                console.log('setting results for ' + subcategory);
+                //console.log('setting results for ' + subcategory);
                 $scope.results[subcategory].total = results.meta.results.total;
                 $scope.results[subcategory].items = results.results;
             },
@@ -113,6 +113,7 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
     $scope.submitQuery = function() {
         $scope.results = $scope.EMPTY_RESULTS;
         angular.element('#results-container').removeClass('in');
+        angular.element('#api-called').empty();
         var promises = [];
         if ($scope.category === 'drug') {
             var eventPromise = fdaGoQueryService.findDrugEvents($scope.search);
@@ -167,7 +168,7 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
     };
 
     $scope.massageEventData = function(results) {
-        console.log('processing event results');
+        //console.log('processing event results');
         var ucSearch = angular.uppercase($scope.search);
         angular.forEach(results.results, function(result) {
             var matchingDrugs = [];
