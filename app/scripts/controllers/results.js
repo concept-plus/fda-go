@@ -90,10 +90,8 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
       });
     };
 
-    $scope.onClickTab = function() {
-        var event = window.event;
-        event.preventDefault();
-        angular.element(event.currentTarget).show();
+    $scope.onClickTab = function(id) {
+        angular.element('#'+id).show();
     };
 
     $scope.setResults = function(subcategory, promise) {
