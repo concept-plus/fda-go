@@ -84,9 +84,9 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
     };
 
     $scope.drawDataTable = function(){
-      $scope.resultsTableEvent.destroy();
-      $scope.resultsTableLabeling.destroy();
-      $scope.resultsTableRecall.destroy();
+      //$scope.resultsTableEvent.destroy();
+      //$scope.resultsTableLabeling.destroy();
+      //$scope.resultsTableRecall.destroy();
 
       $scope.resultsTableEvent = angular.element('#event-results-table').DataTable({
         'ordering': false,
