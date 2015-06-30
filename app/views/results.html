@@ -56,82 +56,14 @@
               </li>
           </ul>
           <div id="detail-tab-content" class="tab-content">
-              <div role="tabpanel" class="tab-pane fade" ng-class="{'hidden': category == 'drug-recall' || category == 'device-recall' || category == 'food-recall'}" id="event-tab-content" aria-labelledBy="event-tab">
-                  <table id="event-results-table" datatables="" class="table display responsive results-table table-striped table-hover" width="100%" data-subcategory="event">
-                      <!-- <caption class="sr-only">Adverse event results</caption>
-                      <thead>
-                          <tr>
-                              <th scope="col">Date</th>
-                              <th scope="col">Patient Reaction</th>
-                              <th scope="col" class="brand-name">Brand Name</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr ng-repeat="result in results.event.items" data-index="{{$index}}">
-                              <td>
-                                {{toDate(result.transmissiondate) | date:'M/d/yyyy'}}
-                              </td>
-                              <td>{{getPatientReaction(result)}}</td>
-                              <td>
-                                <div ng-if="formatArray(result.fdago.matchingBrandNames).length == 0">
-                                  No brand data.
-                                </div>
-                                <div ng-if="formatArray(result.fdago.matchingBrandNames).length > 0">
-                                  <a class="" ng-click="collapse($index)" aria-expanded="false" aria-controls="collapseExample">
-                                    Click to view affected brands.
-                                  </a>
-                                  <div class="collapse" id="result-{{$index}}">
-                                    <div class="well">
-                                      {{formatArray(result.fdago.matchingBrandNames)}}
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                          </tr>
-                      </tbody> -->
-                  </table>
+              <div role="tabpanel" class="tab-pane fade"  id="event-tab-content" aria-labelledBy="event-tab">
+                  <table id="event-results-table" datatables="" class="table display responsive results-table table-striped table-hover" width="100%" data-subcategory="event"></table>
               </div>
               <div role="tabpanel" class="tab-pane fade" id="label-tab-content" aria-labelledBy="label-tab">
-                  <table id="label-results-table" class="table responsive results-table table-striped table-hover" width="100%" data-subcategory="label">
-                      <!-- <caption class="sr-only">Labeling results</caption>
-                      <thead>
-                          <tr>
-                              <th scope="col">Brand Name</th>
-                              <th scope="col">Controlled Substance</th>
-                              <th scope="col">Recent Major Changes</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr ng-repeat="result in results.label.items" data-index="{{$index}}">
-                              <td>{{formatArray(result.openfda.brand_name)}}</td>
-                              <td>{{formatArray(result.controlled_substance)}}</td>
-                              <td>{{formatArray(result.recent_major_changes)}}</td>
-                          </tr>
-                      </tbody> -->
-                  </table>
+                  <table id="label-results-table" class="table responsive results-table table-striped table-hover" width="100%" data-subcategory="label"></table>
               </div>
               <div role="tabpanel" class="tab-pane fade" id="recall-tab-content" aria-labelledBy="recall-tab">
-                  <table id="recall-results-table" class="table responsive results-table table-striped table-hover" width="100%" data-subcategory="recall">
-                      <!-- <caption class="sr-only">Recall results</caption>
-                      <thead>
-                          <tr>
-                              <th scope="col">Date</th>
-                              <th scope="col">Product Description</th>
-                              <th scope="col">Reason / Problem</th>
-                              <th scope="col">Brand Name</th>
-                              <th scope="col">Company</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr ng-repeat="result in results.recall.items" data-index="{{$index}}">
-                              <td>{{toDate(result.recall_initiation_date) | date:'M/d/yyyy'}}</td>
-                              <td>{{result.product_description}}</td>
-                              <td>{{result.reason_for_recall}}</td>
-                              <td>{{formatArray(result.openfda.brand_name)}}</td>
-                              <td>{{result.recalling_firm}}</td>
-                          </tr>
-                      </tbody> -->
-                  </table>
+                  <table id="recall-results-table" class="table responsive results-table table-striped table-hover" width="100%" data-subcategory="recall"></table>
               </div>
           </div>
       </div>

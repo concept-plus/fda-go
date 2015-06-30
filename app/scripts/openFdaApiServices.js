@@ -58,6 +58,13 @@ services.factory('openFdaQueryService', ['queryUtil', '$http', '$q', function(ut
                     });
                 } else {
                     // actual error
+                    if (!response) {
+                        response = {
+                            error: {
+                                message: 'No response'
+                            }
+                        };
+                    }
                     deferred.reject(response);
                 }
             });

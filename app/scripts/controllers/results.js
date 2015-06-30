@@ -85,43 +85,59 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
          angular.element(window).off('resize.doResize'); //remove the handler added earlier
     });
 
-    $scope.collapse = function(index){
-      angular.element('#result-' + index).collapse('toggle');
-    };
-
     $scope.drawDataTable = function($table, columns) {
       var subcategory = $table.data('subcategory');
-      if ($rootScope.resultDatatables[subcategory]) {
-        $rootScope.resultDatatables[subcategory].destroy();
-      }
       $rootScope.resultDatatables[subcategory] = $table.DataTable({
         'ordering': false,
-        'oLanguage': {
-          'sSearch': 'Filter:'
-        },
+        // 'oLanguage': {
+        //   'sSearch': 'Filter:'
+        // },
+        'searching': false,
+        'lengthChange': false,
         'columns': columns,
         'responsive': true,
         'serverSide': true,
-        'ajax': function(data, callback, settings) {
-            var page = data.start / data.length;
-            var promise = $scope.submitQuery(subcategory, page);
-            promise.then(
-                function onSuccess(results) {
-                    callback({
-                        draw: data.draw * 1,
-                        recordsTotal: results.meta.results.total,
-                        recordsFiltered: results.meta.results.total,
-                        data: results.results
-                    });
-                },
-                function onError(error) {
-                    callback({
-                        error: error
-                    });
-                }
-            );
-        }
+        'ajax': angular.bind(this, $scope.doAjax, subcategory)
       });
+    };
+
+    $scope.doAjax = function(subcategory, data, dtCallback, settings) {
+        var page = data.start / data.length;
+        var promise = $scope.submitQuery(subcategory, page);
+        promise.then(
+            function onSuccess(results) {
+                console.log('setting results for ' + subcategory);
+                $scope.results[subcategory].total = results.meta.results.total;
+                $scope.results[subcategory].items = results.results;
+                if (subcategory === 'event' && results.results) {
+                    $scope.massageEventData(results);
+                }
+                $scope.results[subcategory].initialized = true;
+                if ($scope.category === 'drug') {
+                    if ($scope.results.event.initialized && $scope.results.label.initialized && $scope.results.recall.initialized) {
+                        $scope.finalizeQuery(subcategory);
+                    }
+                } else {
+                    $scope.finalizeQuery(subcategory);
+                }
+                dtCallback({
+                    draw: data.draw * 1,
+                    recordsTotal: results.meta.results.total,
+                    recordsFiltered: results.meta.results.total,
+                    data: results.results
+                });
+            },
+            function onError(error) {
+                $scope.results[subcategory].total = 0;
+                $scope.results[subcategory].items = [];
+                var errorMsg = (error && error.error && error.error.message) || 'Error retrieving data';
+                dtCallback({
+                    draw: data.draw * 1,
+                    data: [],
+                    error: errorMsg
+                });
+            }
+        );
     };
 
     $scope.onClickTab = function() {
@@ -132,24 +148,17 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
         tab.show();
     };
 
-    $scope.setResults = function(subcategory, promise) {
-        promise.then(
-            function(results) {
-                console.log('setting results for ' + subcategory);
-                $scope.results[subcategory].total = results.meta.results.total;
-                $scope.results[subcategory].items = results.results;
-            },
-            function(/*error*/) {
-                $scope.results[subcategory].total = 0;
-                $scope.results[subcategory].items = [];
-            }
-        );
-    };
-
     $scope.initiateQuery = function() {
         // clear current search
         $scope.results = $scope.getEmptyResults();
-        angular.element('.results-table').empty();
+        angular.forEach(['event', 'label', 'recall'], function(subcategory) {
+            if ($rootScope.resultDatatables[subcategory]) {
+                $rootScope.resultDatatables[subcategory].clear();
+                $rootScope.resultDatatables[subcategory].destroy();
+                $rootScope.resultDatatables[subcategory] = null;
+            }
+        });
+        // angular.element('.results-table').empty();
 
         // recreate tables
         if ($scope.category === 'drug') {
@@ -157,9 +166,7 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
             $scope.drawDataTable(angular.element('#event-results-table'), [
                 { title: 'Date', data: angular.bind(this, $scope.formatDate, 'transmissiondate'), defaultContent: '' },
                 { title: 'Patient Reaction', data: $scope.getPatientReaction, defaultContent: '' },
-                { title: 'Brand Name', data: function(result) {
-                    return $scope.formatArray(result.fdago.matchingBrandNames);
-                }, defaultContent: '' }
+                { title: 'Brand Name', data: $scope.getCollapsedBrandNames, defaultContent: '' }
             ]);
             $scope.drawDataTable(angular.element('#label-results-table'), [
                 { title: 'Brand Name', data: function(result) { return $scope.formatArray(result.openfda.brand_name); }, defaultContent: '' },
@@ -209,23 +216,6 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
                     break;
             }
         }
-
-        promise.then(function(results) {
-            $scope.results[subcategory].initialized = true;
-            if (subcategory === 'event') {
-                $scope.massageEventData(results);
-            }
-            if ($scope.category === 'drug') {
-                if ($scope.results.event.initialized && $scope.results.label.initialized && $scope.results.recall.initialized) {
-                    $scope.finalizeQuery(subcategory);
-                }
-            } else {
-                $scope.finalizeQuery(subcategory);
-            }
-        });
-
-        $scope.setResults(subcategory, promise);
-
         return promise;
     };
 
@@ -243,8 +233,16 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
         $timeout(function() {
             $rootScope.showLoading(false);
             angular.element('#results-container').addClass('in');
+            $scope.attachHandlers();
         }, 0);
         // $rootScope.resultDatatables[subcategory].draw();
+    };
+
+    $scope.attachHandlers = function() {
+        angular.element('#event-results-table').on('click', '.brand-collapse-toggle', function(event) {
+            var id = angular.element(event.currentTarget).data('target');
+            angular.element('#' + id).collapse('toggle');
+        });
     };
 
     $scope.massageEventData = function(results) {
@@ -379,6 +377,19 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
             demoStr += Math.round(patient.patientweight * 2.2046) + 'lbs'; // convert kg to lbs and remove decimal
         }
         return demoStr;
+    };
+
+    $scope.getCollapsedBrandNames = function(drugEvent, mode, info, position) {
+        var brandNames = drugEvent.fdago.matchingBrandNames;
+        if (brandNames.length === 0) {
+            return 'No brand data.';
+        } else {
+            var collapseId = 'result-' + position.row;
+            return  '<a class="brand-collapse-toggle" aria-expanded="false" data-target="' + collapseId + '" data-toggle="collapse" aria-controls="' + collapseId + '">Click to view affected brands.</a>' +
+                    '<div class="collapse" id="' + collapseId + '">' +
+                        '<div class="well">' + brandNames.join(', ') + '</div>' +
+                    '</div>';
+        }
     };
 
     $scope.initiateQuery();

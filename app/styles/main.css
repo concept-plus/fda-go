@@ -218,6 +218,9 @@ div.dataTables_filter input{
   border-radius: 4px;
   padding: 4px;
 }
+a.brand-collapse-toggle {
+  cursor: pointer;
+}
 
 /* Side menu */
 
