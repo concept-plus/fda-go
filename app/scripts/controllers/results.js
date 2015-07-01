@@ -44,10 +44,12 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
     var mobileView = function() {
         angular.element('#sidemenu .sidemenu-content').attr('aria-hidden', 'false');
         angular.element('#sidebar').hide();
+        angular.element('#sidemenu').removeClass('hidden');
         angular.element('#navigation').show();
       },
       desktopView = function() {
         angular.element('#navigation').hide();
+        angular.element('#sidemenu').addClass('hidden');
         angular.element('#sidemenu .sidemenu-content').attr('aria-hidden', 'true');
         angular.element('#sidebar').show();
       };
