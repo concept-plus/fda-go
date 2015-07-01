@@ -86,22 +86,29 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
     });
 
     $scope.drawDataTable = function($table, columns) {
-      var subcategory = $table.data('subcategory');
-      $rootScope.resultDatatables[subcategory] = $table.DataTable({
-        'ordering': false,
-        // 'oLanguage': {
-        //   'sSearch': 'Filter:'
-        // },
-        'searching': false,
-        'lengthChange': false,
-        'columns': columns,
-        'responsive': true,
-        'serverSide': true,
-        'ajax': angular.bind(this, $scope.doAjax, subcategory)
-      });
+        var subcategory = $table.data('subcategory');
+        var wrapperId = $table.attr('id') + '_wrapper';
+        if (angular.element('#' + wrapperId).length === 0) {
+            // datatable doesn't exist, so create it
+            $rootScope.resultDatatables[subcategory] = $table.DataTable({
+                'ordering': false,
+                // 'oLanguage': {
+                //   'sSearch': 'Filter:'
+                // },
+                'searching': false,
+                'lengthChange': false,
+                'columns': columns,
+                'responsive': true,
+                'serverSide': true,
+                'ajax': angular.bind(this, $scope.doAjax, subcategory)
+            });
+        } else {
+            // datatable already exists, so just reset it
+            $rootScope.resultDatatables[subcategory].page(0).draw();
+        }
     };
 
-    $scope.doAjax = function(subcategory, data, dtCallback, settings) {
+    $scope.doAjax = function(subcategory, data, dtCallback /*, settings*/) {
         var page = data.start / data.length;
         var promise = $scope.submitQuery(subcategory, page);
         promise.then(
@@ -115,10 +122,10 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
                 $scope.results[subcategory].initialized = true;
                 if ($scope.category === 'drug') {
                     if ($scope.results.event.initialized && $scope.results.label.initialized && $scope.results.recall.initialized) {
-                        $scope.finalizeQuery(subcategory);
+                        $scope.finalizeQuery();
                     }
                 } else {
-                    $scope.finalizeQuery(subcategory);
+                    $scope.finalizeQuery();
                 }
                 dtCallback({
                     draw: data.draw * 1,
@@ -148,18 +155,9 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
 
     $scope.initiateQuery = function() {
         // clear current search
-        $scope.results = $scope.getEmptyResults();
-        angular.forEach(['event', 'label', 'recall'], function(subcategory) {
-            if ($rootScope.resultDatatables[subcategory]) {
-                $rootScope.resultDatatables[subcategory].clear();
-                $rootScope.resultDatatables[subcategory].destroy();
-                $rootScope.resultDatatables[subcategory] = null;
-            }
-        });
         angular.element('#api-called').empty();
-        // angular.element('.results-table').empty();
 
-        // recreate tables
+        // create/reset tables
         setTimeout(function() {
             if ($scope.category === 'drug') {
                 $scope.activeSubcategory = 'event';
@@ -220,7 +218,7 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
         return promise;
     };
 
-    $scope.finalizeQuery = function(subcategory) {
+    $scope.finalizeQuery = function() {
         $timeout(function() {
             angular.element('#detail-tabs a[data-subcategory="' + $scope.activeSubcategory + '"]').tab('show');
         }, 300);
@@ -236,7 +234,6 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
             angular.element('#results-container').addClass('in');
             $scope.attachHandlers();
         }, 0);
-        // $rootScope.resultDatatables[subcategory].draw();
     };
 
     $scope.attachHandlers = function() {
