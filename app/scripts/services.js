@@ -98,7 +98,7 @@ queryServices.factory('fdaGoQueryService', ['queryUtil', '$q', 'drugQueryService
                 return drugQueryService.findEnforcementReportsByName(name, page);
             },
             getRecentDrugRecalls: function(page) {
-                return drugQueryService.findEnforcementReportsByDate(util.getTwoMonthsAgo(), util.getToday(), page);
+                return drugQueryService.findEnforcementReportsByDate(util.getOneYearAgo(), util.getToday(), page);
             },
             getRecentDeviceRecalls: function(page) {
                 return deviceQueryService.findEnforcementReportsByDate(util.getOneYearAgo(), util.getToday(), page);

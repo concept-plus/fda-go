@@ -11,7 +11,7 @@
       <h1>{{search}}</h1>
     </div>
     <div ng-if="category == 'drug-recall'">
-      <h1>Drug recalls for the last 60 days</h1>
+      <h1>Drug recalls for the previous 12 months</h1>
     </div>
 
     <!-- Device header -->
@@ -35,7 +35,7 @@
         <p>Showing {{results.recall.total | number: 0}} recalls.</p>
       </div>
       <div ng-if="category == 'drug'">
-        <p>Showing {{results.event.items.length}} of {{results.event.total | number: 0}} events, {{results.label.total | number: 0}} labels, and {{results.recall.total | number: 0}} recalls for <strong>{{search}}</strong>.</p>
+        <p>Showing {{results.event.items.length}} of {{results.event.total | number: 0}} events, {{results.label.items.length}} of {{results.label.total | number: 0}} labels, and {{results.recall.items.length}} of {{results.recall.total | number: 0}} recalls for <strong>{{search}}</strong>.</p>
       </div>
       <!-- Loading -->
       <div id="loading">
