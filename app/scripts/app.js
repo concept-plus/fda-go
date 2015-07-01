@@ -74,4 +74,8 @@ angular
     $rootScope.toggleAPI = function(){
       angular.element('#api-well').collapse('toggle');
     };
+
+    $rootScope.toggleHelp = function(){
+      angular.element('#myModal').modal('show');
+    };
   });
