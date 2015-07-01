@@ -161,29 +161,31 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
         // angular.element('.results-table').empty();
 
         // recreate tables
-        if ($scope.category === 'drug') {
-            $scope.activeSubcategory = 'event';
-            $scope.drawDataTable(angular.element('#event-results-table'), [
-                { title: 'Date', data: angular.bind(this, $scope.formatDate, 'transmissiondate'), defaultContent: '' },
-                { title: 'Patient Reaction', data: $scope.getPatientReaction, defaultContent: '' },
-                { title: 'Brand Name', data: $scope.getCollapsedBrandNames, defaultContent: '' }
-            ]);
-            $scope.drawDataTable(angular.element('#label-results-table'), [
+        setTimeout(function() {
+            if ($scope.category === 'drug') {
+                $scope.activeSubcategory = 'event';
+                $scope.drawDataTable(angular.element('#event-results-table'), [
+                    { title: 'Date', data: angular.bind(this, $scope.formatDate, 'transmissiondate'), defaultContent: '' },
+                    { title: 'Patient Reaction', data: $scope.getPatientReaction, defaultContent: '' },
+                    { title: 'Brand Name', data: $scope.getCollapsedBrandNames, defaultContent: '' }
+                ]);
+                $scope.drawDataTable(angular.element('#label-results-table'), [
+                    { title: 'Brand Name', data: function(result) { return $scope.formatArray(result.openfda.brand_name); }, defaultContent: '' },
+                    { title: 'Controlled Substance', data: 'controlled_substance', defaultContent: '' },
+                    { title: 'Recent Major Changes', data: 'recent_major_changes', defaultContent: '' },
+                    { title: 'Effective Date', data: angular.bind(this, $scope.formatDate, 'effective_time'), defaultContent: '' },
+                ]);
+            } else {
+                $scope.activeSubcategory = 'recall';
+            }
+            $scope.drawDataTable(angular.element('#recall-results-table'), [
+                { title: 'Date', data: angular.bind(this, $scope.formatDate, 'recall_initiation_date'), defaultContent: '' },
+                { title: 'Product Description', data: 'product_description', defaultContent: '' },
+                { title: 'Reason / Problem', data: 'reason_for_recall', defaultContent: '' },
                 { title: 'Brand Name', data: function(result) { return $scope.formatArray(result.openfda.brand_name); }, defaultContent: '' },
-                { title: 'Controlled Substance', data: 'controlled_substance', defaultContent: '' },
-                { title: 'Recent Major Changes', data: 'recent_major_changes', defaultContent: '' },
-                { title: 'Effective Date', data: angular.bind(this, $scope.formatDate, 'effective_time'), defaultContent: '' },
+                { title: 'Company', data: 'recalling_firm', defaultContent: '' }
             ]);
-        } else {
-            $scope.activeSubcategory = 'recall';
-        }
-        $scope.drawDataTable(angular.element('#recall-results-table'), [
-            { title: 'Date', data: angular.bind(this, $scope.formatDate, 'recall_initiation_date'), defaultContent: '' },
-            { title: 'Product Description', data: 'product_description', defaultContent: '' },
-            { title: 'Reason / Problem', data: 'reason_for_recall', defaultContent: '' },
-            { title: 'Brand Name', data: function(result) { return $scope.formatArray(result.openfda.brand_name); }, defaultContent: '' },
-            { title: 'Company', data: 'recalling_firm', defaultContent: '' }
-        ]);
+        }, 0);
     };
 
     $scope.submitQuery = function(subcategory, page) {
