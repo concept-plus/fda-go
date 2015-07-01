@@ -106,7 +106,7 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
         var promise = $scope.submitQuery(subcategory, page);
         promise.then(
             function onSuccess(results) {
-                console.log('setting results for ' + subcategory);
+                // console.log('setting results for ' + subcategory);
                 $scope.results[subcategory].total = results.meta.results.total;
                 $scope.results[subcategory].items = results.results;
                 if (subcategory === 'event' && results.results) {
@@ -140,10 +140,8 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
         );
     };
 
-    $scope.onClickTab = function() {
-        var event = window.event;
-        event.preventDefault();
-        var tab = angular.element(event.currentTarget);
+    $scope.onClickTab = function(id) {
+        var tab = angular.element('#'+id);
         $scope.activeSubcategory = tab.data('subcategory');
         tab.show();
     };
@@ -158,6 +156,7 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
                 $rootScope.resultDatatables[subcategory] = null;
             }
         });
+        angular.element('#api-called').empty();
         // angular.element('.results-table').empty();
 
         // recreate tables
@@ -248,7 +247,7 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
     };
 
     $scope.massageEventData = function(results) {
-        console.log('processing event results');
+        // console.log('processing event results');
         var ucSearch = angular.uppercase($scope.search);
         angular.forEach(results.results, function(result) {
             var matchingDrugs = [];

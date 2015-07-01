@@ -37,7 +37,10 @@ services.factory('openFdaQueryService', ['queryUtil', '$http', '$q', function(ut
 
             url += util.buildQueryString(queryParams);
 
-            console.log('querying: ' + url);
+            //console.log('querying: ' + url);
+
+            // write to api-well
+            angular.element('#api-called').append('<p><a href="' + url + '" target="_blank">' + url + '</a></p>');
 
             var deferred = $q.defer();
             var httpPromise = $http.get(url);

@@ -31,6 +31,7 @@
     </nav>
 
     <div class="canvas" data-info="">
+      <!-- Navbar -->
       <div id="navigation" class="navbar navbar-default navbar-fixed-top">
         <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">
           <span class="icon-bar"></span>
@@ -38,7 +39,18 @@
           <span class="icon-bar"></span>
         </button>
         <a id="fdago-home" href="#/" title="Go to homepage."><img src="./images/fda-go-logo-m.png" alt="Click to go to homepage."/></a>
-        <a id="help-main-page" class="btn help-link" ng-click="toggleHelp()" data-toggle="modal" data-target="#myModal"><span class='sr-only'>Click to learn more about and navigate FDA-go.</span>Help</a>
+        <a id="help-index-page" class="btn help-link" ng-click="toggleHelp()" data-toggle="modal" data-target="#myModal"><span class='sr-only'>Click to learn more about and navigate FDA-go.</span>Help</a>
+        <a id="api-view" class="btn btn-success" ng-click="toggleAPI()" aria-expanded="false" aria-controls="collapseExample">
+          API
+        </a>
+  </button>
+      </div>
+
+      <!-- API well -->
+      <div id="api-well" class="well collapse" aria-hidden="true">
+        <div class="container">
+          <div id="api-called"></div>
+        </div>
       </div>
 
       <div class="container">
@@ -69,6 +81,22 @@
       </div>
     </div>
 
+    <!-- API modal -->
+    <div class="modal fade" id="apiModal" tabindex="-1" role="dialog" aria-labelledby="apiModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">OpenFDA API Data:</h4>
+          </div>
+          <div class="modal-body">
+            <pre></pre>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 

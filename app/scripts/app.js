@@ -65,12 +65,13 @@ angular
     };
 
     $rootScope.getRecall = function(type){
+      angular.element('api-called').empty();
       $rootScope.category = type;
       $location.path('/results/' + type);
       $rootScope.resetSidemenu();
     };
 
-    $rootScope.toggleHelp = function(){
-      console.log('...');
+    $rootScope.toggleAPI = function(){
+      angular.element('#api-well').collapse('toggle');
     };
   });

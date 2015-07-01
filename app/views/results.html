@@ -46,13 +46,13 @@
       <div id="results-container" class="fade">
           <ul id="detail-tabs" class="nav nav-tabs" ng-class="{'hidden': category == 'drug-recall' || category == 'device-recall' || category == 'food-recall'}" role="tablist">
               <li role="presentation" class="">
-                  <a href="#event-tab-content" id="event-tab" role="tab" data-toggle="tab" aria-controls="event-content" aria-expanded="true"  ng-click="onClickTab()" data-subcategory="event">Adverse Events</a>
+                  <a href="#event-tab-content" onclick="return false" id="event-tab" role="tab" data-toggle="tab" aria-controls="event-content" aria-expanded="true"  ng-click="onClickTab('event-tab')" data-subcategory="event">Adverse Events</a>
               </li>
               <li role="presentation">
-                  <a href="#label-tab-content" role="tab" id="label-tab" data-toggle="tab" aria-controls="label-content" ng-click="onClickTab()" data-subcategory="label">Labeling</a>
+                  <a href="#label-tab-content" onclick="return false" role="tab" id="label-tab" data-toggle="tab" aria-controls="label-content" ng-click="onClickTab('label-tab')" data-subcategory="label">Labeling</a>
               </li>
               <li role="presentation">
-                  <a href="#recall-tab-content" role="tab" id="recall-tab" data-toggle="tab" aria-controls="recall-content" ng-click="onClickTab()" data-subcategory="recall">Recalls</a>
+                  <a href="#recall-tab-content" onclick="return false" role="tab" id="recall-tab" data-toggle="tab" aria-controls="recall-content" ng-click="onClickTab('recall-tab')" data-subcategory="recall">Recalls</a>
               </li>
           </ul>
           <div id="detail-tab-content" class="tab-content">
