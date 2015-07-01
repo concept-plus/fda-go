@@ -17,7 +17,7 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
     '$timeout',
     function($q, $rootScope, $scope, $location, fdaGoQueryService, util, $timeout) {
     // set canvas id
-    angular.element('body').attr('id', 'results-page');
+    angular.element('.canvas').attr('id', 'results-page');
 
     $scope.EMPTY_RESULTS = {
         'event': {
