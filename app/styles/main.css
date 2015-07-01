@@ -352,7 +352,7 @@ h1.lead {
   body {
     padding: 0;
   }
-  .navbar {
+  #results-page .navbar {
     display: block !important;
   }
   .canvas {
