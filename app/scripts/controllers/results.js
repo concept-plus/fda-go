@@ -111,7 +111,9 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
     };
 
     $scope.onClickTab = function(id) {
-        angular.element('#'+id).show();
+        $timeout(function() {
+            angular.element('#'+id).tab('show');
+        },100);
     };
 
     $scope.setResults = function(subcategory, promise) {
