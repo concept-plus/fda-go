@@ -9,7 +9,7 @@
  */
 angular.module('fdagoApp').controller('MainCtrl', function($rootScope, $scope) {
     // reset sidemenu
-    angular.element('.canvas').attr('id', 'main-page');
+    angular.element('body').attr('id', 'main-page');
     angular.element('#sidemenu-content').appendTo('#sidemenu');
     angular.element('#api-well').collapse('hide');
 

@@ -17,7 +17,7 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
     '$timeout',
     function($q, $rootScope, $scope, $location, fdaGoQueryService, util, $timeout) {
     // set canvas id
-    angular.element('.canvas').attr('id', 'results-page');
+    angular.element('body').attr('id', 'results-page');
 
     $scope.EMPTY_RESULTS = {
         'event': {
@@ -44,12 +44,12 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
     var mobileView = function() {
         angular.element('#sidemenu .sidemenu-content').attr('aria-hidden', 'false');
         angular.element('#sidebar').hide();
-        angular.element('#sidemenu').removeClass('hidden');
+        //angular.element('#sidemenu').removeClass('hidden');
         angular.element('#navigation').show();
       },
       desktopView = function() {
         angular.element('#navigation').hide();
-        angular.element('#sidemenu').addClass('hidden');
+        //angular.element('#sidemenu').addClass('hidden');
         angular.element('#sidemenu .sidemenu-content').attr('aria-hidden', 'true');
         angular.element('#sidebar').show();
       };
