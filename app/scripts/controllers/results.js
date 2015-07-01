@@ -81,39 +81,17 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
     };
 
     $scope.drawDataTable = function(){
-      if(angular.element('#event-results-table_wrapper').length === 0){
-        angular.element('#event-results-table').DataTable({
-          'ordering': false,
-          'oLanguage': {
-            'sSearch': 'Filter:'
-          },
-          'responsive': true
-        });
-      }
-      if(angular.element('#label-results-table_wrapper').length === 0){
-          angular.element('#label-results-table').DataTable({
-          'ordering': false,
-          'oLanguage': {
-            'sSearch': 'Filter:'
-          },
-          'responsive': true
-        });
-      }
-      if(angular.element('#recall-results-table_wrapper').length === 0){
-          angular.element('#recall-results-table').DataTable({
-          'ordering': false,
-          'oLanguage': {
-            'sSearch': 'Filter:'
-          },
-          'responsive': true
-        });
-      }
+      angular.element('.results-table').DataTable({
+        'ordering': false,
+        'oLanguage': {
+          'sSearch': 'Filter:'
+        },
+        'responsive': true
+      });
     };
 
     $scope.onClickTab = function(id) {
-        $timeout(function() {
-            angular.element('#'+id).tab('show');
-        },100);
+        angular.element('#'+id).show();
     };
 
     $scope.setResults = function(subcategory, promise) {
