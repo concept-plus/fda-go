@@ -111,8 +111,7 @@ html, body {
 }
 
 /* Navbar styles */
-#main-page .navbar,
-#main-page #sidemenu {
+#main-page .navbar{
   display: none !important;
 }
 
