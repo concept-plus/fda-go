@@ -32,10 +32,10 @@
     <!-- Results -->
     <div ng-if="results.event.total + results.label.total + results.recall.total > 0">
       <div ng-if="category == 'drug-recall' || category == 'device-recall' || category == 'food-recall'">
-        <p>Showing {{results.recall.total | number: 0}} recalls.</p>
+        <p>Showing {{results.recall.items.length}} recalls.</p>
       </div>
       <div ng-if="category == 'drug'">
-        <p>Showing {{results.event.items.length}} of {{results.event.total | number: 0}} events, {{results.label.items.length}} of {{results.label.total | number: 0}} labels, and {{results.recall.items.length}} of {{results.recall.total | number: 0}} recalls for <strong>{{search}}</strong>.</p>
+        <p>Showing {{results.event.items.length}} adverse events, {{results.label.items.length}} labels, and {{results.recall.items.length}} recalls for <strong>{{search}}</strong>.</p>
       </div>
       <!-- Loading -->
       <div id="loading">

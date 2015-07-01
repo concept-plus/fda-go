@@ -152,12 +152,15 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
             switch($scope.category) {
                 case 'drug-recall':
                     promise = fdaGoQueryService.getRecentDrugRecalls();
+                    $scope.search = 'drug recalls';
                     break;
                 case 'device-recall':
                     promise = fdaGoQueryService.getRecentDeviceRecalls();
+                    $scope.search = 'medical device recalls';
                     break;
                 case 'food-recall':
                     promise = fdaGoQueryService.getRecentFoodRecalls();
+                    $scope.search = 'food recalls';
                     break;
             }
             if (angular.isDefined(promise)) {
