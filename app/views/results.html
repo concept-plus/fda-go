@@ -62,6 +62,7 @@
                       <thead>
                           <tr>
                               <th scope="col">Date</th>
+                              <th scope="col">Patient</th>
                               <th scope="col">Patient Reaction</th>
                               <th scope="col" class="brand-name">Brand Name</th>
                           </tr>
@@ -71,6 +72,7 @@
                               <td>
                                 {{toDate(result.transmissiondate) | date:'M/d/yyyy'}}
                               </td>
+                              <td>{{getPatientDemographics(result)}}</td>
                               <td>{{getPatientReaction(result)}}</td>
                               <td>
                                 <div ng-if="formatArray(result.fdago.matchingBrandNames).length == 0">
@@ -97,8 +99,9 @@
                       <thead>
                           <tr>
                               <th scope="col">Brand Name</th>
-                              <th scope="col">Controlled Substance</th>
+                              <th scope="col">Controlled Substance Label</th>
                               <th scope="col">Recent Major Changes</th>
+                              <th scope="col">Effective</th>
                           </tr>
                       </thead>
                       <tbody>
@@ -106,6 +109,7 @@
                               <td>{{formatArray(result.openfda.brand_name)}}</td>
                               <td>{{formatArray(result.controlled_substance)}}</td>
                               <td>{{formatArray(result.recent_major_changes)}}</td>
+                              <td>{{toDate(result.effective_time) | date:'M/d/yyyy'}}</td>
                           </tr>
                       </tbody>
                   </table>
