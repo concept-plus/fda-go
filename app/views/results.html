@@ -42,6 +42,11 @@
         <img src="./images/ajax-loader.gif" alt="Your results are loading."/><br><br>
       </div>
 
+      <!-- open fda watch -->
+      <div id="waiter" class="hidden" aria-hidden="true">
+        <p>It's taking a little longer than we expected to get the data from <a href="http://open.fda.gov">open.fda.gov</a>. Please wait...</p>
+      </div>
+
       <!-- Results -->
       <div id="results-container" class="fade">
           <ul id="detail-tabs" class="nav nav-tabs" ng-class="{'hidden': category == 'drug-recall' || category == 'device-recall' || category == 'food-recall'}" role="tablist">

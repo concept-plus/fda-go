@@ -134,9 +134,16 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
 
     $scope.submitQuery = function() {
         $scope.results = $scope.EMPTY_RESULTS;
+        $scope.wait = 0;
+
         angular.element('#results-container').removeClass('in');
         angular.element('#api-called').empty();
         var promises = [];
+        var openfdaIntrvl = setInterval(function(){
+          $scope.wait++;
+          if ($scope.wait > 4) angular.element('#waiter').removeClass('hidden');
+        }, 1000);
+
         if ($scope.category === 'drug') {
             var eventPromise = fdaGoQueryService.findDrugEvents($scope.search);
             var labelingPromise = fdaGoQueryService.findDrugLabeling($scope.search);
@@ -169,6 +176,11 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
             }
         }
         $q.all(promises).finally(function() {
+          // open.fda.gov timeout
+          clearInterval(openfdaIntrvl);
+          $scope.wait = 0;
+          angular.element('#waiter').addClass('hidden');
+
           $rootScope.showLoading(false);
           $timeout(function(){
             if ($scope.category.indexOf('-recall') > -1){
