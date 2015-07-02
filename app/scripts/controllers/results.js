@@ -185,7 +185,7 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
           }catch(e){
             $scope.resultsMessage = 'No results found for ' + $scope.search + '.';
           }
-          setTimeout(function() {
+          $timeout(function() {
             $rootScope.showLoading(false);
             angular.element('#results-container').addClass('in');
           }, 0);
@@ -224,19 +224,19 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
         return array;
     };
 
-    $scope.listDrugs = function(drugEvent, field) {
-        var items = [];
-        angular.forEach(drugEvent.patient.drug, function(drug) {
-            if (angular.isDefined(drug[field])) {
-                items.push(drug[field]);
-            }
-        });
-        return items.join(', ');
-    };
+    // $scope.listDrugs = function(drugEvent, field) {
+    //     var items = [];
+    //     angular.forEach(drugEvent.patient.drug, function(drug) {
+    //         if (angular.isDefined(drug[field])) {
+    //             items.push(drug[field]);
+    //         }
+    //     });
+    //     return items.join(', ');
+    // };
 
     $scope.toDate = function(dateString) { //takes date string in yyyymmdd format
         if (dateString.length === 8) {
-            dateString = dateString.substring(0, 4) + '-' + dateString.substring(4, 6) + '-' + dateString.substring(6);
+            dateString = dateString.substring(0, 4) + '/' + dateString.substring(4, 6) + '/' + dateString.substring(6);
             return new Date(dateString);
         }
         return null;
@@ -285,7 +285,7 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
             demoStr += Math.round(patient.patientonsetage);
             switch (patient.patientonsetageunit) {
                 case '800': // age measured in decades
-                    demoStr += 's';
+                    demoStr += '0s';
                     break;
                 case '801': // age measured in years
                     demoStr += ' years old';
