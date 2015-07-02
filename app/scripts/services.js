@@ -21,7 +21,7 @@ queryServices.factory('fdaGoQueryService', ['queryUtil', '$q', 'drugQueryService
                 return deviceQueryService.findEnforcementReportsByDate(util.getOneYearAgo(), util.getToday(), page);
             },
             getRecentFoodRecalls: function(page) {
-                return foodQueryService.findEnforcementReportsByDate(util.getTwoMonthsAgo(), util.getToday(), page);
+                return foodQueryService.findEnforcementReportsByDate(util.getOneYearAgo(), util.getToday(), page);
             }
         };
     }]);
