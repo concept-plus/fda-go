@@ -174,7 +174,31 @@ describe('Controller: ResultsCtrl', function () {
 
   // test massageEventData
 
-
+  it('massageEventData should add fdago element with matching brand names', function() {
+    var results = createController();
+    var data = {
+        results: [
+            { patient: { drug: [
+                { openfda: { brand_name: ['aspirin'] } },
+                { openfda: { brand_name: ['aspirin extra strength'] } },
+                { openfda: { brand_name: ['motrin'] } }
+            ] } },
+            { patient: { drug: [
+                { openfda: { brand_name: ['aspirin'] } }
+            ] } },
+            { patient: { drug: [
+                { openfda: { brand_name: ['tylenol'] } }
+            ] } }
+        ]
+    };
+    scope.massageEventData(data);
+    expect(data.results[0].fdago).toBeDefined();
+    expect(data.results[0].fdago.matchingBrandNames).toEqual(['aspirin', 'aspirin extra strength']);
+    expect(data.results[1].fdago).toBeDefined();
+    expect(data.results[1].fdago.matchingBrandNames).toEqual(['aspirin']);
+    expect(data.results[2].fdago).toBeDefined();
+    expect(data.results[2].fdago.matchingBrandNames).toEqual([]);
+  });
 
   // test formatArray
 
