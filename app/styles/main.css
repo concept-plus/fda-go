@@ -27,6 +27,9 @@ input.large + span .glyphicon{
   padding-left: 15px;
   padding-right: 15px;
 }
+.footer .poweredby{
+  padding: 20px;
+}
 
 /* Custom page header */
 .header {
