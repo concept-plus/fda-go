@@ -12,12 +12,12 @@ Project Links  | URLs
 
 ### Powered by
 
-[AngularJS]()
-[]()
+![AngularJS](./app/images/angular.png)
+![AWS](./app/images/aws.png)
 []()
 []()
 ()![<>]()
-(http://aws.amazon.com)![<>](./app/images/aws.png)
+(http://aws.amazon.com)![<>]()
 (http://getbootstrap.com)![<>](./app/images/bootstrap.png)
 (http://bower.io)![<>](./app/images/bower.png)
 (https://www.docker.com)![<>](./app/images/docker.png)
@@ -29,7 +29,7 @@ Project Links  | URLs
 (https://nodejs.org)![<>](./app/images/nodejs.png)
 (https://slack.com)![<>](./app/images/slack.png)
 
-[[File:./app/images/angular.png|alt=AngularJS|link=https://angularjs.org]]
+[[|alt=AngularJS|link=https://angularjs.org]]
 
 ## Installation
 
