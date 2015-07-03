@@ -103,7 +103,8 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
       }
       if(angular.element('#recall-results-table_wrapper').length === 0){
           angular.element('#recall-results-table').DataTable({
-          'ordering': false,
+          'ordering': true,
+          'order': [[0, 'desc']],
           'oLanguage': {
             'sSearch': 'Filter:'
           },
@@ -141,7 +142,9 @@ angular.module('fdagoApp').controller('ResultsCtrl', [
         var promises = [];
         var openfdaIntrvl = setInterval(function(){
           $scope.wait++;
-          if ($scope.wait > 4) angular.element('#waiter').removeClass('hidden');
+          if ($scope.wait > 4) {
+            angular.element('#waiter').removeClass('hidden');
+          }
         }, 1000);
 
         if ($scope.category === 'drug') {
