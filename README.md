@@ -1,3 +1,5 @@
+![<Concept Plus>](./images/cp-full-logo-colored-315x53.png)
+
 # FDA GO
 
 
