@@ -50,6 +50,9 @@ input.large + span .glyphicon{
   color: #777;
   border-top: 1px solid #e5e5e5;
 }
+#myModal h2{
+  border-bottom: 1px solid #dfdfdf;
+}
 
 .alert-danger {
   margin-top: 10px;
