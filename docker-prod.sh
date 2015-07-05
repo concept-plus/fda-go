@@ -6,20 +6,20 @@
 echo "---------------------"
 echo "Building Docker Image"
 echo "---------------------"
-docker build -t conceptplus/fdago-dev .
+docker build -t conceptplus/fdago .
 
 echo "----------------------------------"
 echo "Pushing Docker Image to Docker Hub"
 echo "----------------------------------"
-docker push conceptplus/fdago-dev
+docker push conceptplus/fdago
 
 echo "-----------------------------------------"
 echo "Stopping the Current Running Docker Image"
 echo "-----------------------------------------"
-docker stop fdago-dev
-docker rm fdago-dev
+docker stop fdago
+docker rm fdago
 
-echo "--------------------------------------------"
-echo "Running Docker Image - conceptplus/fdago-dev"
-echo "--------------------------------------------"
-docker run -p 80:80 --name fdago-dev conceptplus/fdago-dev
+echo "----------------------------------------"
+echo "Running Docker Image - conceptplus/fdago"
+echo "----------------------------------------"
+docker run -p 80:80 --name fdago -d conceptplus/fdago
