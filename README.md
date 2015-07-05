@@ -25,6 +25,7 @@ Project Links  | URLs
 ![KarmaJS](./app/images/karma.png)
 ![NodeJS](./app/images/nodejs.png)
 ![Slack](./app/images/slack.png)
+![Yeoman](./app/images/yeoman.png)
 
 
 ## Installation
