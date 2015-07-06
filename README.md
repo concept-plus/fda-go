@@ -47,7 +47,8 @@ Team members consisted of:
 # Agile Aproach
 
 | Attachment E: Approach Criteria Evidence |
-| See our [Approach Criteria Evidence](ATTACHMENT_E.md) |
+|------------------------------------------|
+| See our [Approach Criteria Evidence](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/APPROACH_CRITERIA_EVIDENCE.md) |
 
 [ add content about first day(s) here. ]
 
