@@ -48,21 +48,25 @@ Team members consisted of:
 * **Backend Web Developer:** Mike Mathis (mmathis@conceptplusllc.com)
 * **DevOps Engineer:** Alex Rangeo (arangeo@conceptplusllc.com)
 
-# Agile Aproach
+# Agile Approach
 
 _See our [Attachment E: Approach Criteria Evidence](./APPROACH_CRITERIA_EVIDENCE.md)_
 
-Once the team was in place, we immediately held a project kickoff meeting to come up with ideas for the prototype.  Many ideas were presented to the product owner and the decision was made to create FDA-GO - a prototype allowing consumers to execute a drug search for its adverse events, labeling, and recalls. In addition, it also provides a fast way to get recall information for the past 12 months relating to drugs, medical devices, and food. FDA-GO consumes the [OpenFDA APIs](http://open.fda.gov).
+With a team in place, a project kickoff meeting was executed and ideas were presented to the product owner, leading to a decision to create FDA-GO - a prototype allowing consumers to execute a drug search for its adverse events, labeling, and recalls. It also provides recall information for the past 12 months relating to drugs, medical devices, and food. FDA-GO consumes the [OpenFDA APIs](http://open.fda.gov).
 
-The team decided to take a scrum approach for all development activities.  The team worked with the product owner and created the product backlog which identified various user and technical stories which were all created in JIRA.  The backlog was then groomed and refined so that development activities could begin.   All development was performed throughout a total of 4 sprints.  Each sprint consisted of:
-1.	Planning session – development team decomposed and estimated each user and technical stories included in sprint.  
+The team decided to take a scrum approach for all development activities.  Working with the product owner, a product backlog identified various user and technical stories which were then created in [JIRA](https://www.atlassian.com/software/jira).  The backlog was then groomed and refined so development activities could begin.
+
+Development was performed throughout a total of 4 sprints.  Each sprint consisted of:
+1.	Planning session – development team decomposed and estimated each user and technical stories included in sprint.
 2.	Daily stand ups – decomposed tasks and activities are tracked and impediments are identified.
 3.	Sprint demo – all completed user and technical stories were presented to stakeholders for acceptance.
 4.	Sprint retrospective – lessons learned were captured and documented by the entire team.
-Throughout each sprint all tasks were tracked and managed using JIRA and JIRA agile.  JIRA agile provided a virtual agile board which allowed the team to work remotely. All artifacts associated to each sprint along with a schedule can be found here.
-While the development was ongoing the DevOps engineer and Technical architect identified tasks that needed to be completed from an infrastructure perspective.  All items were captured in JIRA and tracked through a Kanban board.  [Click here to see artifacts](./evidence/Sprint_Docs) 
 
-All defects were captured within the sprint during our testing phase.   Defects were identified by the testers, created in JIRA and assigned to the developer assigned to the feature. Upon completion of the bug fix the defect was assigned back to the tester.  If all tests passed then the defect would be closed.
+Throughout each sprint all tasks were tracked and managed using JIRA and JIRA agile.  JIRA agile provided a [virtual agile board](./evidence/Sprint_Docs/Sprint%202/Sprint_2_WIP_1.png) which allowed the team to work remotely. All artifacts associated to each sprint, along with a schedule, [can be found here](./evidence/Sprint_Docs).
+
+Simultaneously, the DevOps engineer and Technical Architect identified tasks that needed to be completed from an infrastructure perspective.  All items were captured in JIRA and tracked through a Kanban board.  [Click here to see artifacts](./evidence/Sprint_Docs)
+
+All defects were captured within the sprint during our testing phase. Defects were identified by the testers, created in JIRA and assigned to the developer owning the feature. Upon completion of the bug fix the defect was assigned back to the tester.  If all tests passed then the defect would be closed.
 
 [ add content about first day(s) here. ]
 
@@ -80,26 +84,26 @@ Keeping in mind the short timeframe, we still wanted to create a prototype that 
 
 ## Modern, Open Source Technologies
 
-* **NodeJS** - Cross-platform runtime environment
-* **AngularJS** - Front-end framework
-* **Bootstrap** - Front-end UI framework
-* **GruntJS** - Javascript task runner
-* **Docker** - Container framework
-* **Karma** - Unit testing framework
-* **Jasmine** - Unit testing framework
+* **[NodeJS](http://nodejs.org)** - Cross-platform runtime environment
+* **[AngularJS](https://angularjs.org/)** - Front-end framework
+* **[Bootstrap](http://getbootstrap.com)** - Front-end UI framework
+* **[GruntJS](http://gruntjs.com/)** - Javascript task runner
+* **[Docker](http://docker.com)** - Container framework
+* **[Karma](http://http://karma-runner.github.io/)** - Unit testing framework
+* **[Jasmine](http://jasmine.github.io/)** - Unit testing framework
 
 ## Other Technologies
 
-* **Github** - Code repository
-* **Jenkins** - Continuous integration
-* **Selenium** - Browser automation
-* **OpenFDA** - REST API
-* **Amazon Web Services** - IaaS 
+* **[Github](http://github.com)** - Code repository
+* **[Jenkins](https://jenkins-ci.org/)** - Continuous integration
+* **[Selenium](http://www.seleniumhq.org/)** - Browser automation
+* **[OpenFDA](http://open.fda.gov)** - REST API
+* **[Amazon Web Services](http://aws.amazon.com)** - IaaS 
 
 # Environments
 
-* **Amazon Web Services** was used as our IaaS provider.
-* **Docker** containerization of web application.
+* **[Amazon Web Services](http://aws.amazon.com)** was used as our IaaS provider.
+* **[Docker](http://docker.com)** containerization of web application.
 [ add content/screenshots here for Amazon, Docker, cAdvisor, etc. ]
 
 [ describe CI process here ]
@@ -112,9 +116,9 @@ Once you have FDA-GO setup on your local system. You can run the following comma
 ```
 grunt test
 ```
-The unit tests are created using (the open source frameworks for testing) [Karma](http://karma-runner.github.io/0.12/index.html), [PhantomJS](http://phantomjs.org/), and [Jasmine](http://jasmine.github.io/). Here is a [sample unit test run](./evidence/unittest.png).
+The unit tests are created using the open source frameworks [Karma](http://karma-runner.github.io/0.12/index.html), [PhantomJS](http://phantomjs.org/), and [Jasmine](http://jasmine.github.io/).
 
-## Autmated Testing
+## Automated Testing
 
 The following tools tied into our CI solution and triggered the execution of automated test scripts. All testing results were captured in the form of html reports.  Click here to view results of our automated tests.
 
