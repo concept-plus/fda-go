@@ -32,9 +32,13 @@ Project Links  | URLs
 ![Slack](./app/images/slack.png)
 ![Yeoman](./app/images/yeoman.png)
 
+# Installation
+
+_See the [FDA-GO Local Deployment Guide](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/LOCAL_DEPLOYMENT.md)_
+
 # Team
 
-Upon receipt of the RFQ, Yazan Ramahi was appointed and authorized to put a multidisciplinary team together to collaboratively design, develop, and deploy a working protoype. 
+Upon receipt of the RFQ, Yazan Ramahi was appointed and authorized to put a multidisciplinary team together to collaboratively design, develop, and deploy a working protoype.
 
 Team members consisted of:
 * **Product Owner:** Yazan Ramahi (yramahi@conceptplusllc.com)
@@ -54,9 +58,18 @@ _See our [Attachment E: Approach Criteria Evidence](./APPROACH_CRITERIA_EVIDENCE
 
 # Environments
 
-# Installation
+[ add content/screenshots here for Amazon, Docker, cAdvisor, etc. ]
+[ describe CI process here ]
 
-_See the [FDA-GO Local Deployment Guide](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/LOCAL_DEPLOYMENT.md)_
+# Testing
+
+## Unit testing
+
+Once you have FDA-GO setup on your local system. You can run the following command to execute the unit tests.
+```
+grunt test
+```
+The unit tests are created using (the open source frameworks for testing) [Karma](http://karma-runner.github.io/0.12/index.html), [PhantomJS](http://phantomjs.org/), and [Jasmine](http://jasmine.github.io/). Here is a ![sample unit test run](./evidence/unittest.png)
 
 
 # License
