@@ -11,7 +11,7 @@ Project Links  | URLs
  CI Environment   | [fdago-ci.conceptplusllc.net](https://fdago-ci.conceptplusllc.net)
  Container Advisor  | [fdago-ca.conceptplusllc.net](https://fdago-ca.conceptplusllc.net)
 
-### Powered by
+#### Powered by
 
 ![AngularJS](./app/images/angular.png)
 ![AWS](./app/images/aws.png)
@@ -61,6 +61,7 @@ _See our [Attachment E: Approach Criteria Evidence](./APPROACH_CRITERIA_EVIDENCE
 # Environments
 
 [ add content/screenshots here for Amazon, Docker, cAdvisor, etc. ]
+
 [ describe CI process here ]
 
 # Testing
