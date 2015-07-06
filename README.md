@@ -61,4 +61,4 @@ _See the [FDA-GO Local Deployment Guide](https://github.com/concept-plus/fda-go/
 
 # License
 
-FDA-GO is licensed under the MIT license. See the [LICENSE](./LICENSE).
+FDA-GO is licensed under the MIT license. For full details see the [LICENSE](./LICENSE) on github.
