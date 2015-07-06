@@ -1,8 +1,8 @@
 ![<Concept Plus>](./app/images/cp-full-logo-colored-315x53.png)
 
-# FDA GO
+# What is FDA-GO?
 
-[ 18f introduction here. ]
+FDA-GO is a working prototype in response to the 18F BPA for Agile Delivery Services. It is a tool for users to do a drug search for its adverse events, labeling, and recall. In addition it also provides a fast way to get recall information for the past 12 months relating to drugs, medical devices, and food.
 
 Project Links  | URLs 
  ------------- | ------------- 
@@ -30,5 +30,15 @@ Project Links  | URLs
 ![Slack](./app/images/slack.png)
 ![Yeoman](./app/images/yeoman.png)
 
+# Team (a,b)
 
+# Agile Aproach
+
+# Technologies (c)
+
+# Environments
+
+# Installation
+
+# License
 
