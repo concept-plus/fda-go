@@ -69,7 +69,7 @@ Once you have FDA-GO setup on your local system. You can run the following comma
 ```
 grunt test
 ```
-The unit tests are created using (the open source frameworks for testing) [Karma](http://karma-runner.github.io/0.12/index.html), [PhantomJS](http://phantomjs.org/), and [Jasmine](http://jasmine.github.io/). Here is a ![sample unit test run](./evidence/unittest.png)
+The unit tests are created using (the open source frameworks for testing) [Karma](http://karma-runner.github.io/0.12/index.html), [PhantomJS](http://phantomjs.org/), and [Jasmine](http://jasmine.github.io/). Here is a [sample unit test run](./evidence/unittest.png)
 
 
 # License
