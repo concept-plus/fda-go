@@ -32,7 +32,17 @@ Project Links  | URLs
 ![Slack](./app/images/slack.png)
 ![Yeoman](./app/images/yeoman.png)
 
-# Team (a,b)
+# Team
+
+Upon receipt of the RFQ, Yazan Ramahi was appointed and authorized to put a multidisciplinary team together to collaboratively design, develop, and deploy a working protoype. 
+
+Team members consisted of:
+. Product Owner: Yazan Ramahi (yramahi@conceptplusllc.com)
+. Technical Architect: Rory McLean (rmclean@conceptplusllc.com)
+. Program Manager / Scrum Master: Hector Villagomez (hvillagomez@conceptplusllc.com)
+. Frontend Web Developer: Ponnamy Kiep (pkiep@conceptplusllc.com)
+. Backend Web Developer: Mike Mathis (mmathis@conceptplusllc.com)
+. DevOps Engineer: Alex Rangeo (arangeo@conceptplusllc.com)
 
 # Agile Aproach
 
