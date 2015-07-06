@@ -2,7 +2,7 @@
 
 # What is FDA-GO?
 
-FDA-GO is a working prototype in response to the 18F BPA for Agile Delivery Services. It is a tool for users to do a drug search for its adverse events, labeling, and recall. In addition it also provides a fast way to get recall information for the past 12 months relating to drugs, medical devices, and food.
+FDA-GO is a working prototype in response to the 18F BPA for Agile Delivery Services. Using the [OpenFDA APIs](http://open.fda.gov), it is a tool for users to do a drug search for its adverse events, labeling, and recall. In addition it also provides a fast way to get recall information for the past 12 months relating to drugs, medical devices, and food.
 
 Project Links  | URLs 
  ------------- | ------------- 
@@ -24,9 +24,11 @@ Project Links  | URLs
 ![Grunt](./app/images/grunt.png)
 ![InVision](./app/images/invision.png)
 ![Jasmine](./app/images/jasmine.png)
+![Jenkins](./app/images/jenkins.png)
 ![KarmaJS](./app/images/karma.png)
 ![NightwatchJS](./app/images/nightwatch.png)
 ![NodeJS](./app/images/nodejs.png)
+![Selenium](./app/images/selenium.png)
 ![Slack](./app/images/slack.png)
 ![Yeoman](./app/images/yeoman.png)
 
