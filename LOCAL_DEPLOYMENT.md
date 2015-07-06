@@ -1,4 +1,7 @@
 # FDA-GO Local Deployment Guide
+
+## Prerequisite
+
 To develop and run the FDA Go application locally, you will need to make sure that you have [NodeJS](https://nodejs.org/) installed and that you can run NPM. Running the command below will verify that you can run NPM.
 
 ```
@@ -23,9 +26,9 @@ Install the dependencies.
 npm install
 ```
 
-## Build & local deployment.
+## Build & local deployment
 
-Run `grunt` for building and `grunt serve` to preview the app locally.
+Run `grunt` for building and `grunt serve` to preview the app locally at [http://localhost:9000/#/](http://localhost:9000/#/).
 
 ## Testing
 

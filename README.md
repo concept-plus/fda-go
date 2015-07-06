@@ -46,9 +46,7 @@ Team members consisted of:
 
 # Agile Aproach
 
-| Attachment E: Approach Criteria Evidence |
-|------------------------------------------|
-| See our [Approach Criteria Evidence](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/APPROACH_CRITERIA_EVIDENCE.md) |
+_See our [Attachment E: Approach Criteria Evidence](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/APPROACH_CRITERIA_EVIDENCE.md)_
 
 [ add content about first day(s) here. ]
 
@@ -57,6 +55,9 @@ Team members consisted of:
 # Environments
 
 # Installation
+
+_See the [FDA-GO Local Deployment Guide](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/LOCAL_DEPLOYMENT.md)
+
 
 # License
 
