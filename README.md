@@ -46,7 +46,7 @@ Team members consisted of:
 
 # Agile Aproach
 
-_See our [Attachment E: Approach Criteria Evidence](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/APPROACH_CRITERIA_EVIDENCE.md)_
+_See our [Attachment E: Approach Criteria Evidence](./APPROACH_CRITERIA_EVIDENCE.md)_
 
 [ add content about first day(s) here. ]
 
@@ -61,4 +61,4 @@ _See the [FDA-GO Local Deployment Guide](https://github.com/concept-plus/fda-go/
 
 # License
 
-FDA-GO is licensed under the MIT license. For full details see the [LICENSE](./LICENSE) on github.
+FDA-GO is licensed under the MIT license. For full details see the [LICENSE](./LICENSE.md) on github.
