@@ -56,8 +56,9 @@ _See our [Attachment E: Approach Criteria Evidence](https://github.com/concept-p
 
 # Installation
 
-_See the [FDA-GO Local Deployment Guide](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/LOCAL_DEPLOYMENT.md)
+_See the [FDA-GO Local Deployment Guide](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/LOCAL_DEPLOYMENT.md)_
 
 
 # License
 
+FDA-GO is licensed under the MIT license. See the [LICENSE](./LICENSE).
