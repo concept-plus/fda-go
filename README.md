@@ -55,7 +55,7 @@ Team members consisted of:
 
 # Agile Approach
 
-_See our [Attachment E: Approach Criteria Evidence](./APPROACH_CRITERIA_EVIDENCE.md)_
+_See our [Attachment E: Approach Criteria Evidence](./evidence/gsa_ads_attachment_e_approach_criteria_evidence_template_mod_5-Development-Pool.xlsx)_
 
 With a team in place, a project kickoff meeting was executed and ideas were presented to the product owner, leading to a decision to create FDA-GO; a site allowing consumers to execute a text search for a drug’s adverse events, labeling, and recall data. Consumers may also view recall information related to drugs, medical devices, and food for the past 12 months.
 
