@@ -1,0 +1,447 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fmodern\fcharset0 Courier;\f1\fnil\fcharset0 Monaco;\f2\fnil\fcharset134 STHeitiSC-Light;
+\f3\fnil\fcharset77 ZapfDingbatsITC;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720
+
+\f0\fs24 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Started by GitHub push by pkiep\
+Started by an SCM change\
+Started by user Concept Plus Admin\
+[EnvInject] - Loading node environment variables.\
+Building in workspace /var/lib/jenkins/workspace/FDAGo-prod-docker\
+ > git rev-parse --is-inside-work-tree # timeout=10\
+Fetching changes from the remote Git repository\
+ > git config remote.origin.url https://github.com/concept-plus/fda-go.git # timeout=10\
+Fetching upstream changes from https://github.com/concept-plus/fda-go.git\
+ > git --version # timeout=10\
+using .gitcredentials to set credentials\
+ > git config --local credential.helper store --file=/tmp/git9193619051663000019.credentials # timeout=10\
+ > git -c core.askpass=true fetch --tags --progress https://github.com/concept-plus/fda-go.git +refs/heads/*:refs/remotes/origin/*\
+ > git config --local --remove-section credential # timeout=10\
+ > git rev-parse refs/remotes/origin/master^\{commit\} # timeout=10\
+ > git rev-parse refs/remotes/origin/origin/master^\{commit\} # timeout=10\
+Checking out Revision a3e00a01e42718ebec80a6f610af821c67756f3f (refs/remotes/origin/master)\
+ > git config core.sparsecheckout # timeout=10\
+ > git checkout -f a3e00a01e42718ebec80a6f610af821c67756f3f\
+ > git rev-list bd0cf5ac03008cc76e89ee7046dda745e0de3400 # timeout=10\
+[FDAGo-prod-docker] $ /bin/sh -xe /tmp/hudson3431627025777201751.sh\
++ npm install\
+npm WARN package.json fdago@0.0.0 No license field.\
+npm WARN prefer global bower@1.4.1 should be installed with -g\
+\
+> fdago@0.0.0 postinstall /var/lib/jenkins/workspace/FDAGo-prod-docker\
+> bower install\
+\
+bower@1.4.1 node_modules/bower\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  is-root@1.0.0\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  junk@1.0.2\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  stringify-object@1.0.1\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  user-home@1.1.1\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  chmodr@0.1.0\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  abbrev@1.0.7\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  rimraf@2.4.1\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  archy@1.0.0\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  opn@1.0.2\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  bower-logger@0.2.2\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  bower-endpoint-parser@0.2.2\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  graceful-fs@3.0.8\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  lockfile@1.0.1\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  lru-cache@2.6.5\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  nopt@3.0.3\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  retry@0.6.1\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  tmp@0.0.24\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  request-progress@0.3.1 (throttleit@0.0.2)\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  q@1.4.1\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  chalk@1.1.0 (escape-string-regexp@1.0.3, supports-color@2.0.0, ansi-styles@2.1.0, has-ansi@2.0.0, strip-ansi@3.0.0)\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  shell-quote@1.4.3 (array-filter@0.0.1, array-reduce@0.0.0, array-map@0.0.0, jsonify@0.0.0)\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  which@1.1.1 (is-absolute@0.1.7)\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  bower-json@0.4.0 (intersect@0.0.3, deep-extend@0.2.11, graceful-fs@2.0.3)\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  semver@2.3.2\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  fstream@1.0.7 (inherits@2.0.1)\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  p-throttler@0.1.1 (q@0.9.7)\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  promptly@0.2.0 (read@1.0.6)\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  mkdirp@0.5.0 (minimist@0.0.8)\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  glob@4.5.3 (inherits@2.0.1, once@1.3.2, inflight@1.0.4, minimatch@2.0.8)\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  fstream-ignore@1.0.2 (inherits@2.0.1, minimatch@2.0.8)\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  insight@0.5.3 (object-assign@2.1.1, lodash.debounce@3.1.1, async@0.9.2, os-name@1.0.3, tough-cookie@0.12.1)\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  tar-fs@1.7.0 (pump@1.0.0, tar-stream@1.2.1)\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  decompress-zip@0.1.0 (mkpath@0.1.0, touch@0.0.3, readable-stream@1.1.13, binary@0.3.0)\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  update-notifier@0.3.2 (is-npm@1.0.0, string-length@1.0.0, semver-diff@2.0.0, latest-version@1.0.1)\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  request@2.53.0 (caseless@0.9.0, forever-agent@0.5.2, aws-sign2@0.5.0, stringstream@0.0.4, oauth-sign@0.6.0, tunnel-agent@0.4.1, isstream@0.1.2, json-stringify-safe@5.0.1, node-uuid@1.4.3, qs@2.3.3, combined-stream@0.0.7, form-data@0.2.0, mime-types@2.0.14, http-signature@0.10.1, bl@0.9.4, tough-cookie@2.0.0, hawk@2.3.1)\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  bower-registry-client@0.3.0 (graceful-fs@2.0.3, request-replay@0.2.0, rimraf@2.2.8, lru-cache@2.3.1, async@0.2.10, mkdirp@0.3.5, request@2.51.0)\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  github@0.2.4 (mime@1.3.4)\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  cardinal@0.4.4 (ansicolors@0.2.1, redeyed@0.4.4)\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  mout@0.11.0\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  bower-config@0.6.1 (osenv@0.0.3, graceful-fs@2.0.3, optimist@0.6.1, mout@0.9.1)\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  configstore@0.3.2 (object-assign@2.1.1, xdg-basedir@1.0.1, uuid@2.0.1, osenv@0.1.3, js-yaml@3.3.1)\
+
+\f1 \uc0\u9500 \u9472 \u9472 
+\f0  handlebars@2.0.0 (optimist@0.3.7, uglify-js@2.3.6)\
+
+\f1 \uc0\u9492 \u9472 \u9472 
+\f0  inquirer@0.8.0 (figures@1.3.5, ansi-regex@1.1.1, mute-stream@0.0.4, through@2.3.8, readline2@0.1.1, chalk@0.5.1, lodash@2.4.2, cli-color@0.3.3, rx@2.5.3)\
++ bower install\
++ grunt build\
+[4mRunning "clean:dist" (clean) task[24m\
+[32m>> [39m19 paths cleaned.\
+\
+[4mRunning "wiredep:app" (wiredep) task[24m\
+\
+[4mRunning "wiredep:test" (wiredep) task[24m\
+\
+[4mRunning "useminPrepare:html" (useminPrepare) task[24m\
+Configuration changed for [36mconcat[39m, [36muglify[39m, [36mcssmin[39m\
+\
+[4mRunning "concurrent:dist" (concurrent) task[24m\
+[32m>> [39mWarning: There are more tasks than your concurrency limit. After this limit[32m\
+>> [39mis reached no further tasks will be run until the current tasks are[32m\
+>> [39mcompleted. You can adjust the limit in the concurrent task options\
+    \
+    [4mRunning "copy:styles" (copy) task[24m\
+    Copied 2 files\
+    \
+    [32mDone, without errors.[39m\
+    \
+    \
+    Execution Time (2015-07-07 03:42:02 UTC)\
+    loading tasks  13ms  
+\f2 \'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e
+\f0  15%\
+    copy:styles    64ms  
+\f2 \'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e
+\f0  74%\
+    Total 86ms\
+        \
+    [4mRunning "imagemin:dist" (imagemin) task[24m\
+    Minified 29 images (saved 33.63 kB)\
+    \
+    [32mDone, without errors.[39m\
+    \
+    \
+    Execution Time (2015-07-07 03:42:02 UTC)\
+    imagemin:dist  7.2s  
+\f2 \'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e
+\f0  100%\
+    Total 7.2s\
+        \
+    [4mRunning "svgmin:dist" (svgmin) task[24m\
+    Total saved: 0 B\
+    \
+    [32mDone, without errors.[39m\
+    \
+    \
+    Execution Time (2015-07-07 03:42:12 UTC)\
+    loading tasks   10ms  
+\f2 \'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e
+\f0  8%\
+    svgmin:dist    109ms  
+\f2 \'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e
+\f0  91%\
+    Total 120ms\
+    \
+[4mRunning "autoprefixer:server" (autoprefixer) task[24m\
+Autoprefixer's process() method is deprecated and will removed in next major release. Use postcss([autoprefixer]).process() instead\
+File .tmp/styles/bootstrap.css created.\
+Autoprefixer's process() method is deprecated and will removed in next major release. Use postcss([autoprefixer]).process() instead\
+File .tmp/styles/main.css created.\
+\
+[4mRunning "autoprefixer:dist" (autoprefixer) task[24m\
+Autoprefixer's process() method is deprecated and will removed in next major release. Use postcss([autoprefixer]).process() instead\
+File .tmp/styles/bootstrap.css created.\
+Autoprefixer's process() method is deprecated and will removed in next major release. Use postcss([autoprefixer]).process() instead\
+File .tmp/styles/main.css created.\
+\
+[4mRunning "concat:generated" (concat) task[24m\
+File .tmp/concat/scripts/vendor.js created.\
+File .tmp/concat/scripts/scripts.js created.\
+\
+[4mRunning "ngAnnotate:dist" (ngAnnotate) task[24m\
+[32m>> [39m2 files successfully generated.\
+\
+[4mRunning "copy:dist" (copy) task[24m\
+Copied 14 files\
+\
+[4mRunning "cdnify:dist" (cdnify) task[24m\
+Going through [36mdist/404.html[39m, [36mdist/index.html[39m to update script refs\
+
+\f3 \uc0\u10004 
+\f0  bower_components/angular/angular.js changed to //ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.2/angular.min.js\
+
+\f3 \uc0\u10004 
+\f0  bower_components/angular-animate/angular-animate.js changed to //ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.2/angular-animate.min.js\
+
+\f3 \uc0\u10004 
+\f0  bower_components/angular-cookies/angular-cookies.js changed to //ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.2/angular-cookies.min.js\
+
+\f3 \uc0\u10004 
+\f0  bower_components/angular-resource/angular-resource.js changed to //ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.2/angular-resource.min.js\
+
+\f3 \uc0\u10004 
+\f0  bower_components/angular-route/angular-route.js changed to //ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.2/angular-route.min.js\
+
+\f3 \uc0\u10004 
+\f0  bower_components/angular-sanitize/angular-sanitize.js changed to //ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.2/angular-sanitize.min.js\
+
+\f3 \uc0\u10004 
+\f0  bower_components/angular-touch/angular-touch.js changed to //ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.2/angular-touch.min.js\
+
+\f3 \uc0\u10004 
+\f0  bower_components/angular/angular.js changed to //ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.2/angular.min.js\
+
+\f3 \uc0\u10004 
+\f0  bower_components/angular-animate/angular-animate.js changed to //ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.2/angular-animate.min.js\
+
+\f3 \uc0\u10004 
+\f0  bower_components/angular-cookies/angular-cookies.js changed to //ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.2/angular-cookies.min.js\
+
+\f3 \uc0\u10004 
+\f0  bower_components/angular-resource/angular-resource.js changed to //ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.2/angular-resource.min.js\
+
+\f3 \uc0\u10004 
+\f0  bower_components/angular-route/angular-route.js changed to //ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.2/angular-route.min.js\
+
+\f3 \uc0\u10004 
+\f0  bower_components/angular-sanitize/angular-sanitize.js changed to //ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.2/angular-sanitize.min.js\
+
+\f3 \uc0\u10004 
+\f0  bower_components/angular-touch/angular-touch.js changed to //ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.2/angular-touch.min.js\
+\
+[4mRunning "cssmin:generated" (cssmin) task[24m\
+[32m>> [39m2 files created. 187.79 kB 
+\f1 \uc0\u8594 
+\f0  151.29 kB\
+\
+[4mRunning "uglify:generated" (uglify) task[24m\
+[32m>> [39m2 files created.\
+\
+[4mRunning "filerev:dist" (filerev) task[24m\
+Revved 33 files\
+\
+[4mRunning "usemin:html" (usemin) task[24m\
+Replaced 6 references to assets\
+\
+[4mRunning "usemin:css" (usemin) task[24m\
+Replaced 2 references to assets\
+\
+[4mRunning "htmlmin:dist" (htmlmin) task[24m\
+Minified 6 files\
+\
+[32mDone, without errors.[39m\
+\
+\
+Execution Time (2015-07-07 03:41:52 UTC)\
+concurrent:dist      19.6s  
+\f2 \'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e
+\f0  27%\
+autoprefixer:server   1.2s  
+\f2 \'a8\'7e
+\f0  2%\
+ngAnnotate:dist       4.6s  
+\f2 \'a8\'7e\'a8\'7e\'a8\'7e
+\f0  6%\
+cdnify:dist           6.5s  
+\f2 \'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e
+\f0  9%\
+uglify:generated     39.4s  
+\f2 \'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e\'a8\'7e
+\f0  54%\
+Total 1m 13.3s\
+\
+SSH: Connecting from host [ip-10-10-14-250]\
+SSH: Connecting with configuration [AWS Docker - ec2-user home] ...\
+SSH: EXEC: STDOUT/STDERR from command [cd fdago/prod && pwd && ls && chmod 755 docker-prod.sh && ./docker-prod.sh] ...\
+/home/ec2-user/fdago/prod\
+dist\
+Dockerfile\
+docker-prod.sh\
+---------------------\
+Building Docker Image\
+---------------------\
+Sending build context to Docker daemon 557.1 kB\
+Sending build context to Docker daemon 1.114 MB\
+Sending build context to Docker daemon 1.671 MB\
+Sending build context to Docker daemon     2 MB\
+\
+Sending build context to Docker daemon \
+Step 0 : FROM ubuntu:12.04\
+ ---> 78cef618c77e\
+Step 1 : MAINTAINER Concept Plus, LLC --- Alex Rangeo\
+ ---> Using cache\
+ ---> 2878d20521c0\
+Step 2 : RUN apt-get update -y\
+ ---> Using cache\
+ ---> 9367b5ac8d79\
+Step 3 : RUN apt-get install -y git curl apache2 php5 libapache2-mod-php5 php5-mcrypt php5-mysql\
+ ---> Using cache\
+ ---> c7d476488813\
+Step 4 : RUN rm -rf /var/www/*\
+ ---> Using cache\
+ ---> 2f10e160f6ed\
+Step 5 : ADD dist /var/www\
+ ---> 54f0df6eb9a5\
+Removing intermediate container 22ed52df2eff\
+Step 6 : RUN a2enmod rewrite\
+ ---> Running in 7e11826c73a3\
+Enabling module rewrite.\
+To activate the new configuration, you need to run:\
+  service apache2 restart\
+ ---> 173865900d52\
+Removing intermediate container 7e11826c73a3\
+Step 7 : RUN chown -R www-data:www-data /var/www\
+ ---> Running in eef58468c171\
+ ---> 11163ca4f3ea\
+Removing intermediate container eef58468c171\
+Step 8 : ENV APACHE_RUN_USER www-data\
+ ---> Running in 71a9df667de0\
+ ---> 17e9073c8cea\
+Removing intermediate container 71a9df667de0\
+Step 9 : ENV APACHE_RUN_GROUP www-data\
+ ---> Running in 0dbacda0f0b0\
+ ---> 51a537748bb7\
+Removing intermediate container 0dbacda0f0b0\
+Step 10 : ENV APACHE_LOG_DIR /var/log/apache2\
+ ---> Running in ca50e07f223b\
+ ---> 11a02b300849\
+Removing intermediate container ca50e07f223b\
+Step 11 : EXPOSE 80\
+ ---> Running in d76b42b69f5c\
+ ---> db0fa462c68c\
+Removing intermediate container d76b42b69f5c\
+Step 12 : CMD /usr/sbin/apache2 -D FOREGROUND\
+ ---> Running in d2ea56c33426\
+ ---> 9edbb58a7df6\
+Removing intermediate container d2ea56c33426\
+Successfully built 9edbb58a7df6\
+----------------------------------\
+Pushing Docker Image to Docker Hub\
+----------------------------------\
+The push refers to a repository [conceptplus/fdago] (len: 1)\
+9edbb58a7df6: Buffering to Disk\
+9edbb58a7df6: Image successfully pushed\
+9edbb58a7df6: Image already exists\
+db0fa462c68c: Buffering to Disk\
+db0fa462c68c: Image successfully pushed\
+11a02b300849: Buffering to Disk\
+11a02b300849: Image successfully pushed\
+51a537748bb7: Buffering to Disk\
+51a537748bb7: Image successfully pushed\
+17e9073c8cea: Buffering to Disk\
+17e9073c8cea: Image successfully pushed\
+11163ca4f3ea: Buffering to Disk\
+11163ca4f3ea: Image successfully pushed\
+173865900d52: Buffering to Disk\
+173865900d52: Image successfully pushed\
+54f0df6eb9a5: Buffering to Disk\
+54f0df6eb9a5: Image successfully pushed\
+2f10e160f6ed: Buffering to Disk\
+2f10e160f6ed: Image successfully pushed\
+c7d476488813: Image already exists\
+9367b5ac8d79: Buffering to Disk\
+9367b5ac8d79: Image successfully pushed\
+2878d20521c0: Image already exists\
+78cef618c77e: Image already exists\
+82ed8e312318: Image already exists\
+87183ecb6716: Image already exists\
+b5da78899d3a: Image already exists\
+Digest: sha256:c6a0154205a5f2a4261af613b8db5f3fcca2a4c82d941377645289c64d57bb36\
+-----------------------------------------\
+Stopping the Current Running Docker Image\
+-----------------------------------------\
+fdago\
+fdago\
+----------------------------------------\
+Running Docker Image - conceptplus/fdago\
+----------------------------------------\
+bdd0612e3d5e534b019c7ab78d892e2c9038c3493ce0bbd0f5dd8f85f0ec1d47\
+SSH: EXEC: completed after 45,853 ms\
+SSH: Disconnecting configuration [AWS Docker - ec2-user home] ...\
+SSH: Transferred 49 file(s)\
+Warning: you have no plugins providing access control for builds, so falling back to legacy behavior of permitting any downstream builds to be triggered\
+Triggering a new build of FDAGo-Production-Test\
+Finished: SUCCESS\
+}

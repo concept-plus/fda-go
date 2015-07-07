@@ -37,15 +37,14 @@ Project Links  | URLs
 _See the [FDA-GO Local Deployment Guide](./LOCAL_DEPLOYMENT.md)_
 
 **Docker**  
-  The Docker container listens on port locally. To access the container, run the following command substituting an open port on your machine.
-
-docker run -p <localport>:80 -n fdago conceptplus/fdago
+  
+_See the [Docker hub registry](https://registry.hub.docker.com/u/conceptplus/fdago/)_
 
 # Team
 
 Upon receipt of the RFQ, Yazan Ramahi was appointed and authorized to put a multidisciplinary team together to collaboratively design, develop, and deploy a working protoype.
 
-Team members consisted of:
+[Team members](./evidence/Team) consisted of:
 * **Product Manager:** Yazan Ramahi- Leader given authority, responsibility, and held accountable for the quality of the FDAGO prototype.
 * **Technical Architect:** (Category 2) - Rory McLean 
 * **Frontend Web Developer:** (Category 6) - Ponnamy Kiep 
@@ -56,7 +55,8 @@ Team members consisted of:
 
 # Agile Approach
 
-_See our [Attachment E: Approach Criteria Evidence](./APPROACH_CRITERIA_EVIDENCE.md)_
+_See our [Attachment E: Approach Criteria Evidence](./evidence/gsa_ads_attachment_e_approach_criteria_evidence_template_mod_5-Development-Pool.xlsx)_
+
 With a team in place, a project kickoff meeting was executed and ideas were presented to the product owner, leading to a decision to create FDA-GO; a site allowing consumers to execute a text search for a drug’s adverse events, labeling, and recall data. Consumers may also view recall information related to drugs, medical devices, and food for the past 12 months.
 
 The team executed a scrum approach for all development activities. Working with the product owner, a product backlog was created identifying various user and technical stories.  Stories were captured in [JIRA](https://www.atlassian.com/software/jira) and then groomed and refined allowing development to begin.
@@ -67,11 +67,8 @@ Development was completed in 4 sprints. Each sprint consisted of:
  * Sprint demo – all completed user and technical stories were presented to stakeholders for acceptance. 
  * Sprint retrospective – lessons learned were captured and documented by the entire team.
 
-Sprint tasks were tracked and managed using JIRA. A [virtual agile board](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs/Sprint%202/Sprint_2_WIP_1.png) allowed the team to work remotely. All artifacts associated to each sprint, along with a schedule, [can be found here.](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs)
-Simultaneously, the DevOps engineer and Technical Architect identified tasks that needed to be completed from an infrastructure perspective. All items were captured in JIRA and tracked through a Kanban board. [Click here to see artifacts](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs)
-
-All defects were captured within the sprint during our testing phase. Defects were identified by the testers, created in JIRA and assigned to the developer owning the feature. Upon completion of the bug fix the defect was assigned back to the tester. If all tests passed then the defect would be closed.
-
+Sprint tasks were tracked and managed using JIRA. A [virtual agile board](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs/Sprint%202/Sprint_2_WIP_1.png) allowed the team to work remotely. All artifacts associated to each sprint [can be found here.](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs)
+Simultaneously, the DevOps engineer and Technical Architect identified tasks that needed to be completed from an infrastructure perspective. All items were captured in JIRA and tracked through a [Kanban board](./evidence/Operational_Tasks). [Click here to see artifacts](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs)
 
 # Technologies
 
@@ -86,7 +83,7 @@ The prototype consumes the [OpenFDA APIs](http://open.fda.gov) and works on mult
 * **[Bootstrap](http://getbootstrap.com)** - Front-end UI framework
 * **[GruntJS](http://gruntjs.com/)** - Javascript task runner
 * **[Docker](http://docker.com)** - Container framework
-* **[Karma](http://http://karma-runner.github.io/)** - Unit testing framework
+* **[Karma](http://karma-runner.github.io/)** - Unit testing framework
 * **[Jasmine](http://jasmine.github.io/)** - Unit testing framework
 
 ## Other Technologies
@@ -95,24 +92,36 @@ The prototype consumes the [OpenFDA APIs](http://open.fda.gov) and works on mult
 * **[Jenkins](https://jenkins-ci.org/)** - Continuous integration
 * **[Selenium](http://www.seleniumhq.org/)** - Browser automation
 * **[OpenFDA](http://open.fda.gov)** - REST API
-* **[Amazon Web Services](http://aws.amazon.com)** - IaaS 
 
 # Environments
 
 * **[Amazon Web Services](http://aws.amazon.com)** was used as our IaaS provider.
 ![AWS](./evidence/Continuous Integration/AWS_18f_ec2.png)
 * **[Docker](http://docker.com)** containerization of web application.
+![Docker](./evidence/Continuous Integration/Docker_Hub.png)
 
-Our Continuous Integration implementation invloves the following steps:
+## Continuous Integration
+
+Our Continuous Integration implementation involved:
 * Developer checks in code into GitHub
 * Jenkins polls GitHub for any check-ins
 * Jenkins executes job to build code base and deploys to AWS server
 * AWS builds Docker container based on script ran in Jenkins
 * AWS starts container
 * Container is published to Docker Hub
-* Upon successful build of container Jenkins executes job to run automated container
+* Upon [successful deployment of container](./evidence/Continuous Integration/fdago-production-build-output.rtf) Jenkins executes job to run automated tests
 * Test results produce HTML reports
 ![CI](./evidence/Continuous Integration/CI_Diagram.png)
+
+## Continuous Monitoring
+
+For the scope of this effort, we have enabled multiple monitoring tools to monitor security, vulnerability, performance and health. Based on findings from periodical scans, appropriate action was taken.
+
+* **[SSL Scans](./evidence/Continuous Monitoring/SSL-Server-Test-fdago.conceptplusllc.pdf)** - [Qualys](https://www.qualys.com/free-tools-trials/security-at-your-fingertips/)
+* **[Open Web Application Security Project (OWASP)](./evidence/Continuous Monitoring/fdago-OWASP-Scan.pdf)** - [Qualys](https://www.qualys.com/free-tools-trials/security-at-your-fingertips/)
+* **[Vulnerability](./evidence/Continuous Monitoring/fdago-threat-report.pdf)** - [Qualys](https://www.qualys.com/free-tools-trials/security-at-your-fingertips/)
+* **[Container Monitoring](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Continuous%20Monitoring/cAdvisorEvidence.docx?raw=true)** - [cAdvisor](https://fdago-ca.conceptplusllc.net/containers/)
+* **[Machine Health / Usage](./evidence/Continuous Integration/AWS_ec2_alarms.png)** - [AWS CloudWatch](http://aws.amazon.com/cloudwatch/) [with real-time alerts](./evidence/Continuous Monitoring/ALARMUSNVirginia.pdf)
 
 # Testing
 
@@ -126,10 +135,10 @@ The unit tests are created using the open source frameworks [Karma](http://karma
 
 ## Automated Testing
 
-The following tools tied into our CI solution and triggered the execution of automated test scripts. All testing results were captured in the form of html reports.  Click here to view results of our automated tests.
+The following tools tied into our CI solution and triggered the execution of automated test scripts. All testing results were captured in html reports.  ***** >>>> [Click here to view test results]().
 
 * [Selenium](http://www.seleniumhq.org/) - web browser automation tool.
-* [NightwatchJS](http://www.nightwatchjs.org/) - easy to use Node.js E2E testing solution for browser based apps and websites.
+* [NightwatchJS](http://www.nightwatchjs.org/) - Node.js E2E testing for browser based apps and websites.
 * [PhantomJS](http://phantomjs.org/) - headless webkit scriptable with a Javascript API.
 
 
