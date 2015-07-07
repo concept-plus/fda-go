@@ -1,5 +1,5 @@
 module.exports = {
-    disabled: false,
+    disabled: true,
     //Global vars - use variables defined in globalsModule.js file by client.global.VARIABLE_NAME
     'Access URL': function(client) {
         client
@@ -16,8 +16,7 @@ module.exports = {
         client
             .click(client.globals.srchbtnID)
             .verify.elementPresent('h1')
-            .verify.containsText('h1',client.globals.srchCrit2)
-            .assert.elementPresent(client.globals.loadingIndID);
+            .verify.containsText('h1',client.globals.srchCrit2);
         client.globals.TakeSS(client, 'BPA-70-search_results_loading_indicator');
     },
 

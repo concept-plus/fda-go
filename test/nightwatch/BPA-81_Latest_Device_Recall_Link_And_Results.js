@@ -28,15 +28,14 @@ module.exports = {
 	'Verify device recall results page': function(client) {
         client
 			.verify.elementPresent('h1')
-			.verify.containsText('h1',client.globals.devrecallTxt)
+			.verify.containsText('h1',client.globals.devRecallTxt)
             .pause(1000);
 
         client.globals.TakeSS(client, 'BPA-81-drug_recall_results');
     },
     'Verify device recall results table is present': function(client) {
         client
-			.verify.elementPresent(client.globals.recallresTblID)
-            //.pause(1000);
+			.verify.elementPresent(client.globals.recallResTblID);
 
         client.globals.TakeSS(client, 'BPA-81-Device Search Result');
     },

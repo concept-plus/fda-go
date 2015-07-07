@@ -103,14 +103,12 @@ The prototype consumes the [OpenFDA APIs](http://open.fda.gov) and works on mult
 ## Continuous Integration
 
 Our Continuous Integration implementation involved:
-* Developer checks in code into GitHub
-* Jenkins polls GitHub for any check-ins
-* Jenkins executes job to build code base and deploys to AWS server
-* AWS builds Docker container based on script ran in Jenkins
-* AWS starts container
+* Code check-in
+* Jenkins polls and executes build to AWS
+* AWS builds and starts Docker container
 * Container is published to Docker Hub
 * Upon [successful deployment of container](./evidence/Continuous Integration/fdago-production-build-output.rtf) Jenkins executes job to run automated tests
-* Test results produce HTML reports
+* [Test](./evidence/Continuous Integration/nightwatch-html-reports.pdf) and [Build](./evidence/Continuous Integration/Jenkins-Prod-Build-Pipeline.png) results produced
 ![CI](./evidence/Continuous Integration/CI_Diagram.png)
 
 ## Continuous Monitoring
@@ -135,12 +133,15 @@ The unit tests are created using the open source frameworks [Karma](http://karma
 
 ## Automated Testing
 
-The following tools tied into our CI solution and triggered the execution of automated test scripts. All testing results were captured in html reports.  ***** >>>> [Click here to view test results]().
+The following tools tied into our CI solution and triggered the execution of automated test scripts. All testing results were captured in html reports. [Click here to view test results](./evidence/Continuous Integration/nightwatch-html-reports.pdf).
 
 * [Selenium](http://www.seleniumhq.org/) - web browser automation tool.
 * [NightwatchJS](http://www.nightwatchjs.org/) - Node.js E2E testing for browser based apps and websites.
 * [PhantomJS](http://phantomjs.org/) - headless webkit scriptable with a Javascript API.
 
+## 508 Testing
+
+[508 findings](./test/508) were added to the backlog.
 
 # License
 
