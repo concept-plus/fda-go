@@ -32,14 +32,14 @@ module.exports = {
 		    .pause(4000)
 			.verify.elementPresent('label')
 	},
-	'Verify adverse events table is visible':  function(client) {
+	    'Verify adverse events table is visible':  function(client) {
 	    client
 	        .pause(1000)
 			.verify.visible(client.globals.eventResTblID)
 	},
 	'Click label tab and verify label table is visible':  function(client) {
 	    client
-			.click(client.globals.eventTabID)
+			.click(client.globals.labelTabID)
 			.pause(4000)
 			.verify.visible(client.globals.labelResTblID)
 	},
