@@ -108,7 +108,7 @@ Our Continuous Integration implementation involved:
 * AWS builds and starts Docker container
 * Container is published to Docker Hub
 * Upon [successful deployment of container](./evidence/Continuous Integration/fdago-production-build-output.rtf) Jenkins executes job to run automated tests
-* Test results produced
+* [Test](./evidence/Continuous Integration/nightwatch-html-reports.pdf) and [Build](./evidence/Continuous Integration/Jenkins-Prod-Build-Pipeline.png) results produced
 ![CI](./evidence/Continuous Integration/CI_Diagram.png)
 
 ## Continuous Monitoring
