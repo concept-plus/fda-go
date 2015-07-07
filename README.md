@@ -92,7 +92,6 @@ The prototype consumes the [OpenFDA APIs](http://open.fda.gov) and works on mult
 * **[Jenkins](https://jenkins-ci.org/)** - Continuous integration
 * **[Selenium](http://www.seleniumhq.org/)** - Browser automation
 * **[OpenFDA](http://open.fda.gov)** - REST API
-* **[Amazon Web Services](http://aws.amazon.com)** - IaaS 
 
 # Environments
 
@@ -103,7 +102,7 @@ The prototype consumes the [OpenFDA APIs](http://open.fda.gov) and works on mult
 
 ## Continuous Integration
 
-Our Continuous Integration implementation involves the following steps:
+Our Continuous Integration implementation involved:
 * Developer checks in code into GitHub
 * Jenkins polls GitHub for any check-ins
 * Jenkins executes job to build code base and deploys to AWS server
@@ -115,8 +114,6 @@ Our Continuous Integration implementation involves the following steps:
 ![CI](./evidence/Continuous Integration/CI_Diagram.png)
 
 ## Continuous Monitoring
-
-
 
 # Testing
 
@@ -130,10 +127,10 @@ The unit tests are created using the open source frameworks [Karma](http://karma
 
 ## Automated Testing
 
-The following tools tied into our CI solution and triggered the execution of automated test scripts. All testing results were captured in the form of html reports.  Click here to view test results.
+The following tools tied into our CI solution and triggered the execution of automated test scripts. All testing results were captured in html reports.  ***** >>>> [Click here to view test results]().
 
 * [Selenium](http://www.seleniumhq.org/) - web browser automation tool.
-* [NightwatchJS](http://www.nightwatchjs.org/) - easy to use Node.js E2E testing solution for browser based apps and websites.
+* [NightwatchJS](http://www.nightwatchjs.org/) - Node.js E2E testing for browser based apps and websites.
 * [PhantomJS](http://phantomjs.org/) - headless webkit scriptable with a Javascript API.
 
 
