@@ -141,6 +141,9 @@ The following tools tied into our CI solution and triggered the execution of aut
 * [NightwatchJS](http://www.nightwatchjs.org/) - Node.js E2E testing for browser based apps and websites.
 * [PhantomJS](http://phantomjs.org/) - headless webkit scriptable with a Javascript API.
 
+## 508 Testing
+
+[508 findings](./test/508) were added to the backlog.
 
 # License
 
