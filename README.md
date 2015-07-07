@@ -1,6 +1,6 @@
 ![<Concept Plus>](./app/images/cp-full-logo-colored-315x53.png)
 
-![buildstatus](https://fdago-ci.conceptplusllc.net/buildStatus/icon?job=FDAGo-prod-docker)
+<a href='https://fdago-ci.conceptplusllc.net/job/FDAGo-prod-docker'><img src='https://fdago-ci.conceptplusllc.net/buildStatus/icon?job=FDAGo-prod-docker'></a>
 ![teststatus](https://fdago-ci.conceptplusllc.net/buildStatus/icon?job=FDAGo-Production-Test)
 
 # What is FDA-GO?
