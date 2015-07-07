@@ -117,7 +117,7 @@ Our Continuous Integration implementation involved:
 
 For the scope of this effort, we have enabled multiple monitoring tools to monitor security, vulnerability, performance and health. Based on findings from periodical scans, appropriate action was taken.
 
-* **[SSL Scans](./evidence/Continuous Monitoring/SSL Server Test_fdago.conceptplusllc.pdf)** - [Qualys](https://www.qualys.com/free-tools-trials/security-at-your-fingertips/)
+* **[SSL Scans](./evidence/Continuous Monitoring/SSL-Server-Test-fdago.conceptplusllc.pdf)** - [Qualys](https://www.qualys.com/free-tools-trials/security-at-your-fingertips/)
 * **[Open Web Application Security Project (OWASP)](./evidence/Continuous Monitoring/fdago-OWASP-Scan.pdf)** - [Qualys](https://www.qualys.com/free-tools-trials/security-at-your-fingertips/)
 * **[Vulnerability](./evidence/Continuous Monitoring/fdago-threat-report.pdf)** - [Qualys](https://www.qualys.com/free-tools-trials/security-at-your-fingertips/)
 * **[Container Monitoring](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Continuous%20Monitoring/cAdvisorEvidence.docx?raw=true)** - [cAdvisor](https://fdago-ca.conceptplusllc.net/containers/)
