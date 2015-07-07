@@ -2,42 +2,55 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>FDA GO: 18F BPA for Agile Delivery Services</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/jasny-bootstrap/dist/css/jasny-bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/datatables/media/css/jquery.dataTables.css" />
+    <link rel="stylesheet" href="bower_components/angular-datatables/dist/plugins/bootstrap/datatables.bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/datatables-responsive/css/dataTables.responsive.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/bootstrap.css">
     <link rel="stylesheet" href="styles/main.css">
+
     <!-- endbuild -->
   </head>
-  <body ng-app="fdagoApp">
+  <body ng-app="fdagoApp" ng-controller="RootCtrl">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Reveal menu -->
-    <div class="navmenu navmenu-default navmenu-fixed-left">
-      <a class="navmenu-brand" href="#/">Home</a>
-      <ul class="nav navmenu-nav">
-        <li><a href="./">Drug Recalls</a></li>
-        <li><a href="./">Device Recalls</a></li>
-        <li class="active"><a href="./">Food Recalls</a></li>
-      </ul>
-    </div>
+    <nav id="sidemenu" class="hidden navmenu navmenu-default navmenu-fixed-left offcanvas-768" role="navigation">
+      <div ng-include="'views/sidemenu.html'"></div>
+    </nav>
 
-    <div class="canvas">
-      <div id="navigation" class="navbar navbar-default navbar-fixed-top">
+    <div class="canvas" data-info="">
+      <!-- Navbar -->
+      <div id="navigation" class="navbar navbar-default navbar-fixed-top" style="display: none !important;">
         <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
+        <a id="fdago-home" href="#/" title="Go to homepage."><img src="./images/fda-go-logo-m.png" alt="Click to go to homepage."/></a>
+        <a id="help-index-page" onclik="return false" class="btn help-link" ng-click="toggleHelp()" ><span class='sr-only'>Click to learn more about and navigate FDA-go.</span>About</a>
+        <a id="api-view" class="btn btn-success" ng-click="toggleAPI()" aria-expanded="false" aria-controls="collapseExample">
+          API
+        </a>
+  </button>
+      </div>
+
+      <!-- API well -->
+      <div id="api-well" class="well collapse" aria-hidden="true">
+        <div class="container">
+          <div id="api-called"></div>
+        </div>
       </div>
 
       <div class="container">
@@ -46,20 +59,78 @@
 
       <div class="footer">
         <div class="container center">
-          <p><span class="glyphicon glyphicon-heart"></span> from the Concept Plus team</p>
+          <h5>Made with <span class="glyphicon glyphicon-heart"></span> from the &nbsp;<a href="http://www.conceptplusllc.com"><img src="./images/cp-full-no-tagline-colored-200x33.jpg" style="height:20px;" alt="Click to go to the Concept Plus homepage." title="Concept Plus"/></a> team</h5>
+          <p>&nbsp;</p>
+          <h5>Powered by:</h5>
+          <div class="poweredby">
+            <a href="http://angularjs.org/"><img src="../images/angular.png" alt="AngularJS" title="AngularJS" ></a>
+            <a href="http://aws.amazon.com/"><img src="../images/aws.png" atl="Amazon Web Services" title="Amazon Web Services" ></a>
+            <a href="https://github.com/google/cadvisor"><img src="../images/cadvisor.png" alt="cAdvisor" title="cAdvisor" ></a>
+            <a href="http://getbootstrap.com/"><img src="../images/bootstrap.png" alt="Bootstrap" title="Bootstrap" ></a>
+            <a href="http://bower.io/"><img src="../images/bower.png" alt="Bower" title="Bower Package Manager" ></a>
+            <a href="http://www.docker.com/"><img src="../images/docker.png" alt="Docker" title="Docker" ></a>
+            <a href="http://git-scm.com//"><img src="../images/git.png" alt="Git" title="Git" ></a>
+            <a href="http://github.com/"><img src="../images/github.png" alt="GitHub" title="GitHub" ></a>
+            <a href="http://gruntjs.com/"><img src="../images/grunt.png" alt="Grunt JS" title="Grunt Task Runner" ></a>
+            <a href="http://invisionapp.com/"><img src="../images/invision.png" alt="Invision" title="InVision" ></a>
+            <a href="http://jasmine.github.io/"><img src="../images/jasmine.png" alt="JasmineJS" title="Jasmine Behavior-Driven JavaScript" ></a>
+            <a href="http://jenkins-ci.org/"><img src="../images/jenkins.png" alt="Jenkins CI Server" title="Jenkins CI Server" ></a>
+            <a href="http://karma-runner.github.io/0.12/index.html"><img src="../images/karma.png" alt="KarmaJS" title="KarmaJS" ></a>
+            <a href="http://nightwatchjs.org/"><img src="../images/nightwatch.png" alt="Nightwatch.js" title="Nightwatch.js" ></a>
+            <a href="http://nodejs.org/"><img src="../images/nodejs.png" alt="NodeJS" title="NodeJS" ></a>
+            <a href="http://www.seleniumhq.org/"><img src="../images/selenium.png" alt="Selenium Browser Automation" title="Selenium Browser Automation" ></a>
+            <a href="http://slack.com/"><img src="../images/slack.png" alt="Slack" title="Slack" ></a>
+            <a href="http://yeoman.io/"><img src="../images/yeoman.png" alt="Yeoman" title="Yeoman" ></a>
+          </div>
+          <p>Last build: 07-05-2015, 09:28PM</p>
         </div>
       </div>
     </div>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <!-- Help modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">About FDA Go</h4>
+          </div>
+          <div class="modal-body">
+            <div ng-include="'views/help.html'"></div>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
+    <!-- API modal -->
+    <div class="modal fade" id="apiModal" tabindex="-1" role="dialog" aria-labelledby="apiModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">OpenFDA API Data:</h4>
+          </div>
+          <div class="modal-body">
+            <pre></pre>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-51439623-4', 'auto');
+      ga('send', 'pageview');
     </script>
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -76,13 +147,27 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/jquery-ui/jquery-ui.js"></script>
     <script src="bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.js"></script>
+    <script src="bower_components/datatables/media/js/jquery.dataTables.js"></script>
+    <script src="bower_components/angular-datatables/dist/angular-datatables.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/colreorder/angular-datatables.colreorder.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/columnfilter/angular-datatables.columnfilter.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/colvis/angular-datatables.colvis.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/fixedcolumns/angular-datatables.fixedcolumns.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/fixedheader/angular-datatables.fixedheader.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/scroller/angular-datatables.scroller.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/tabletools/angular-datatables.tabletools.js"></script>
+    <script src="bower_components/datatables-responsive/js/dataTables.responsive.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+        <script src="scripts/services.js"></script>
+        <script src="scripts/openFdaApiServices.js"></script>
+        <script src="scripts/util.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/results.js"></script>
-        <!-- endbuild -->
+    <!-- endbuild -->
 </body>
 </html>

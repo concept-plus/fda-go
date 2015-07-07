@@ -26,7 +26,8 @@ services.factory('openFdaQueryService', ['queryUtil', '$http', '$q', function(ut
 
             var queryParams = [];
             if (options.search) {
-                queryParams.push({ name: 'search', value: options.search });
+                var search = options.search.replace(/\s+/g, '+'); // replace whitespace with '+' character according to openfda api
+                queryParams.push({ name: 'search', value: search });
             }
             queryParams.push({ name: 'limit', value: PAGE_SIZE });
             if (options.page > 0) {
@@ -36,7 +37,10 @@ services.factory('openFdaQueryService', ['queryUtil', '$http', '$q', function(ut
 
             url += util.buildQueryString(queryParams);
 
-            console.log('querying: ' + url);
+            //console.log('querying: ' + url);
+
+            // write to api-well
+            angular.element('#api-called').append('<p><a href="' + url + '" target="_blank">' + url + '</a></p>');
 
             var deferred = $q.defer();
             var httpPromise = $http.get(url);
@@ -74,7 +78,7 @@ services.factory('drugQueryService', ['openFdaQueryService', function(openFdaQue
             return openFdaQueryService.query({
                 category: 'drug',
                 subcategory: 'event',
-                search: 'patient.drug.openfda.substance_name:' + name,
+                search: 'patient.drug.openfda.brand_name:' + name,
                 page: page
             });
         },
@@ -82,7 +86,7 @@ services.factory('drugQueryService', ['openFdaQueryService', function(openFdaQue
             return openFdaQueryService.query({
                 category: 'drug',
                 subcategory: 'label',
-                search: 'openfda.substance_name:' + name,
+                search: 'openfda.brand_name:' + name,
                 page: page
             });
         },
@@ -90,7 +94,7 @@ services.factory('drugQueryService', ['openFdaQueryService', function(openFdaQue
             return openFdaQueryService.query({
                 category: 'drug',
                 subcategory: 'enforcement',
-                search: 'openfda.substance_name:' + name,
+                search: 'openfda.brand_name:' + name,
                 page: page
             });
         },
@@ -109,22 +113,22 @@ services.factory('deviceQueryService', ['openFdaQueryService', function(openFdaQ
     'use strict';
 
     return {
-        findAdverseEventsByName: function(name, page) {
-            return openFdaQueryService.query({
-                category: 'device',
-                subcategory: 'event',
-                search: 'openfda.substance_name:' + name,
-                page: page
-            });
-        },
-        findEnforcementReportsByName: function(name, page) {
-            return openFdaQueryService.query({
-                category: 'device',
-                subcategory: 'enforcement',
-                search: 'product_description:' + name,
-                page: page
-            });
-        },
+        // findAdverseEventsByName: function(name, page) {
+        //     return openFdaQueryService.query({
+        //         category: 'device',
+        //         subcategory: 'event',
+        //         search: 'openfda.substance_name:' + name,
+        //         page: page
+        //     });
+        // },
+        // findEnforcementReportsByName: function(name, page) {
+        //     return openFdaQueryService.query({
+        //         category: 'device',
+        //         subcategory: 'enforcement',
+        //         search: 'product_description:' + name,
+        //         page: page
+        //     });
+        // },
         findEnforcementReportsByDate: function(startDate, endDate, page) {
             return openFdaQueryService.query({
                 category: 'device',
@@ -140,14 +144,14 @@ services.factory('foodQueryService', ['openFdaQueryService', function(openFdaQue
     'use strict';
 
     return {
-        findEnforcementReportsByName: function(name, page) {
-            return openFdaQueryService.query({
-                category: 'food',
-                subcategory: 'enforcement',
-                search: 'product_description:' + name,
-                page: page
-            });
-        },
+        // findEnforcementReportsByName: function(name, page) {
+        //     return openFdaQueryService.query({
+        //         category: 'food',
+        //         subcategory: 'enforcement',
+        //         search: 'product_description:' + name,
+        //         page: page
+        //     });
+        // },
         findEnforcementReportsByDate: function(startDate, endDate, page) {
             return openFdaQueryService.query({
                 category: 'food',

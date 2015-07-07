@@ -14,7 +14,9 @@ module.exports = function(config) {
     basePath: '../',
 
     // testing framework to use (jasmine/mocha/qunit/...)
-    frameworks: ['jasmine'],
+    frameworks: [
+      'jasmine'
+    ],
 
     // list of files / patterns to load in the browser
     files: [
@@ -31,7 +33,20 @@ module.exports = function(config) {
       'bower_components/bootstrap/dist/js/bootstrap.js',
       'bower_components/jquery-ui/jquery-ui.js',
       'bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.js',
+      'bower_components/datatables/media/js/jquery.dataTables.js',
+      'bower_components/angular-datatables/dist/angular-datatables.js',
+      'bower_components/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.js',
+      'bower_components/angular-datatables/dist/plugins/colreorder/angular-datatables.colreorder.js',
+      'bower_components/angular-datatables/dist/plugins/columnfilter/angular-datatables.columnfilter.js',
+      'bower_components/angular-datatables/dist/plugins/colvis/angular-datatables.colvis.js',
+      'bower_components/angular-datatables/dist/plugins/fixedcolumns/angular-datatables.fixedcolumns.js',
+      'bower_components/angular-datatables/dist/plugins/fixedheader/angular-datatables.fixedheader.js',
+      'bower_components/angular-datatables/dist/plugins/scroller/angular-datatables.scroller.js',
+      'bower_components/angular-datatables/dist/plugins/tabletools/angular-datatables.tabletools.js',
+      'bower_components/datatables-responsive/js/dataTables.responsive.js',
       'bower_components/angular-mocks/angular-mocks.js',
+      'bower_components/jasmine/lib/jasmine-core/jasmine.js',
+      'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
       // endbower
       'app/scripts/**/*.js',
       'test/mock/**/*.js',

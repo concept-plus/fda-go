@@ -1,1 +1,148 @@
-<p>This is the results view.</p>
+<div class="">
+  <!-- left sidebar -->
+  <div id="sidebar" class="col-md-3">
+    <div ng-include="'/views/sidemenu.html'"></div>
+  </div>
+
+  <!-- main -->
+  <div id="main-content" class="col-md-9 results-wrapper">
+    <!-- Drug header -->
+    <div ng-if="category == 'drug'">
+      <h1>{{search}}</h1>
+    </div>
+    <div ng-if="category == 'drug-recall'">
+      <h1>Drug recalls for the previous 12 months</h1>
+    </div>
+
+    <!-- Device header -->
+    <div ng-if="category == 'device-recall'">
+      <h1>Device recalls for the previous 12 months</h1>
+    </div>
+
+    <!-- Food header -->
+    <div ng-if="category == 'food-recall'">
+      <h1>Food recalls for the previous 12 months</h1>
+    </div>
+
+    <!-- No Results -->
+    <div ng-if="results.event.total + results.label.total + results.recall.total < 1">
+      <p>{{resultsMessage}}</p>
+    </div>
+
+    <!-- Results -->
+    <div ng-if="results.event.total + results.label.total + results.recall.total > 0">
+      <div ng-if="category == 'drug-recall' || category == 'device-recall' || category == 'food-recall'">
+        <p>Showing {{results.recall.items.length}} recalls.</p>
+      </div>
+      <div ng-if="category == 'drug'">
+        <p>Showing {{results.event.items.length}} adverse events, {{results.label.items.length}} labels, and {{results.recall.items.length}} recalls for <strong>{{search}}</strong>.</p>
+      </div>
+      <!-- Loading -->
+      <div id="loading">
+        <img src="./images/ajax-loader.gif" alt="Your results are loading."/><br><br>
+      </div>
+
+      <!-- open fda watch -->
+      <div id="waiter" class="hidden" aria-hidden="true">
+        <p>It's taking a little longer than we expected to get the data from <a href="http://open.fda.gov">open.fda.gov</a>. Please wait...</p>
+      </div>
+
+      <!-- Results -->
+      <div id="results-container" class="fade">
+          <ul id="detail-tabs" class="nav nav-tabs" ng-class="{'hidden': category == 'drug-recall' || category == 'device-recall' || category == 'food-recall'}" role="tablist">
+              <li role="presentation" class="">
+                  <a href="#event-tab-content" onclick="return false" id="event-tab" role="tab" data-toggle="tab" aria-controls="event-content" aria-expanded="true"  ng-click="onClickTab('event-tab')">Adverse Events</a>
+              </li>
+              <li role="presentation">
+                  <a href="#label-tab-content" onclick="return false" role="tab" id="label-tab" data-toggle="tab" aria-controls="label-content" ng-click="onClickTab('label-tab')">Labeling</a>
+              </li>
+              <li role="presentation">
+                  <a href="#recall-tab-content" onclick="return false" role="tab" id="recall-tab" data-toggle="tab" aria-controls="recall-content" ng-click="onClickTab('recall-tab')">Recalls</a>
+              </li>
+          </ul>
+          <div id="detail-tab-content" class="tab-content">
+              <div role="tabpanel" class="tab-pane fade" ng-class="{'hidden': category == 'drug-recall' || category == 'device-recall' || category == 'food-recall'}" id="event-tab-content" aria-labelledBy="event-tab">
+                  <table id="event-results-table" datatables="" class="table display responsive results-table table-striped table-hover" width="100%" data-subcategory="event">
+                      <caption class="sr-only">Adverse event results</caption>
+                      <thead>
+                          <tr>
+                              <th scope="col">Date</th>
+                              <th scope="col">Patient</th>
+                              <th scope="col">Patient Reaction</th>
+                              <th scope="col" class="brand-name">Brand Name</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr ng-repeat="result in results.event.items" data-index="{{$index}}">
+                              <td>
+                                {{toDate(result.transmissiondate) | date:'M/d/yyyy'}}
+                              </td>
+                              <td>{{getPatientDemographics(result)}}</td>
+                              <td>{{getPatientReaction(result)}}</td>
+                              <td>
+                                <div ng-if="formatArray(result.fdago.matchingBrandNames).length == 0">
+                                  No brand data.
+                                </div>
+                                <div ng-if="formatArray(result.fdago.matchingBrandNames).length > 0">
+                                  <a class="" ng-click="collapse($index)" aria-expanded="false" aria-controls="collapseExample">
+                                    Click to view affected brands.
+                                  </a>
+                                  <div class="collapse" id="result-{{$index}}">
+                                    <div class="well">
+                                      {{formatArray(result.fdago.matchingBrandNames)}}
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="label-tab-content" aria-labelledBy="label-tab">
+                  <table id="label-results-table" class="table responsive results-table table-striped table-hover" width="100%" data-subcategory="label">
+                      <caption class="sr-only">Labeling results</caption>
+                      <thead>
+                          <tr>
+                              <th scope="col">Brand Name</th>
+                              <th scope="col">Controlled Substance Label</th>
+                              <th scope="col">Recent Major Changes</th>
+                              <th scope="col">Effective</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr ng-repeat="result in results.label.items" data-index="{{$index}}">
+                              <td>{{formatArray(result.openfda.brand_name)}}</td>
+                              <td>{{formatArray(result.controlled_substance)}}</td>
+                              <td>{{formatArray(result.recent_major_changes)}}</td>
+                              <td>{{toDate(result.effective_time) | date:'M/d/yyyy'}}</td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="recall-tab-content" aria-labelledBy="recall-tab">
+                  <table id="recall-results-table" class="table responsive results-table table-striped table-hover" width="100%" data-subcategory="recall">
+                      <caption class="sr-only">Recall results</caption>
+                      <thead>
+                          <tr>
+                              <th scope="col">Date</th>
+                              <th scope="col">Product Description</th>
+                              <th scope="col">Reason / Problem</th>
+                              <th scope="col">Brand Name</th>
+                              <th scope="col">Company</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr ng-repeat="result in results.recall.items" data-index="{{$index}}">
+                              <td>{{toDate(result.recall_initiation_date) | date:'M/d/yyyy'}}</td>
+                              <td>{{result.product_description}}</td>
+                              <td>{{result.reason_for_recall}}</td>
+                              <td>{{formatArray(result.openfda.brand_name)}}</td>
+                              <td>{{result.recalling_firm}}</td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+    </div>
+</div>

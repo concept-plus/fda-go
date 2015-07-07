@@ -1,35 +1,38 @@
-<div class="center">
+<div class="main-wrapper center">
     <image class="header-logo" src="../images/fda-go-logo-l.png"></image>
+    <a id="help-main-page" onclick="return false" class="btn help-link" ng-click="toggleHelp()"><span class='sr-only'>Click to learn more about and navigate FDA-go.</span>About</a>
     <h1 class="lead fda-go-text">FDA drugs, devices and food info.</h1>
 
     <form>
-
         <div class="row search-bar">
           <h4 for="drugsearch">Search for adverse events, labeling and recalls for drugs.</h4>
           <div class="input-group">
-            <input type="text" name="drugsearch" id="category-search-box" class="form-control large" placeholder="Enter your drug search here.">
+            <input type="text" id="search-box" class="form-control large" placeholder="Enter your drug search here." ng-model="searchString">
             <span class="input-group-btn">
-                <button type="submit" id="category-search-button" class="btn btn-default">
-                    <i class="glyphicon glyphicon-search"></i>
+                <button type="submit" id="search-button" class="go-endcap" ng-click="submitSearch(searchString)">
+                  <img src="./images/go-button-endcap-l.png" alt="Go: click to search medical device recalls.">
                     <span class='sr-only'>Search</span>
                 </button>
             </span>
           </div>
+          <div class="alert alert-danger" role="alert" ng-show="invalid == true">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error: </span>
+            Please enter a search value.
+          </div>
         </div>
 
     </form>
-
-    <p id="recall-instructions">...or select one of the predefined searches below to get a list of the most recent recalls.</p>
+    <p id="recall-instructions"> ...or to view a list of the most recent drug, medical device, or food recalls select one of the links below.</p>
 
     <div class="row recall-buttons">
         <div class="col-sm-4">
-            <button type="button" id="drug-recall-button" class="btn btn-default recall-search-button">Drug Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search drug recalls."></span>
+            <button type="button" id="drug-recall-button" class="btn btn-default recall-search-button" ng-click="getRecall('drug-recall')">Drug Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search drug recalls."></span>
         </div>
         <div class="col-sm-4">
-            <button type="button" id="device-recall-button" class="btn btn-default recall-search-button">Device Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search medical device recalls."></span>
+            <button type="button" id="device-recall-button" class="btn btn-default recall-search-button" ng-click="getRecall('device-recall')">Medical Device Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search medical device recalls."></span>
         </div>
         <div class="col-sm-4">
-            <button type="button" id="food-recall-button" class="btn btn-default recall-search-button">Food Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search food recalls."></span>
+            <button type="button" id="food-recall-button" class="btn btn-default recall-search-button" ng-click="getRecall('food-recall')">Food Recalls</button><span class="go-endcap"><img src="./images/go-button-endcap.png" alt="Go: click to search food recalls."></span>
         </div>
     </div>
 

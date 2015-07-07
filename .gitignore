@@ -3,3 +3,6 @@ dist
 .tmp
 .sass-cache
 bower_components
+test/nightwatch/node_modules
+test/nightwatch/examples/reports/screenshots
+test/nightwatch/examples/reports/*.xml

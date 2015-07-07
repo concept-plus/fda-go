@@ -44,13 +44,13 @@ describe('Factory: queryUtil', function () {
   it('should return everything if there are no duplicates', function() {
     var drugs = [
         {
-            substance_name: 'tylenol'
+            brand_name: 'tylenol'
         }, {
-            substance_name: 'metformin'
+            brand_name: 'metformin'
         }, {
-            substance_name: 'aspirin'
+            brand_name: 'aspirin'
         }, {
-            substance_name: 'cocain'
+            brand_name: 'cocain'
         }
     ];
     var uniqueDrugs = Util.removeDuplicateDrugs(drugs);
@@ -65,22 +65,22 @@ describe('Factory: queryUtil', function () {
   it('should remove duplicates there are only a few drugs', function() {
     var drugs = [
         {
-            substance_name: 'tylenol'
+            brand_name: 'tylenol'
         }, {
-            substance_name: 'tylenol'
+            brand_name: 'tylenol'
         }
     ];
     var uniqueDrugs = Util.removeDuplicateDrugs(drugs);
 
     expect(uniqueDrugs.length).toBe(1);
-    expect(uniqueDrugs[0].substance_name).toBe('tylenol');
+    expect(uniqueDrugs[0].brand_name).toBe('tylenol');
   });
 
   it('should remove duplicates when there are a bunch of drugs', function() {
-    var tylenol = { substance_name: 'tylenol' };
-    var aspirin = { substance_name: 'aspirin' };
-    var metformin = { substance_name: 'metformin' };
-    var cocain = { substance_name: 'cocain' };
+    var tylenol = { brand_name: 'tylenol' };
+    var aspirin = { brand_name: 'aspirin' };
+    var metformin = { brand_name: 'metformin' };
+    var cocain = { brand_name: 'cocain' };
     var drugs = [
         tylenol,
         tylenol,
