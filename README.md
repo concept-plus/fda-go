@@ -36,37 +36,42 @@ Project Links  | URLs
 
 _See the [FDA-GO Local Deployment Guide](./LOCAL_DEPLOYMENT.md)_
 
+**Docker**  
+  The Docker container listens on port locally. To access the container, run the following command substituting an open port on your machine.
+
+docker run -p <localport>:80 -n fdago conceptplus/fdago
+
 # Team
 
 Upon receipt of the RFQ, Yazan Ramahi was appointed and authorized to put a multidisciplinary team together to collaboratively design, develop, and deploy a working protoype.
 
 Team members consisted of:
-* **Product Owner:** Yazan Ramahi (yramahi@conceptplusllc.com)
-* **Technical Architect:** Rory McLean (rmclean@conceptplusllc.com)
-* **Program Manager / Scrum Master:** Hector Villagomez (hvillagomez@conceptplusllc.com)
-* **Frontend Web Developer:** Ponnamy Kiep (pkiep@conceptplusllc.com)
-* **Backend Web Developer:** Mike Mathis (mmathis@conceptplusllc.com)
-* **DevOps Engineer:** Alex Rangeo (arangeo@conceptplusllc.com)
+* **Product Manager:** Yazan Ramahi- Leader given authority, responsibility, and held accountable for the quality of the FDAGO prototype.
+* **Technical Architect:** (Category 2) - Rory McLean 
+* **Frontend Web Developer:** (Category 6) - Ponnamy Kiep 
+* **Frontend Web Developer:** (Category 6) - Dana Ramahi 
+* **Backend Web Developer:** (Category 7) - Mike Mathis 
+* **DevOps Engineer:** (Category 8) - Alex Rangeo 
+* **DevOps Engineer:** (Category 8) - Hector Villagomez 
 
 # Agile Approach
 
 _See our [Attachment E: Approach Criteria Evidence](./APPROACH_CRITERIA_EVIDENCE.md)_
+With a team in place, a project kickoff meeting was executed and ideas were presented to the product owner, leading to a decision to create FDA-GO; a site allowing consumers to execute a text search for a drug’s adverse events, labeling, and recall data. Consumers may also view recall information related to drugs, medical devices, and food for the past 12 months.
 
-With a team in place, a project kickoff meeting was executed and ideas were presented to the product owner, leading to a decision to create FDA-GO - a prototype allowing consumers to execute a drug search for its adverse events, labeling, and recalls. It also provides recall information for the past 12 months relating to drugs, medical devices, and food.
+The team executed a scrum approach for all development activities. Working with the product owner, a product backlog was created identifying various user and technical stories.  Stories were captured in [JIRA](https://www.atlassian.com/software/jira) and then groomed and refined allowing development to begin.
 
-The team decided on a scrum approach for all development activities.  Working with the product owner, a product backlog identified various user and technical stories which were then created in [JIRA](https://www.atlassian.com/software/jira).  The backlog was then groomed and refined allowing development to begin.
+Development was completed in 4 sprints. Each sprint consisted of: 
+ * Planning session – development team decomposed and estimated the user and technical stories. 
+ * Daily stand ups – decomposed tasks and activities are tracked and impediments are identified.
+ * Sprint demo – all completed user and technical stories were presented to stakeholders for acceptance. 
+ * Sprint retrospective – lessons learned were captured and documented by the entire team.
 
-Development was performed throughout a total of 4 sprints.  Each sprint consisted of:
-1.	Planning session – development team decomposed and estimated each user and technical stories included in sprint.
-2.	Daily stand ups – decomposed tasks and activities are tracked and impediments are identified.
-3.	Sprint demo – all completed user and technical stories were presented to stakeholders for acceptance.
-4.	Sprint retrospective – lessons learned were captured and documented by the entire team.
+Sprint tasks were tracked and managed using JIRA. A [virtual agile board](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs/Sprint%202/Sprint_2_WIP_1.png) allowed the team to work remotely. All artifacts associated to each sprint, along with a schedule, [can be found here.](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs)
+Simultaneously, the DevOps engineer and Technical Architect identified tasks that needed to be completed from an infrastructure perspective. All items were captured in JIRA and tracked through a Kanban board. [Click here to see artifacts](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs)
 
-Throughout each sprint all tasks were tracked and managed using JIRA and JIRA agile.  JIRA agile provided a [virtual agile board](./evidence/Sprint_Docs/Sprint%202/Sprint_2_WIP_1.png) which allowed the team to work remotely. All artifacts associated to each sprint, along with a schedule, [can be found here](./evidence/Sprint_Docs).
+All defects were captured within the sprint during our testing phase. Defects were identified by the testers, created in JIRA and assigned to the developer owning the feature. Upon completion of the bug fix the defect was assigned back to the tester. If all tests passed then the defect would be closed.
 
-Simultaneously, the DevOps engineer and Technical Architect identified tasks that needed to be completed from an infrastructure perspective.  All items were captured in JIRA and tracked through a Kanban board.  [Click here to see artifacts](./evidence/Sprint_Docs)
-
-All defects were captured within the sprint during our testing phase. Defects were identified by the testers, created in JIRA and assigned to the developer owning the feature. Upon completion of the bug fix the defect was assigned back to the tester.  If all tests passed then the defect would be closed.
 
 # Technologies
 
@@ -95,10 +100,19 @@ The prototype consumes the [OpenFDA APIs](http://open.fda.gov) and works on mult
 # Environments
 
 * **[Amazon Web Services](http://aws.amazon.com)** was used as our IaaS provider.
+![AWS](./evidence/Continuous Integration/AWS_18f_ec2.png)
 * **[Docker](http://docker.com)** containerization of web application.
-[ add content/screenshots here for Amazon, Docker, cAdvisor, etc. ]
 
-[ describe CI process here ]
+Our Continuous Integration implementation invloves the following steps:
+* Developer checks in code into GitHub
+* Jenkins polls GitHub for any check-ins
+* Jenkins executes job to build code base and deploys to AWS server
+* AWS builds Docker container based on script ran in Jenkins
+* AWS starts container
+* Container is published to Docker Hub
+* Upon successful build of container Jenkins executes job to run automated container
+* Test results produce HTML reports
+![CI](./evidence/Continuous Integration/CI_Diagram.png)
 
 # Testing
 
