@@ -118,7 +118,13 @@ Our Continuous Integration implementation involves the following steps:
 
 ## Continuous Monitoring
 
+For the scope of this effort, we have enabled multiple monitoring tools to monitor security, vulnerability, performance and health. Based on findings from periodical scans, appropriate action was taken.
 
+* **[SSL Scans](./evidence/Continuous Monitoring/SSL Server Test_fdago.conceptplusllc.net.pdf)** - [Qualys](https://www.qualys.com/free-tools-trials/security-at-your-fingertips/)
+* **[Open Web Application Security Project (OWASP)](./evidence/Continuous Monitoring/fdago-OWASP-Scan.pdf)** - [Qualys](https://www.qualys.com/free-tools-trials/security-at-your-fingertips/)
+* **[Vulnerability](./evidence/Continuous Monitoring/fdago-threat-report.pdf)** - [Qualys](https://www.qualys.com/free-tools-trials/security-at-your-fingertips/)
+* **[Container Monitoring](./evidence/Continuous Monitoring/cAdvisorEvidence)** - [cAdvisor](https://github.com/google/cadvisor)
+* **[Machine Health / Usage](./evidence/Continuous Integration/AWS_ec2_alarms.png)** - [AWS CloudWatch](http://aws.amazon.com/cloudwatch/) with real-time alerts
 
 # Testing
 
