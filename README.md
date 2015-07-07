@@ -1,5 +1,8 @@
 ![<Concept Plus>](./app/images/cp-full-logo-colored-315x53.png)
 
+![buildstatus](https://fdago-ci.conceptplusllc.net/buildStatus/icon?job=FDAGo-prod-docker)
+![teststatus](https://fdago-ci.conceptplusllc.net/buildStatus/icon?job=FDAGo-Production-Test)
+
 # What is FDA-GO?
 
 FDA-GO is Concept Plus' working prototype submission in response to the 18F BPA for Agile Delivery Services. 
