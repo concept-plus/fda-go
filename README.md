@@ -135,7 +135,7 @@ The unit tests are created using the open source frameworks [Karma](http://karma
 
 ## Automated Testing
 
-The following tools tied into our CI solution and triggered the execution of automated test scripts. All testing results were captured in html reports.  ***** >>>> [Click here to view test results]().
+The following tools tied into our CI solution and triggered the execution of automated test scripts. All testing results were captured in html reports. [Click here to view test results](./evidence/Continuous Integration/nightwatch-html-reports.pdf).
 
 * [Selenium](http://www.seleniumhq.org/) - web browser automation tool.
 * [NightwatchJS](http://www.nightwatchjs.org/) - Node.js E2E testing for browser based apps and websites.
