@@ -52,9 +52,9 @@ Team members consisted of:
 
 _See our [Attachment E: Approach Criteria Evidence](./APPROACH_CRITERIA_EVIDENCE.md)_
 
-With a team in place, a project kickoff meeting was executed and ideas were presented to the product owner, leading to a decision to create FDA-GO - a prototype allowing consumers to execute a drug search for its adverse events, labeling, and recalls. It also provides recall information for the past 12 months relating to drugs, medical devices, and food. FDA-GO consumes the [OpenFDA APIs](http://open.fda.gov).
+With a team in place, a project kickoff meeting was executed and ideas were presented to the product owner, leading to a decision to create FDA-GO - a prototype allowing consumers to execute a drug search for its adverse events, labeling, and recalls. It also provides recall information for the past 12 months relating to drugs, medical devices, and food.
 
-The team decided to take a scrum approach for all development activities.  Working with the product owner, a product backlog identified various user and technical stories which were then created in [JIRA](https://www.atlassian.com/software/jira).  The backlog was then groomed and refined so development activities could begin.
+The team decided on a scrum approach for all development activities.  Working with the product owner, a product backlog identified various user and technical stories which were then created in [JIRA](https://www.atlassian.com/software/jira).  The backlog was then groomed and refined allowing development to begin.
 
 Development was performed throughout a total of 4 sprints.  Each sprint consisted of:
 1.	Planning session – development team decomposed and estimated each user and technical stories included in sprint.
@@ -68,17 +68,9 @@ Simultaneously, the DevOps engineer and Technical Architect identified tasks tha
 
 All defects were captured within the sprint during our testing phase. Defects were identified by the testers, created in JIRA and assigned to the developer owning the feature. Upon completion of the bug fix the defect was assigned back to the tester.  If all tests passed then the defect would be closed.
 
-[ add content about first day(s) here. ]
-
-[ include pictures of initial whiteboard design ]
-
-[ add jira sprint info and maybe some screenshots ]
-
-[ add info about bug tracking and resolution ]
-
 # Technologies
 
-Keeping in mind the short timeframe, we still wanted to create a prototype that worked on multiple devices while satisfying all of the criterias for this challenge. This was achieved with using many modern and open source technologies.
+The prototype consumes the [OpenFDA APIs](http://open.fda.gov) and works on multiple devices while satisfying all of the criterias for this challenge. This was achieved with using many modern and open source technologies.
 
 ![Architecture](./evidence/architecture.png)
 
