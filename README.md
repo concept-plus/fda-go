@@ -44,7 +44,7 @@ _See the (Docker hub registry](https://registry.hub.docker.com/u/conceptplus/fda
 
 Upon receipt of the RFQ, Yazan Ramahi was appointed and authorized to put a multidisciplinary team together to collaboratively design, develop, and deploy a working protoype.
 
-Team members consisted of:
+[Team members](./evidence/Team) consisted of:
 * **Product Manager:** Yazan Ramahi- Leader given authority, responsibility, and held accountable for the quality of the FDAGO prototype.
 * **Technical Architect:** (Category 2) - Rory McLean 
 * **Frontend Web Developer:** (Category 6) - Ponnamy Kiep 
@@ -68,7 +68,7 @@ Development was completed in 4 sprints. Each sprint consisted of:
  * Sprint retrospective – lessons learned were captured and documented by the entire team.
 
 Sprint tasks were tracked and managed using JIRA. A [virtual agile board](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs/Sprint%202/Sprint_2_WIP_1.png) allowed the team to work remotely. All artifacts associated to each sprint [can be found here.](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs)
-Simultaneously, the DevOps engineer and Technical Architect identified tasks that needed to be completed from an infrastructure perspective. All items were captured in JIRA and tracked through a Kanban board. [Click here to see artifacts](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs)
+Simultaneously, the DevOps engineer and Technical Architect identified tasks that needed to be completed from an infrastructure perspective. All items were captured in JIRA and tracked through a [Kanban board](./evidence/Operational_Tasks). [Click here to see artifacts](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs)
 
 # Technologies
 
@@ -109,7 +109,7 @@ Our Continuous Integration implementation involved:
 * AWS builds Docker container based on script ran in Jenkins
 * AWS starts container
 * Container is published to Docker Hub
-* Upon successful build of container Jenkins executes job to run automated container
+* Upon [successful deployment of container](./evidence/Continuous Integration/fdago-production-build-output.rtf) Jenkins executes job to run automated tests
 * Test results produce HTML reports
 ![CI](./evidence/Continuous Integration/CI_Diagram.png)
 
@@ -121,7 +121,7 @@ For the scope of this effort, we have enabled multiple monitoring tools to monit
 * **[Open Web Application Security Project (OWASP)](./evidence/Continuous Monitoring/fdago-OWASP-Scan.pdf)** - [Qualys](https://www.qualys.com/free-tools-trials/security-at-your-fingertips/)
 * **[Vulnerability](./evidence/Continuous Monitoring/fdago-threat-report.pdf)** - [Qualys](https://www.qualys.com/free-tools-trials/security-at-your-fingertips/)
 * **[Container Monitoring](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Continuous%20Monitoring/cAdvisorEvidence.docx?raw=true)** - [cAdvisor](https://github.com/google/cadvisor)
-* **[Machine Health / Usage](./evidence/Continuous Integration/AWS_ec2_alarms.png)** - [AWS CloudWatch](http://aws.amazon.com/cloudwatch/) with real-time alerts
+* **[Machine Health / Usage](./evidence/Continuous Integration/AWS_ec2_alarms.png)** - [AWS CloudWatch](http://aws.amazon.com/cloudwatch/) [with real-time alerts](./evidence/ALARMUSNVirginia.pdf)
 
 # Testing
 
