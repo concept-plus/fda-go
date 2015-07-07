@@ -37,8 +37,9 @@ Project Links  | URLs
 _See the [FDA-GO Local Deployment Guide](./LOCAL_DEPLOYMENT.md)_
 
 **Docker**  
-  The Docker container listens on port locally. To access the container, run the following command substituting an open port on your machine.
   
+The Docker container listens on port locally. To access the container, run the following command substituting an open port on your machine.
+
 ```
 docker run -p <localport>:80 -n fdago conceptplus/fdago
 ```
@@ -59,6 +60,7 @@ Team members consisted of:
 # Agile Approach
 
 _See our [Attachment E: Approach Criteria Evidence](./APPROACH_CRITERIA_EVIDENCE.md)_
+
 With a team in place, a project kickoff meeting was executed and ideas were presented to the product owner, leading to a decision to create FDA-GO; a site allowing consumers to execute a text search for a drug’s adverse events, labeling, and recall data. Consumers may also view recall information related to drugs, medical devices, and food for the past 12 months.
 
 The team executed a scrum approach for all development activities. Working with the product owner, a product backlog was created identifying various user and technical stories.  Stories were captured in [JIRA](https://www.atlassian.com/software/jira) and then groomed and refined allowing development to begin.
