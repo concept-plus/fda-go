@@ -67,11 +67,8 @@ Development was completed in 4 sprints. Each sprint consisted of:
  * Sprint demo – all completed user and technical stories were presented to stakeholders for acceptance. 
  * Sprint retrospective – lessons learned were captured and documented by the entire team.
 
-Sprint tasks were tracked and managed using JIRA. A [virtual agile board](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs/Sprint%202/Sprint_2_WIP_1.png) allowed the team to work remotely. All artifacts associated to each sprint, along with a schedule, [can be found here.](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs)
+Sprint tasks were tracked and managed using JIRA. A [virtual agile board](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs/Sprint%202/Sprint_2_WIP_1.png) allowed the team to work remotely. All artifacts associated to each sprint [can be found here.](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs)
 Simultaneously, the DevOps engineer and Technical Architect identified tasks that needed to be completed from an infrastructure perspective. All items were captured in JIRA and tracked through a Kanban board. [Click here to see artifacts](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs)
-
-All defects were captured within the sprint during our testing phase. Defects were identified by the testers, created in JIRA and assigned to the developer owning the feature. Upon completion of the bug fix the defect was assigned back to the tester. If all tests passed then the defect would be closed.
-
 
 # Technologies
 
@@ -102,8 +99,11 @@ The prototype consumes the [OpenFDA APIs](http://open.fda.gov) and works on mult
 * **[Amazon Web Services](http://aws.amazon.com)** was used as our IaaS provider.
 ![AWS](./evidence/Continuous Integration/AWS_18f_ec2.png)
 * **[Docker](http://docker.com)** containerization of web application.
+![Docker](./evidence/Continuous Integration/Docker_Hub.png)
 
-Our Continuous Integration implementation invloves the following steps:
+## Continuous Integration
+
+Our Continuous Integration implementation involves the following steps:
 * Developer checks in code into GitHub
 * Jenkins polls GitHub for any check-ins
 * Jenkins executes job to build code base and deploys to AWS server
@@ -113,6 +113,10 @@ Our Continuous Integration implementation invloves the following steps:
 * Upon successful build of container Jenkins executes job to run automated container
 * Test results produce HTML reports
 ![CI](./evidence/Continuous Integration/CI_Diagram.png)
+
+## Continuous Monitoring
+
+
 
 # Testing
 
@@ -126,7 +130,7 @@ The unit tests are created using the open source frameworks [Karma](http://karma
 
 ## Automated Testing
 
-The following tools tied into our CI solution and triggered the execution of automated test scripts. All testing results were captured in the form of html reports.  Click here to view results of our automated tests.
+The following tools tied into our CI solution and triggered the execution of automated test scripts. All testing results were captured in the form of html reports.  Click here to view test results.
 
 * [Selenium](http://www.seleniumhq.org/) - web browser automation tool.
 * [NightwatchJS](http://www.nightwatchjs.org/) - easy to use Node.js E2E testing solution for browser based apps and websites.
