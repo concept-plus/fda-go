@@ -38,8 +38,8 @@ Project Links  | URLs
 
 _See the [FDA-GO Local Deployment Guide](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/LOCAL_DEPLOYMENT.md)_
 
-**Docker**
-The Docker container listens on port locally. To access the container, run the following command substituting an open port on your machine.
+**Docker**  
+  The Docker container listens on port locally. To access the container, run the following command substituting an open port on your machine.
 
 docker run -p <localport>:80 -n fdago conceptplus/fdago
 
@@ -48,7 +48,7 @@ docker run -p <localport>:80 -n fdago conceptplus/fdago
 Upon receipt of the RFQ, Yazan Ramahi was appointed and authorized to put a multidisciplinary team together to collaboratively design, develop, and deploy a working protoype.
 
 Team members consisted of:
-* **Product Manager:** Yazan Ramahi (yramahi@conceptplusllc.com)
+* **Product Manager:** Yazan Ramahi (yramahi@conceptplusllc.com) - Leader given authority, responsibility, and held accountable for the quality of the FDAGO prototype.
 * **Technical Architect:** Rory McLean (rmclean@conceptplusllc.com)
 * **Frontend Web Developer:** Ponnamy Kiep (pkiep@conceptplusllc.com)
 * **Frontend Web Developer:** Dana Ramahi (dramahi@conceptplusllc.com)
@@ -64,10 +64,10 @@ With a team in place, a project kickoff meeting was executed and ideas were pres
 The team executed a scrum approach for all development activities. Working with the product owner, a product backlog was created identifying various user and technical stories.  Stories were captured in [JIRA](https://www.atlassian.com/software/jira) and then groomed and refined allowing development to begin.
 
 Development was completed in 4 sprints. Each sprint consisted of: 
-1 Planning session – development team decomposed and estimated the user and technical stories. 
-2 Daily stand ups – decomposed tasks and activities are tracked and impediments are identified.
-3 Sprint demo – all completed user and technical stories were presented to stakeholders for acceptance. 
-4 Sprint retrospective – lessons learned were captured and documented by the entire team.
+ * Planning session – development team decomposed and estimated the user and technical stories. 
+ * Daily stand ups – decomposed tasks and activities are tracked and impediments are identified.
+ * Sprint demo – all completed user and technical stories were presented to stakeholders for acceptance. 
+ * Sprint retrospective – lessons learned were captured and documented by the entire team.
 
 Sprint tasks were tracked and managed using JIRA. A [virtual agile board](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs/Sprint%202/Sprint_2_WIP_1.png) allowed the team to work remotely. All artifacts associated to each sprint, along with a schedule, [can be found here.](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs)
 Simultaneously, the DevOps engineer and Technical Architect identified tasks that needed to be completed from an infrastructure perspective. All items were captured in JIRA and tracked through a Kanban board. [Click here to see artifacts](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs)
