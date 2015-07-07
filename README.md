@@ -34,7 +34,7 @@ Project Links  | URLs
 
 # Installation
 
-_See the [FDA-GO Local Deployment Guide](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/LOCAL_DEPLOYMENT.md)_
+_See the [FDA-GO Local Deployment Guide](./LOCAL_DEPLOYMENT.md)_
 
 # Team
 
