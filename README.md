@@ -2,7 +2,7 @@
 
 # What is FDA-GO?
 
-FDA-GO is Concept Plus' working prototype submission in response to the 18F BPA for Agile Delivery Services. 
+FDA-GO is Concept Plus' working prototype submission in response to the 18F BPA for Agile Delivery Services for RFQ 4QTFHS150004
 
 Project Links  | URLs 
  ------------- | ------------- 
@@ -45,7 +45,7 @@ _See the [Docker hub registry](https://registry.hub.docker.com/u/conceptplus/fda
 Upon receipt of the RFQ, Yazan Ramahi was appointed and authorized to put a multidisciplinary team together to collaboratively design, develop, and deploy a working protoype.
 
 [Team members](./evidence/Team) consisted of:
-* **Product Manager:** Yazan Ramahi- Leader given authority, responsibility, and held accountable for the quality of the FDAGO prototype.
+* **Product Manager:** Yazan Ramahi- Leader given authority, responsibility, and held accountable for the quality of the FDA-GO prototype.
 * **Technical Architect:** (Category 2) - Rory McLean 
 * **Frontend Web Developer:** (Category 6) - Ponnamy Kiep 
 * **Frontend Web Developer:** (Category 6) - Dana Ramahi 
@@ -63,16 +63,16 @@ The team executed a scrum approach for all development activities. Working with 
 
 Development was completed in 4 sprints. Each sprint consisted of: 
  * Planning session – development team decomposed and estimated the user and technical stories. 
- * Daily stand ups – decomposed tasks and activities are tracked and impediments are identified.
+ * Daily stand ups – decomposed tasks and activities were tracked and impediments identified.
  * Sprint demo – all completed user and technical stories were presented to stakeholders for acceptance. 
  * Sprint retrospective – lessons learned were captured and documented by the entire team.
 
 Sprint tasks were tracked and managed using JIRA. A [virtual agile board](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs/Sprint%202/Sprint_2_WIP_1.png) allowed the team to work remotely. All artifacts associated to each sprint [can be found here.](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs)
-Simultaneously, the DevOps engineer and Technical Architect identified tasks that needed to be completed from an infrastructure perspective. All items were captured in JIRA and tracked through a [Kanban board](./evidence/Operational_Tasks). [Click here to see artifacts](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs)
+Simultaneously, the DevOps engineer and Technical Architect identified tasks that needed to be completed from an infrastructure perspective. All items were captured in JIRA and tracked through a [Kanban board](./evidence/Operational_Tasks). [Click here to see artifacts](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs).
 
 # Technologies
 
-The prototype consumes the [OpenFDA APIs](http://open.fda.gov) and works on multiple devices while satisfying all of the criterias for this challenge. This was achieved with using many modern and open source technologies.
+The prototype consumes the [OpenFDA APIs](http://open.fda.gov) and works on multiple devices while satisfying all of the criteria's for this challenge. This was achieved with using many modern and open source technologies.
 
 ![Architecture](./evidence/architecture.png)
 
@@ -96,8 +96,11 @@ The prototype consumes the [OpenFDA APIs](http://open.fda.gov) and works on mult
 # Environments
 
 * **[Amazon Web Services](http://aws.amazon.com)** was used as our IaaS provider.
+
 ![AWS](./evidence/Continuous Integration/AWS_18f_ec2.png)
+
 * **[Docker](http://docker.com)** containerization of web application.
+
 ![Docker](./evidence/Continuous Integration/Docker_Hub.png)
 
 ## Continuous Integration
@@ -113,7 +116,7 @@ Our Continuous Integration implementation involved:
 
 ## Continuous Monitoring
 
-For the scope of this effort, we have enabled multiple monitoring tools to monitor security, vulnerability, performance and health. Based on findings from periodical scans, appropriate action was taken.
+For the scope of this effort, we have enabled multiple monitoring tools to monitor security, vulnerability, performance and health. Based on findings from periodic scans, appropriate action was taken.
 
 * **[SSL Scans](./evidence/Continuous Monitoring/SSL-Server-Test-fdago.conceptplusllc.pdf)** - [Qualys](https://www.qualys.com/free-tools-trials/security-at-your-fingertips/)
 * **[Open Web Application Security Project (OWASP)](./evidence/Continuous Monitoring/fdago-OWASP-Scan.pdf)** - [Qualys](https://www.qualys.com/free-tools-trials/security-at-your-fingertips/)
@@ -146,3 +149,7 @@ The following tools tied into our CI solution and triggered the execution of aut
 # License
 
 FDA-GO is licensed under the MIT license. For full details see the [LICENSE](./LICENSE.md) on github.
+
+# US Digital Playbook
+
+Please refer to the ["evidence"](./evidence) folder.
