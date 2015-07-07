@@ -1,7 +1,9 @@
 ![<Concept Plus>](./app/images/cp-full-logo-colored-315x53.png)
 
 <a href='https://fdago-ci.conceptplusllc.net/job/FDAGo-prod-docker'><img src='https://fdago-ci.conceptplusllc.net/buildStatus/icon?job=FDAGo-prod-docker'></a>
-![teststatus](https://fdago-ci.conceptplusllc.net/buildStatus/icon?job=FDAGo-Production-Test)
+[![teststatus](https://fdago-ci.conceptplusllc.net/job/FDAGo-prod-docker)](https://fdago-ci.conceptplusllc.net/buildStatus/icon?job=FDAGo-prod-docker)
+[![Coverage Status](https://coveralls.io/repos/beatfactor/nightwatch/badge.png?branch=master)](https://coveralls.io/r/beatfactor/nightwatch?branch=master)
+
 
 # What is FDA-GO?
 
@@ -52,12 +54,12 @@ Upon receipt of the RFQ, Yazan Ramahi was appointed and authorized to put a mult
 
 Team members consisted of:
 * **Product Manager:** Yazan Ramahi (yramahi@conceptplusllc.com) - Leader given authority, responsibility, and held accountable for the quality of the FDAGO prototype.
-* **Technical Architect:** Rory McLean (rmclean@conceptplusllc.com)
-* **Frontend Web Developer:** Ponnamy Kiep (pkiep@conceptplusllc.com)
-* **Frontend Web Developer:** Dana Ramahi (dramahi@conceptplusllc.com)
-* **Backend Web Developer:** Mike Mathis (mmathis@conceptplusllc.com)
-* **DevOps Engineer:** Alex Rangeo (arangeo@conceptplusllc.com)
-* **DevOps Engineer:** Hector Villagomez (hvillagomez@conceptplusllc.com)
+* **Technical Architect:** (Category 2) - Rory McLean 
+* **Frontend Web Developer:** (Category 6) - Ponnamy Kiep 
+* **Frontend Web Developer:** (Category 6) - Dana Ramahi - 
+* **Backend Web Developer:** (Category 7) - Mike Mathis 
+* **DevOps Engineer:** (Category 8) - Alex Rangeo 
+* **DevOps Engineer:** (Category 8) - Hector Villagomez 
 
 # Agile Approach
 
