@@ -38,7 +38,7 @@ _See the [FDA-GO Local Deployment Guide](./LOCAL_DEPLOYMENT.md)_
 
 **Docker**  
   
-_See the (Docker hub registry](https://registry.hub.docker.com/u/conceptplus/fdago/)
+_See the [Docker hub registry](https://registry.hub.docker.com/u/conceptplus/fdago/)_
 
 # Team
 
