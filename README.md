@@ -64,10 +64,10 @@ With a team in place, a project kickoff meeting was executed and ideas were pres
 The team executed a scrum approach for all development activities. Working with the product owner, a product backlog was created identifying various user and technical stories.  Stories were captured in [JIRA](https://www.atlassian.com/software/jira) and then groomed and refined allowing development to begin.
 
 Development was completed in 4 sprints. Each sprint consisted of: 
-1. Planning session – development team decomposed and estimated the user and technical stories. 
-2. Daily stand ups – decomposed tasks and activities are tracked and impediments are identified.
-3. Sprint demo – all completed user and technical stories were presented to stakeholders for acceptance. 
-4. Sprint retrospective – lessons learned were captured and documented by the entire team.
+1 Planning session – development team decomposed and estimated the user and technical stories. 
+2 Daily stand ups – decomposed tasks and activities are tracked and impediments are identified.
+3 Sprint demo – all completed user and technical stories were presented to stakeholders for acceptance. 
+4 Sprint retrospective – lessons learned were captured and documented by the entire team.
 
 Sprint tasks were tracked and managed using JIRA. A [virtual agile board](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs/Sprint%202/Sprint_2_WIP_1.png) allowed the team to work remotely. All artifacts associated to each sprint, along with a schedule, [can be found here.](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs)
 Simultaneously, the DevOps engineer and Technical Architect identified tasks that needed to be completed from an infrastructure perspective. All items were captured in JIRA and tracked through a Kanban board. [Click here to see artifacts](https://github.com/concept-plus/fda-go/blob/BPA-57-1.0-open/evidence/Sprint_Docs)
@@ -115,6 +115,7 @@ Our Continuous Integration implementation invloves the following steps:
 * Upon successful build of container Jenkins executes job to run automated container
 * Test results produce HTML reports
 ![CI](./evidence/Continuous Integration/CI_Diagram.png)
+
 # Testing
 
 ## Unit Testing
