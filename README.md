@@ -38,11 +38,7 @@ _See the [FDA-GO Local Deployment Guide](./LOCAL_DEPLOYMENT.md)_
 
 **Docker**  
   
-The Docker container listens on port locally. To access the container, run the following command substituting an open port on your machine.
-
-```
-docker run -p <localport>:80 -n fdago conceptplus/fdago
-```
+_See the (Docker hub registry](https://registry.hub.docker.com/u/conceptplus/fdago/)
 
 # Team
 
