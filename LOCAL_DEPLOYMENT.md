@@ -20,6 +20,11 @@ NOTE: You may receive EACCESS errors when executing the above command. You will 
 sudo chown -R `whoami` ~/.npm
 sudo chown -R `whoami` /usr/local/lib/node_modules
 ```
+or execute the commands with the 'sudo'.
+```
+$ sudo npm install -g bower grunt-cli
+```
+
 Clone this repository.
 ```
 $ git clone https://github.com/concept-plus/fda-go.git
