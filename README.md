@@ -83,7 +83,7 @@ The prototype consumes the [OpenFDA APIs](http://open.fda.gov) and works on mult
 * **[Bootstrap](http://getbootstrap.com)** - Front-end UI framework
 * **[GruntJS](http://gruntjs.com/)** - Javascript task runner
 * **[Docker](http://docker.com)** - Container framework
-* **[Karma](http://http://karma-runner.github.io/)** - Unit testing framework
+* **[Karma](http://karma-runner.github.io/)** - Unit testing framework
 * **[Jasmine](http://jasmine.github.io/)** - Unit testing framework
 
 ## Other Technologies
