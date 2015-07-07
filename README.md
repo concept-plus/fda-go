@@ -96,8 +96,11 @@ The prototype consumes the [OpenFDA APIs](http://open.fda.gov) and works on mult
 # Environments
 
 * **[Amazon Web Services](http://aws.amazon.com)** was used as our IaaS provider.
+
 ![AWS](./evidence/Continuous Integration/AWS_18f_ec2.png)
+
 * **[Docker](http://docker.com)** containerization of web application.
+
 ![Docker](./evidence/Continuous Integration/Docker_Hub.png)
 
 ## Continuous Integration
